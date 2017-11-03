@@ -1,4 +1,72 @@
 <resources>
     <string name="app_name">RTIRPC</string>
     <string name="header_text">Road Traffic Injury Research and Prevention Center</string>
+    <string-array name="hospital_array">
+        <item>AKU</item>
+        <item>JMPC</item>
+        <item>ASH</item>
+    </string-array>
+    <string-array name="ambulance_array">
+        <item>Ambulane</item>
+        <item>Private</item>
+        <item>Public</item>
+        <item>Police</item>
+    </string-array>
+    <string-array name="history_array">
+        <item>Patient</item>
+        <item>Attendant</item>
+        <item>Public</item>
+        <item>Police</item>
+    </string-array>
+    <string-array name="travelling_array">
+        <item>Work</item>
+        <item>Leisure</item>
+        <item>Study</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="vehicles_array">
+        <item>Car</item>
+        <item>Truck</item>
+        <item>Bike</item>
+        <item>Taxi</item>
+    </string-array>
+    <string-array name="patient_ride_array">
+        <item>Rider (of 2 wheeler)</item>
+        <item>Pillion Passenger</item>
+        <item>Driver (of 4 wheeler)</item>
+        <item>Passenger</item>
+        <item>Pedestrian</item>
+        <item>Driver (of 3 wheeler)</item>
+        <item>Driver (more than 4 wheeler)</item>
+        <item>Unknown</item>
+    </string-array>
+
+    <string-array name="helmet_array">
+        <item>Wearing Helmet</item>
+        <item>Not Wearing Helmet</item>
+        <item>Unknown</item>
+    </string-array>
+
+    <string-array name="collision_array">
+        <item>Head-on</item>
+        <item>Rear-end</item>
+        <item>Hit Object</item>
+        <item>Merging</item>
+        <item>Side Swipe</item>
+        <item>Right Angle</item>
+        <item>Unknown</item>
+    </string-array>
+
+    <string-array name="loc_detail_array">
+        <item>--Select--</item>
+        <item>Intersection</item>
+        <item>Mid Block</item>
+        <item>U-Turn</item>
+        <item>Flyover</item>
+        <item>Bridges</item>
+        <item>Underpass</item>
+        <item>Unknown</item>
+    </string-array>
+
+
 </resources>
