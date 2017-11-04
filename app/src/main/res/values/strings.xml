@@ -68,5 +68,12 @@
         <item>Unknown</item>
     </string-array>
 
+    <string-array name="accident_array">
+        <item>Road Crossing</item>
+        <item>Over Taking</item>
+        <item>Over Speeding</item>
+        <item>Lane Jumping</item>
+    </string-array>
+
 
 </resources>
