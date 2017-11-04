@@ -348,6 +348,7 @@
                 android:weightSum="2">
 
                 <Button
+                    android:textColor="@android:color/white"
                     android:id="@+id/btnPrevious"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -359,6 +360,7 @@
                     android:textStyle="bold" />
 
                 <Button
+                    android:textColor="@android:color/white"
                     android:id="@+id/btnSave"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"

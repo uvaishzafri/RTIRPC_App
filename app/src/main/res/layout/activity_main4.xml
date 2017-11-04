@@ -12,16 +12,43 @@
     <ImageView
         android:padding="16dp"
         android:id="@+id/imageView2"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        app:srcCompat="@drawable/logo"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
+        android:src="@drawable/logo"
         android:layout_gravity="center"/>
 
     <TextView
+        android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Thanks for saving data"
         android:textAlignment="center"
         android:textStyle="bold"
-        android:textSize="18sp"/>
+        android:textColor="@android:color/black"
+        android:textSize="25sp"/>
+
+        <Button
+            android:id="@+id/btnNewCase"
+            android:layout_gravity="center"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+         android:layout_margin="16dp"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"
+            android:text="NEW CASE"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:textColor="@android:color/white"
+            android:id="@+id/btnExit"
+            android:layout_gravity="center"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+
+            android:background="@color/colorPrimary"
+            android:text="EXIT"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
 </LinearLayout>

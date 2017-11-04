@@ -1,7 +1,9 @@
 package com.example.yumnaasim.rtirpc;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -22,6 +24,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this,Main2Activity.class));
+                finish();
             }
         });
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
@@ -115,4 +118,21 @@ public class MainActivity extends Activity {
 // Apply the adapter to the spinner
         spinner10.setAdapter(adapter8);
     }
+
+    @Override
+    public void onBackPressed() {
+            new AlertDialog.Builder(this)
+                    .setIcon(R.drawable.ic_warning_black_24dp)
+                    .setTitle("Exit")
+                    .setMessage("Are you sure you want to exit?")
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                        }
+                    })
+                    .setNegativeButton("No", null)
+                    .show();
+        }
+
 }
