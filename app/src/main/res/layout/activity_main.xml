@@ -54,7 +54,7 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/editText5"
+                    android:id="@+id/emergencyNo"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="20"
@@ -76,7 +76,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="2"
                     android:layout_height="wrap_content"
-                    android:text="Hospital No. :"
+                    android:text="Hospital Name. :"
                     android:textSize="18sp" />
 
                 <Spinner
@@ -102,7 +102,7 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/editText6"
+                    android:id="@+id/name"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="45"
@@ -118,7 +118,7 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/editText7"
+                    android:id="@+id/age"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="30"
@@ -141,7 +141,7 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/editText8"
+                    android:id="@+id/address"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -165,7 +165,7 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/editText9"
+                    android:id="@+id/mobile"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="7"
@@ -181,7 +181,7 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/editText10"
+                    android:id="@+id/occupation"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="7"
@@ -204,16 +204,18 @@
                     <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:id="@+id/radioGroupGender">
 
                     <RadioButton
-                        android:id="@+id/checkBox"
+                        android:id="@+id/male"
+                        android:checked="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Male" />
 
                     <RadioButton
-                        android:id="@+id/checkBox1"
+                        android:id="@+id/female"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Female" />
@@ -236,7 +238,7 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/editText12"
+                    android:id="@+id/timeAcc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -259,7 +261,7 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/editText11"
+                    android:id="@+id/timeArr"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -298,7 +300,7 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/editText14"
+                    android:id="@+id/ambulance"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="30"
@@ -413,48 +415,33 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content" />
             </LinearLayout>
-            <LinearLayout
-                android:weightSum="3"
-                android:paddingBottom="10dp"
+
+            <TextView
+                android:id="@+id/text18"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:text="Is patient wearing helmet:"
+                android:textSize="18sp" />
 
-                <TextView
-                    android:id="@+id/text18"
-                    android:layout_width="0dp"
-                    android:layout_weight="2"
-                    android:layout_height="wrap_content"
-                    android:text="If patient is MotorBike Rider/Pillion:"
-                    android:textSize="18sp" />
-
-                <Spinner
-                    android:id="@+id/spinner7"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-            <LinearLayout
-                android:weightSum="3"
-                android:paddingBottom="10dp"
-                android:layout_width="match_parent"
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
                 android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/radio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:text="Yes" />
 
-                <TextView
-                    android:id="@+id/text19"
-                    android:layout_width="0dp"
-                    android:layout_weight="2"
-                    android:layout_height="wrap_content"
-                    android:text="If patient is Driver/Passenger:"
-                    android:textSize="18sp" />
-
-                <Spinner
-                    android:id="@+id/spinner8"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
+            <RadioButton
+                android:id="@+id/radio1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:text="No" />
+            </RadioGroup>
             <LinearLayout
                 android:weightSum="3"
                 android:paddingBottom="10dp"
@@ -493,42 +480,43 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:weightSum="20"
                 android:paddingBottom="10dp">
 
-                <CheckBox
+                <RadioGroup
+                    android:weightSum="3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/radioGroup">
+
+                <RadioButton
                     android:id="@+id/checkBox4"
                     android:layout_width="0dp"
+                    android:checked="true"
                     android:layout_height="wrap_content"
-                    android:layout_weight="5"
+                    android:layout_weight="1"
                     android:text="Signboard" />
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/checkBox3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="5"
+                    android:layout_weight="1"
                     android:text="Vehicle" />
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="3"
-                    android:layout_height="wrap_content"
-                    android:text="Other"
-                    android:textSize="18sp"/>
-
-                <EditText
-                    android:id="@+id/checkBox2"
+                <RadioButton
+                    android:id="@+id/checkBox8"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="7"
-                    />
+                    android:layout_weight="1"
+                    android:text="Other" />
+                </RadioGroup>
             </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Which lane were your travelling?"
+                android:text="Which lane were you travelling?"
                 android:textSize="18sp"
                 android:paddingBottom="10dp"/>
 
@@ -541,6 +529,7 @@
 
                 <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                     android:layout_width="fill_parent"
+                    android:id="@+id/radioGroup1"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                 <RadioButton
@@ -552,6 +541,7 @@
 
                 <RadioButton
                     android:id="@+id/checkBox6"
+                    android:checked="true"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="5"
@@ -575,7 +565,7 @@
                 android:paddingBottom="10dp"/>
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/loc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -614,7 +604,6 @@
                 android:textStyle="bold"
                 android:background="@color/colorPrimary"/>
         </LinearLayout>
-
 
     </ScrollView>
 

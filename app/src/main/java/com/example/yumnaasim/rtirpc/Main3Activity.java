@@ -9,7 +9,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
+
+import Databases.Database;
+import model.AccidentDetails;
+import model.AccidentRecord;
+import model.Patient;
+import model.PatientHealth;
 
 public class Main3Activity extends Activity {
 
@@ -21,6 +28,60 @@ public class Main3Activity extends Activity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                /*retrieving all intent extras*/
+                PatientHealth health = (PatientHealth)
+                        getIntent().getSerializableExtra("PatientHealth");
+
+                AccidentRecord accidentRecord = (AccidentRecord) getIntent().getSerializableExtra("AccidentRecord");
+
+                Patient patient = (Patient) getIntent().getSerializableExtra("Patient");
+
+                AccidentDetails details = (AccidentDetails) getIntent().getSerializableExtra("AccidentDetails");
+                /*taking user input*/
+                EditText editTextTimestamp = (EditText) findViewById(R.id.timestamp);
+                String timestamp = editTextTimestamp.getText().toString();
+
+                EditText editTextDataCollector = (EditText) findViewById(R.id.dataCollectorName);
+                String dataCollectorName = editTextDataCollector.getText().toString();
+
+                accidentRecord.setTimestamp(timestamp);
+                accidentRecord.setDataCollectorName(dataCollectorName);
+
+                Spinner spinner1 = (Spinner) findViewById(R.id.headISS);
+                String headISS = spinner1.getSelectedItem().toString();
+
+                Spinner spinner2 = (Spinner) findViewById(R.id.spinner1);
+                String chestISS = spinner2.getSelectedItem().toString();
+
+                Spinner spinner3 = (Spinner) findViewById(R.id.spinner2);
+                String extermityISS = spinner3.getSelectedItem().toString();
+
+                Spinner spinner4 = (Spinner) findViewById(R.id.spinner3);
+                String faceISS = spinner4.getSelectedItem().toString();
+
+                Spinner spinner5 = (Spinner) findViewById(R.id.spinner4);
+                String abdomenISS = spinner5.getSelectedItem().toString();
+
+                Spinner spinner6 = (Spinner) findViewById(R.id.spinner5);
+                String externalISS = spinner6.getSelectedItem().toString();
+
+                EditText editTextNotes = (EditText) findViewById(R.id.notes);
+                String dtNotes = editTextNotes.getText().toString();
+
+                health.setHeadISS(headISS);
+                health.setChestISS(chestISS);
+                health.setExtermityISS(extermityISS);
+                health.setFaceISS(faceISS);
+                health.setAbdomenISS(abdomenISS);
+                health.setExternalISS(externalISS);
+                health.setDoctorNotes(dtNotes);
+
+                new Database(Main3Activity.this).addToPatientHealth(health);
+                new Database(Main3Activity.this).addToPatientInfo(patient);
+                new Database(Main3Activity.this).addToAccidentDetails(details);
+                new Database(Main3Activity.this).addToRecord(accidentRecord);
+
                 startActivity(new Intent(Main3Activity.this,Main4Activity.class));
                 finish();
             }
@@ -29,11 +90,11 @@ public class Main3Activity extends Activity {
         buttonPrev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Main3Activity.this,Main2Activity.class));
-                finish();
+                onBackPressed();
             }
         });
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        /*setting data on spinner*/
+        Spinner spinner = (Spinner) findViewById(R.id.headISS);
         Spinner spinner1 = (Spinner) findViewById(R.id.spinner1);
         Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
         Spinner spinner3 = (Spinner) findViewById(R.id.spinner3);
@@ -52,19 +113,6 @@ public class Main3Activity extends Activity {
         spinner4.setAdapter(adapter);
         spinner5.setAdapter(adapter);
     }
-    @Override
-    public void onBackPressed() {
-        new AlertDialog.Builder(this)
-                .setIcon(R.drawable.ic_warning_black_24dp)
-                .setTitle("Exit")
-                .setMessage("Are you sure you want to exit?")
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        finish();
-                    }
-                })
-                .setNegativeButton("No", null)
-                .show();
-    }
+
+
 }

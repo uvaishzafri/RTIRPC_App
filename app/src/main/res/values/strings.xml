@@ -69,7 +69,6 @@
     </string-array>
 
     <string-array name="iss_array">
-        <item>--Select--</item>
         <item>Minor</item>
         <item>Moderate</item>
         <item>Serious</item>

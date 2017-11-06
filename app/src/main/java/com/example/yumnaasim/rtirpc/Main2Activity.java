@@ -9,7 +9,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
+
+import java.io.Serializable;
+
+import model.AccidentDetails;
+import model.AccidentRecord;
+import model.Patient;
+import model.PatientHealth;
 
 public class Main2Activity extends Activity {
 
@@ -25,37 +34,82 @@ public class Main2Activity extends Activity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
+
         Button button = (Button) findViewById(R.id.btnNext);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Main2Activity.this,Main3Activity.class));
-                finish();
+                /*taking user input*/
+                RadioGroup radioGroup1 = (RadioGroup) findViewById(R.id.respiratorRate);
+                int id1 = radioGroup1.getCheckedRadioButtonId();
+
+                RadioButton radioButton1 = (RadioButton) findViewById(id1);
+                String respiratorRate = radioButton1.getText().toString();
+
+                RadioGroup radioGroup2 = (RadioGroup) findViewById(R.id.bloodPressure);
+                int id2 = radioGroup2.getCheckedRadioButtonId();
+                RadioButton radioButton2 = (RadioButton) findViewById(id2);
+                String bloodPressure = radioButton2.getText().toString();
+
+                RadioGroup radioGroup3 = (RadioGroup) findViewById(R.id.gcs);
+                int id3 = radioGroup3.getCheckedRadioButtonId();
+                RadioButton radioButton3 = (RadioButton) findViewById(id3);
+                String gcs = radioButton3.getText().toString();
+
+                RadioGroup radioGroup4 = (RadioGroup) findViewById(R.id.eyeRes1);
+                int id4 = radioGroup4.getCheckedRadioButtonId();
+                RadioButton radioButton4 = (RadioButton) findViewById(id4);
+                String eyeRes1 = radioButton4.getText().toString();
+
+                RadioGroup radioGroup5 = (RadioGroup) findViewById(R.id.eyeRes2);
+                int id5 = radioGroup5.getCheckedRadioButtonId();
+                RadioButton radioButton5 = (RadioButton) findViewById(id5);
+                String eyeRes2 = radioButton5.getText().toString();
+
+                RadioGroup radioGroup6 = (RadioGroup) findViewById(R.id.verbalRes);
+                int id6 = radioGroup6.getCheckedRadioButtonId();
+                RadioButton radioButton6 = (RadioButton) findViewById(id6);
+                String verRes = radioButton6.getText().toString();
+
+                PatientHealth patientHealth = new PatientHealth();
+                patientHealth.setRespiratorRate(respiratorRate);
+                patientHealth.setBloodPressure(bloodPressure);
+                patientHealth.setGcs(gcs);
+                patientHealth.setEyeResponse1(eyeRes1);
+                patientHealth.setEyeResponse2(eyeRes2);
+                patientHealth.setVerbalResponse1(verRes);
+
+                Spinner spinner1 = (Spinner) findViewById(R.id.spinner);
+                String locDes = spinner1.getSelectedItem().toString();
+
+                /*getting intent values*/
+                Patient patient = (Patient) getIntent().getSerializableExtra("Patient");
+                AccidentRecord accidentRecord = (AccidentRecord) getIntent().getSerializableExtra("AccidentRecord");
+                AccidentDetails details = (AccidentDetails) getIntent().getSerializableExtra("AccidentDetails");
+
+                details.setLocDescription(locDes);
+                /*passing intent*/
+                Intent intent = new Intent(Main2Activity.this,Main3Activity.class);
+                intent.putExtra("PatientHealth", patientHealth);
+                intent.putExtra("Patient",patient);
+                intent.putExtra("AccidentRecord",accidentRecord);
+                intent.putExtra("AccidentDetails",details);
+                startActivity(intent);
+
             }
         });
         Button buttonPrev = (Button) findViewById(R.id.btnPrevious);
         buttonPrev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Main2Activity.this,MainActivity.class));
-                finish();
+                onBackPressed();
             }
         });
 
     }
+
     @Override
     public void onBackPressed() {
-        new AlertDialog.Builder(this)
-                .setIcon(R.drawable.ic_warning_black_24dp)
-                .setTitle("Exit")
-                .setMessage("Are you sure you want to exit?")
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        finish();
-                    }
-                })
-                .setNegativeButton("No", null)
-                .show();
+        super.onBackPressed();
     }
 }

@@ -46,7 +46,7 @@
                     android:textSize="18sp" />
 
                 <Spinner
-                    android:id="@+id/spinner"
+                    android:id="@+id/headISS"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content" />
@@ -180,7 +180,7 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/editText2"
+                android:id="@+id/notes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -218,7 +218,25 @@
                     android:layout_height="wrap_content"
                     android:text="Detained for" />
 
-               <LinearLayout
+                <RadioButton
+                    android:id="@+id/radio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Expired" />
+
+                <RadioButton
+                    android:id="@+id/radio1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Transferred to other hospital" />
+
+                <RadioButton
+                    android:id="@+id/radio5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Referred from other hospital" />
+
+               <!--<LinearLayout
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
                    android:paddingBottom="5dp"
@@ -244,9 +262,9 @@
                        android:layout_height="wrap_content"
                        android:ems="10"
                        android:inputType="time" />
-               </LinearLayout>
+               </LinearLayout>-->
 
-                <LinearLayout
+                <!--<LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -257,7 +275,7 @@
                         android:layout_width="0dp"
                         android:layout_weight="2"
                         android:layout_height="wrap_content"
-                        android:text="Transferred to" />
+                        android:text="Transferred to other hospital" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -272,9 +290,9 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:inputType="text" />
-                </LinearLayout>
+                </LinearLayout>-->
 
-                <LinearLayout
+                <!--<LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -286,7 +304,7 @@
                         android:layout_weight="2"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Referred From" />
+                        android:text="Referred from other hospital" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -301,7 +319,7 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:inputType="text" />
-                </LinearLayout>
+                </LinearLayout>-->
 
                 <RadioButton
                     android:id="@+id/radio6"
@@ -317,7 +335,7 @@
                     android:text="Name of Data Collector:"
                     android:textSize="18sp" />
                 <EditText
-                    android:id="@+id/editText6"
+                    android:id="@+id/dataCollectorName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -334,7 +352,7 @@
                     android:text="Date, Time: "
                     android:textSize="18sp" />
                 <EditText
-                    android:id="@+id/editText8"
+                    android:id="@+id/timestamp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
