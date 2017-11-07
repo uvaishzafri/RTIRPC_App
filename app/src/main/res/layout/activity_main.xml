@@ -26,102 +26,113 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:weightSum="100"
+                android:weightSum="5"
                 android:paddingBottom="10dp">
 
                 <TextView
                     android:id="@+id/text"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Date:"
+                    android:text="Date "
                     android:textSize="18sp" />
 
                 <EditText
+                 style="@style/inputStyle"
                     android:id="@+id/date"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="30"
                     android:ems="10"
+                    android:layout_weight="3"
                     android:inputType="date" />
+                </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="5"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp">
 
                 <TextView
                     android:id="@+id/text1"
+                    android:layout_weight="2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="50"
-                    android:text="Emergency No. :"
+                    android:text="Emergency No. "
                     android:textSize="18sp" />
 
                 <EditText
                     android:id="@+id/emergencyNo"
                     android:layout_width="0dp"
+                    android:layout_weight="3"
                     android:layout_height="wrap_content"
-                    android:layout_weight="20"
+                    style="@style/inputStyle"
                     android:ems="10"
                     android:inputType="number" />
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="3"
-                android:paddingBottom="10dp">
-
                 <TextView
 
                     android:id="@+id/text2"
-                    android:layout_width="0dp"
-                    android:layout_weight="2"
+                    android:paddingBottom="10dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Hospital Name. :"
+                    android:text="Hospital Name"
                     android:textSize="18sp" />
 
                 <Spinner
+                    android:paddingBottom="10dp"
                     android:id="@+id/spinner"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content" />
-
-            </LinearLayout>
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:weightSum="5"
                 android:paddingBottom="10dp">
 
                 <TextView
                     android:id="@+id/text3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="15"
-                    android:text="Name:"
+                    android:text="Name "
+                    android:layout_weight="2"
                     android:textSize="18sp" />
 
                 <EditText
                     android:id="@+id/name"
+                    style="@style/inputStyle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="45"
+                    android:layout_weight="3"
                     android:ems="10"
                     android:inputType="textPersonName" />
+                </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="5"
+                android:paddingBottom="10dp">
                 <TextView
                     android:id="@+id/text4"
                     android:layout_width="0dp"
+                    android:layout_weight="2"
                     android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:text="Age:"
+                    android:text="Age "
                     android:textSize="18sp" />
 
                 <EditText
                     android:id="@+id/age"
+                    style="@style/inputStyle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="30"
+                    android:layout_weight="3"
                     android:ems="10"
                     android:inputType="number" />
             </LinearLayout>
@@ -130,21 +141,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:weightSum="5"
                 android:paddingBottom="10dp">
 
                 <TextView
 
                     android:id="@+id/text6"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Address :"
+                    android:text="Address "
+                    android:layout_weight="2"
                     android:textSize="18sp" />
 
                 <EditText
                     android:id="@+id/address"
-                    android:layout_width="wrap_content"
+                    style="@style/inputStyle"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight="3"
                     android:ems="10"
                     android:inputType="textPersonName" />
             </LinearLayout>
@@ -153,7 +167,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:weightSum="20"
+                android:weightSum="5"
                 android:paddingBottom="10dp">
 
                 <TextView
@@ -165,26 +179,34 @@
                     android:textSize="18sp" />
 
                 <EditText
+                    style="@style/inputStyle"
                     android:id="@+id/mobile"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="7"
+                    android:layout_weight="3"
                     android:ems="10"
                     android:inputType="phone" />
-
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="5"
+                android:paddingBottom="10dp">
                 <TextView
                     android:id="@+id/text8"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="4"
+                    android:layout_weight="2"
                     android:text="Occupation"
                     android:textSize="18sp" />
 
                 <EditText
+                    style="@style/inputStyle"
                     android:id="@+id/occupation"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="7"
+                    android:layout_weight="3"
                     android:ems="10"
                     android:inputType="text" />
             </LinearLayout>
@@ -227,21 +249,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_weight="5"
                 android:paddingBottom="10dp">
 
                 <TextView
 
                     android:id="@+id/text10"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
                     android:layout_height="wrap_content"
-                    android:text="Time of Accident :"
+                    android:text="Time of Accident"
                     android:textSize="18sp" />
 
                 <EditText
                     android:id="@+id/timeAcc"
-                    android:layout_width="wrap_content"
+                    style="@style/inputStyle"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight="3"
                     android:ems="10"
                     android:inputType="time" />
             </LinearLayout>
@@ -251,170 +276,140 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:paddingBottom="10dp"
+                android:weightSum="5"
                 >
 
                 <TextView
                     android:id="@+id/text9"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
                     android:layout_height="wrap_content"
                     android:text="Time of Arrival :"
                     android:textSize="18sp" />
 
                 <EditText
                     android:id="@+id/timeArr"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
+                    style="@style/inputStyle"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight="3"
                     android:ems="10"
                     android:inputType="time" />
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="110"
-                android:paddingBottom="10dp">
-
                 <TextView
                     android:id="@+id/text11"
-                    android:layout_width="0dp"
+                    android:paddingBottom="10dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="20"
                     android:text="Arrived by: "
                     android:textSize="18sp" />
 
                 <Spinner
+                    android:paddingBottom="10dp"
                     android:id="@+id/spinner1"
-                    android:layout_width="0dp"
-                    android:layout_weight="30"
-                    android:layout_height="wrap_content" />
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"/>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="5"
+                android:paddingBottom="13dp">
                 <TextView
                     android:id="@+id/text12"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="30"
+                    android:layout_weight="2"
                     android:text="Ambulance Name"
                     android:textSize="18sp" />
 
                 <EditText
                     android:id="@+id/ambulance"
+                    style="@style/inputStyle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="30"
+                    android:layout_weight="3"
                     android:ems="10"
                     android:inputType="text" />
             </LinearLayout>
 
-            <LinearLayout
-                android:weightSum="3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingBottom="10dp">
-
                 <TextView
                     android:id="@+id/text13"
-                    android:layout_weight="2"
-                    android:layout_width="0dp"
+                    android:paddingBottom="10dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="History given by :"
                     android:textSize="18sp" />
 
                 <Spinner
                     android:id="@+id/spinner2"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
+                    android:paddingBottom="10dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="3"
-                android:paddingBottom="10dp"
-                android:orientation="horizontal">
+
 
                 <TextView
                     android:id="@+id/text14"
-                    android:layout_width="0dp"
+                    android:paddingBottom="10dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Was he travelling for :"
                     android:textSize="18sp"
-                    android:layout_weight="2"/>
+                    />
 
                 <Spinner
                     android:id="@+id/spinner3"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
+                    android:paddingBottom="10dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingBottom="10dp"
-                android:weightSum="3">
+
 
                 <TextView
-                    android:layout_weight="2"
+                    android:paddingBottom="10dp"
                     android:id="@+id/text15"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Vehicle(s) involvement 1:"
                     android:textSize="18sp" />
 
                 <Spinner
                     android:id="@+id/spinner4"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
+                    android:paddingBottom="10dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
-            </LinearLayout>
 
-            <LinearLayout
-                android:weightSum="3"
-                android:paddingBottom="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/text16"
-                    android:layout_width="0dp"
-                    android:layout_weight="2"
+                    android:layout_width="match_parent"
+                    android:paddingBottom="10dp"
                     android:layout_height="wrap_content"
                     android:text="Vehicle(s) involvement 2 :"
                     android:textSize="18sp" />
 
                 <Spinner
                     android:id="@+id/spinner5"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
+                    android:paddingBottom="10dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:weightSum="3"
-                android:paddingBottom="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/text17"
-                    android:layout_width="0dp"
-                    android:layout_weight="2"
+                    android:layout_width="match_parent"
+                    android:paddingBottom="10dp"
                     android:layout_height="wrap_content"
                     android:text="Patient was:"
                     android:textSize="18sp" />
 
                 <Spinner
                     android:id="@+id/spinner6"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
+                    android:paddingBottom="10dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
-            </LinearLayout>
 
             <TextView
                 android:id="@+id/text18"
@@ -442,32 +437,27 @@
                 android:layout_weight="5"
                 android:text="No" />
             </RadioGroup>
-            <LinearLayout
-                android:weightSum="3"
-                android:paddingBottom="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/text20"
-                    android:layout_width="0dp"
-                    android:layout_weight="2"
+                    android:layout_width="match_parent"
+                    android:paddingBottom="10dp"
                     android:layout_height="wrap_content"
                     android:text="Type of collision:"
                     android:textSize="18sp" />
 
                 <Spinner
                     android:id="@+id/spinner9"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
+                    android:paddingBottom="10dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
-            </LinearLayout>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Distraction questions:"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 android:paddingBottom="10dp"/>
             <TextView
                 android:layout_width="match_parent"
@@ -566,44 +556,42 @@
 
             <EditText
                 android:id="@+id/loc"
+                style="@style/inputStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textMultiLine" />
 
-            <LinearLayout
-                android:weightSum="3"
-                android:paddingBottom="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/text21"
-                    android:layout_width="0dp"
-                    android:layout_weight="2"
+                    android:layout_width="match_parent"
+                    android:paddingBottom="10dp"
                     android:layout_height="wrap_content"
                     android:text="Location Details"
                     android:textSize="18sp" />
 
                 <Spinner
                     android:id="@+id/spinner10"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
+                    android:paddingBottom="10dp"
+                    android:layout_margin="10dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
-            </LinearLayout>
+
 
             <Button
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 android:id="@+id/buttonNext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Next"
+                android:text="NEXT"
+                android:letterSpacing="1"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:background="@color/colorPrimary"/>
-        </LinearLayout>
+                android:background="@drawable/button_shape"/>
+
+</LinearLayout>
 
     </ScrollView>
 

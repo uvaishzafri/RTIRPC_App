@@ -8,6 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="inputStyle">
+        <item name="android:padding">5dp</item>
+        <item name="android:background">@drawable/box</item>
+    </style>
+
     <style name="myApp">
         <item name="android:textColor">@android:color/black</item>
     </style>

@@ -3,6 +3,7 @@ package com.example.yumnaasim.rtirpc;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AlertDialog;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,8 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.Toast;
+
 
 import Databases.Database;
 import model.AccidentDetails;
@@ -25,117 +28,119 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button button = (Button) findViewById(R.id.buttonNext);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 /*getting all inputs from user*/
                 /*accident record input*/
-                EditText editTextDate = (EditText) findViewById(R.id.date);
-                String date = editTextDate.getText().toString();
+                    EditText editTextDate = (EditText) findViewById(R.id.date);
+                    String date = editTextDate.getText().toString();
 
-                EditText editTextEmergencyNo = (EditText) findViewById(R.id.emergencyNo);
-                String emergencyNo = editTextEmergencyNo.getText().toString();
+                    EditText editTextEmergencyNo = (EditText) findViewById(R.id.emergencyNo);
+                    String emergencyNo = editTextEmergencyNo.getText().toString();
 
-                Spinner spinner = (Spinner) findViewById(R.id.spinner);
-                String hospitalName = spinner.getSelectedItem().toString();
+                    Spinner spinner = (Spinner) findViewById(R.id.spinner);
+                    String hospitalName = spinner.getSelectedItem().toString();
 
-                AccidentRecord accidentRecord = new AccidentRecord();
-                accidentRecord.setDate(date);
-                accidentRecord.setEmergencyNo(emergencyNo);
-                accidentRecord.setHospitalName(hospitalName);
+                    AccidentRecord accidentRecord = new AccidentRecord();
+                    accidentRecord.setDate(date);
+                    accidentRecord.setEmergencyNo(emergencyNo);
+                    accidentRecord.setHospitalName(hospitalName);
                 /*patient record input*/
-                EditText editTextName = (EditText) findViewById(R.id.name);
-                String name = editTextName.getText().toString();
-                EditText editTextAge = (EditText) findViewById(R.id.age);
-                String age = editTextAge.getText().toString();
-                EditText editTextAddress = (EditText) findViewById(R.id.address);
-                String address = editTextAddress.getText().toString();
-                EditText editTextMobile = (EditText) findViewById(R.id.mobile);
-                String mobile = editTextMobile.getText().toString();
-                EditText editTextOccup = (EditText) findViewById(R.id.occupation);
-                String occupation = editTextOccup.getText().toString();
+                    EditText editTextName = (EditText) findViewById(R.id.name);
+                    String name = editTextName.getText().toString();
+                    EditText editTextAge = (EditText) findViewById(R.id.age);
+                    String age = editTextAge.getText().toString();
+                    EditText editTextAddress = (EditText) findViewById(R.id.address);
+                    String address = editTextAddress.getText().toString();
+                    EditText editTextMobile = (EditText) findViewById(R.id.mobile);
+                    String mobile = editTextMobile.getText().toString();
+                    EditText editTextOccup = (EditText) findViewById(R.id.occupation);
+                    String occupation = editTextOccup.getText().toString();
 
-                RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroupGender);
-                int id = radioGroup.getCheckedRadioButtonId();
-                RadioButton radioButton = (RadioButton) findViewById(id);
-                String gender = radioButton.getText().toString();
+                    RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroupGender);
+                    int id = radioGroup.getCheckedRadioButtonId();
+                    RadioButton radioButton = (RadioButton) findViewById(id);
+                    String gender = radioButton.getText().toString();
 
-                RadioGroup radioGroup1 = (RadioGroup) findViewById(R.id.radioGroup);
-                int id1 = radioGroup1.getCheckedRadioButtonId();
-                RadioButton radioButton1 = (RadioButton) findViewById(id1);
-                String distraction = radioButton1.getText().toString();
+                    RadioGroup radioGroup1 = (RadioGroup) findViewById(R.id.radioGroup);
+                    int id1 = radioGroup1.getCheckedRadioButtonId();
+                    RadioButton radioButton1 = (RadioButton) findViewById(id1);
+                    String distraction = radioButton1.getText().toString();
 
-                RadioGroup radioGroup2 = (RadioGroup) findViewById(R.id.radioGroup1);
-                int id2 = radioGroup2.getCheckedRadioButtonId();
-                RadioButton radioButton2 = (RadioButton) findViewById(id2);
-                String lane = radioButton2.getText().toString();
+                    RadioGroup radioGroup2 = (RadioGroup) findViewById(R.id.radioGroup1);
+                    int id2 = radioGroup2.getCheckedRadioButtonId();
+                    RadioButton radioButton2 = (RadioButton) findViewById(id2);
+                    String lane = radioButton2.getText().toString();
 
-                Spinner spinner1 = (Spinner) findViewById(R.id.spinner6);
-                String patientState = spinner1.getSelectedItem().toString();
+                    Spinner spinner1 = (Spinner) findViewById(R.id.spinner6);
+                    String patientState = spinner1.getSelectedItem().toString();
 
                 /*accident details input*/
-                EditText editTextTimeAcc = (EditText) findViewById(R.id.timeAcc);
-                String timeAcc = editTextTimeAcc.getText().toString();
+                    EditText editTextTimeAcc = (EditText) findViewById(R.id.timeAcc);
+                    String timeAcc = editTextTimeAcc.getText().toString();
 
-                EditText editTextTimeArr = (EditText) findViewById(R.id.timeArr);
-                String timeArr = editTextTimeArr.getText().toString();
+                    EditText editTextTimeArr = (EditText) findViewById(R.id.timeArr);
+                    String timeArr = editTextTimeArr.getText().toString();
 
-                Spinner spinner2 = (Spinner) findViewById(R.id.spinner1);
-                String arrivalVehicle = spinner2.getSelectedItem().toString();
+                    Spinner spinner2 = (Spinner) findViewById(R.id.spinner1);
+                    String arrivalVehicle = spinner2.getSelectedItem().toString();
 
-                EditText editTextAmb = (EditText) findViewById(R.id.ambulance);
-                String ambulance = editTextAmb.getText().toString();
+                    EditText editTextAmb = (EditText) findViewById(R.id.ambulance);
+                    String ambulance = editTextAmb.getText().toString();
 
-                Spinner spinner3 = (Spinner) findViewById(R.id.spinner2);
-                String historyProvider = spinner3.getSelectedItem().toString();
+                    Spinner spinner3 = (Spinner) findViewById(R.id.spinner2);
+                    String historyProvider = spinner3.getSelectedItem().toString();
 
-                Spinner spinner4 = (Spinner) findViewById(R.id.spinner3);
-                String travellingReason = spinner4.getSelectedItem().toString();
+                    Spinner spinner4 = (Spinner) findViewById(R.id.spinner3);
+                    String travellingReason = spinner4.getSelectedItem().toString();
 
-                Spinner spinner5 = (Spinner) findViewById(R.id.spinner4);
-                String vehicle1 = spinner5.getSelectedItem().toString();
+                    Spinner spinner5 = (Spinner) findViewById(R.id.spinner4);
+                    String vehicle1 = spinner5.getSelectedItem().toString();
 
-                Spinner spinner6 = (Spinner) findViewById(R.id.spinner5);
-                String vehicle2 = spinner6.getSelectedItem().toString();
+                    Spinner spinner6 = (Spinner) findViewById(R.id.spinner5);
+                    String vehicle2 = spinner6.getSelectedItem().toString();
 
-                Spinner spinner7 = (Spinner) findViewById(R.id.spinner9);
-                String collisionType = spinner7.getSelectedItem().toString();
+                    Spinner spinner7 = (Spinner) findViewById(R.id.spinner9);
+                    String collisionType = spinner7.getSelectedItem().toString();
 
-                EditText editTextLoc = (EditText) findViewById(R.id.loc);
-                String loc = editTextLoc.getText().toString();
+                    EditText editTextLoc = (EditText) findViewById(R.id.loc);
+                    String loc = editTextLoc.getText().toString();
 
-                Spinner spinnerLoc = (Spinner) findViewById(R.id.spinner10);
-                String locDet = spinnerLoc.getSelectedItem().toString();
+                    Spinner spinnerLoc = (Spinner) findViewById(R.id.spinner10);
+                    String locDet = spinnerLoc.getSelectedItem().toString();
 
-                AccidentDetails details = new AccidentDetails();
-                details.setTimeArrival(timeArr);
-                details.setTimeAccident(timeAcc);
-                details.setArrivalVehicle(arrivalVehicle);
-                details.setAmbulanceName(ambulance);
-                details.setHistoryProvider(historyProvider);
-                details.setTravellingReason(travellingReason);
-                details.setVehicle1(vehicle1);
-                details.setVehicle2(vehicle2);
-                details.setCollisionType(collisionType);
-                details.setLocation(loc);
-                details.setLocDetails(locDet);
+                    AccidentDetails details = new AccidentDetails();
+                    details.setTimeArrival(timeArr);
+                    details.setTimeAccident(timeAcc);
+                    details.setArrivalVehicle(arrivalVehicle);
+                    details.setAmbulanceName(ambulance);
+                    details.setHistoryProvider(historyProvider);
+                    details.setTravellingReason(travellingReason);
+                    details.setVehicle1(vehicle1);
+                    details.setVehicle2(vehicle2);
+                    details.setCollisionType(collisionType);
+                    details.setLocation(loc);
+                    details.setLocDetails(locDet);
 
-                Patient patient = new Patient();
-                patient.setName(name);
-                patient.setAge(age);
-                patient.setAddress(address);
-                patient.setOccupation(occupation);
-                patient.setMobile(mobile);
-                patient.setGender(gender);
-                patient.setDistractedBy(distraction);
-                patient.setLane(lane);
-                patient.setPatientState(patientState);
+                    Patient patient = new Patient();
+                    patient.setName(name);
+                    patient.setAge(age);
+                    patient.setAddress(address);
+                    patient.setOccupation(occupation);
+                    patient.setMobile(mobile);
+                    patient.setGender(gender);
+                    patient.setDistractedBy(distraction);
+                    patient.setLane(lane);
+                    patient.setPatientState(patientState);
 
-                Intent intent = new Intent(MainActivity.this,Main2Activity.class);
-                intent.putExtra("AccidentRecord",accidentRecord);
-                intent.putExtra("Patient",patient);
-                intent.putExtra("AccidentDetails",details);
-                startActivity(intent);
+
+                    Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+                    intent.putExtra("AccidentRecord", accidentRecord);
+                    intent.putExtra("Patient", patient);
+                    intent.putExtra("AccidentDetails", details);
+                    startActivity(intent);
 
             }
         });

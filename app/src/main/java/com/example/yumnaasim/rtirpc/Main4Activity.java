@@ -25,31 +25,22 @@ public class Main4Activity extends Activity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Main4Activity.this,MainActivity.class));
+                startActivity(new Intent(Main4Activity.this, MainActivity.class));
                 finish();
-        }
-    });
+            }
+        });
         Button button1 = (Button) findViewById(R.id.btnExit);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new AlertDialog.Builder(Main4Activity.this)
-                        .setIcon(R.drawable.ic_warning_black_24dp)
-                        .setTitle("Exit")
-                        .setMessage("Are you sure you want to exit?")
-                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                finish();
-                            }
-                        })
-                        .setNegativeButton("No", null)
-                        .show();
+                onBackPressed();
             }
         });
     }
+
     @Override
     public void onBackPressed() {
+
         new AlertDialog.Builder(this)
                 .setIcon(R.drawable.ic_warning_black_24dp)
                 .setTitle("Exit")
@@ -57,7 +48,10 @@ public class Main4Activity extends Activity {
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        finish();
+                      finish();
+                        moveTaskToBack(true);
+                        android.os.Process.killProcess(android.os.Process.myPid());
+                        System.exit(1);
                     }
                 })
                 .setNegativeButton("No", null)

@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">RTIRPC</string>
+    <string name="app_title">Road Traffic Injury Research and Prevention Center</string>
+    <string name="app_sub_title">Department of Neurosurgrey, Jinnah Postgrudate Medical Center\n
+Karachi 75510, Pakistan. Phone: 0092 99207377 \n
+Email: info@roadsafety.pk, rtirpc@gmail.com</string>
     <string name="header_text">Road Traffic Injury Research and Prevention Center</string>
     <string-array name="hospital_array">
         <item>AKU</item>
@@ -58,7 +62,6 @@
     </string-array>
 
     <string-array name="loc_detail_array">
-        <item>--Select--</item>
         <item>Intersection</item>
         <item>Mid Block</item>
         <item>U-Turn</item>

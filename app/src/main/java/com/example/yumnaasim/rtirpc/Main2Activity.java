@@ -15,6 +15,7 @@ import android.widget.Spinner;
 
 import java.io.Serializable;
 
+
 import model.AccidentDetails;
 import model.AccidentRecord;
 import model.Patient;
@@ -102,6 +103,7 @@ public class Main2Activity extends Activity {
         buttonPrev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 onBackPressed();
             }
         });
@@ -112,4 +114,5 @@ public class Main2Activity extends Activity {
     public void onBackPressed() {
         super.onBackPressed();
     }
+
 }

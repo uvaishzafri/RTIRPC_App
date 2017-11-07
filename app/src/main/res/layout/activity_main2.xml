@@ -90,7 +90,7 @@
                 <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="5"
+                    android:layout_weight="6"
                     android:id="@+id/respiratorRate"
                     android:orientation="horizontal">
 
@@ -119,7 +119,7 @@
                         android:id="@+id/radio"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="1.5"
                         android:text="10-29" />
 
                     <RadioButton
@@ -127,7 +127,7 @@
                         android:id="@+id/radio1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="1.5"
                         android:text=">29" />
                 </RadioGroup>
             </LinearLayout>
@@ -149,7 +149,7 @@
                 <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="5"
+                    android:layout_weight="6"
                     android:id="@+id/bloodPressure"
                     android:orientation="horizontal">
 
@@ -164,21 +164,21 @@
                         android:id="@+id/radio6"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="1.5"
                         android:text="1-49" />
 
                     <RadioButton
                         android:id="@+id/radio7"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="1.5"
                         android:text="50-75" />
 
                     <RadioButton
                         android:id="@+id/radio8"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="1.5"
                         android:text="76-89" />
 
                     <RadioButton
@@ -186,7 +186,7 @@
                         android:id="@+id/radio9"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="1.5"
                         android:text=">89" />
                 </RadioGroup>
             </LinearLayout>
@@ -208,7 +208,7 @@
                 <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="5"
+                    android:layout_weight="7"
                     android:id="@+id/gcs"
                     android:orientation="horizontal">
 
@@ -223,21 +223,21 @@
                         android:id="@+id/radio11"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="1.5"
                         android:text="1-49" />
 
                     <RadioButton
                         android:id="@+id/radio12"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="1.5"
                         android:text="50-75" />
 
                     <RadioButton
                         android:id="@+id/radio13"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="1.5"
                         android:text="76-89" />
 
                     <RadioButton
@@ -245,7 +245,7 @@
                         android:id="@+id/radio14"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="1.5"
                         android:text=">89" />
 
                 </RadioGroup>
@@ -431,25 +431,27 @@
                 android:weightSum="2">
 
                 <Button
-                    android:textColor="@android:color/white"
+                    android:background="@drawable/button_shape"
+                    android:textColor="@android:color/black"
                     android:id="@+id/btnPrevious"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@color/colorPrimary"
                     android:layout_margin="5dp"
                     android:text="PREVIOUS"
                     android:textSize="18sp"
+                    android:letterSpacing="0.1"
                     android:textStyle="bold" />
 
                 <Button
-                    android:textColor="@android:color/white"
+                    android:background="@drawable/button_shape"
+                    android:textColor="@android:color/black"
                     android:id="@+id/btnNext"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="@color/colorPrimary"
+                    android:letterSpacing="1"
                     android:text="NEXT"
                     android:textSize="18sp"
                     android:textStyle="bold" />

@@ -34,7 +34,7 @@ public class Database extends SQLiteAssetHelper {
     private static final String PAT_COL_6 = "distractedBy";
     private static final String PAT_COL_7 = "lane";
     private static final String PAT_COL_8 = "disposal";
-    private static final String PAT_COL_9 = "vehicle";
+    private static final String PAT_COL_9 = "patientState";
     private static final String PAT_COL_10 = "name";
 
     private static final String TABLE_NAME2 = "PatientHealth";
@@ -88,17 +88,9 @@ public class Database extends SQLiteAssetHelper {
     public void addToPatientInfo(Patient patient)
     {
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
-        /*String query = String.format("INSERT INTO "+TABLE_NAME1+" ("+PAT_COL_10+","+PAT_COL_1+","+PAT_COL_2+","+PAT_COL_3+","+PAT_COL_4+","+PAT_COL_5+","+PAT_COL_6+","+PAT_COL_7+","+PAT_COL_8+","+PAT_COL_9+")"
-                        +" VALUES('%s','%s','%s','%s','%s','%s''%s','%s','%s','%s');",*/
-        String query = String.format("INSERT INTO "+TABLE_NAME1+" ("+PAT_COL_10+","+PAT_COL_1+","+PAT_COL_2+","+PAT_COL_3+","+PAT_COL_4+")"
-                        +" VALUES('%s','%s','%s','%s','%s');",
+        String query = String.format("INSERT INTO "+TABLE_NAME1+" ("+PAT_COL_10+","+PAT_COL_1+","+PAT_COL_2+","+PAT_COL_3+","+PAT_COL_4+","+PAT_COL_5+","+PAT_COL_6+","+PAT_COL_7+","+PAT_COL_8+","+PAT_COL_9+")"
+                        +" VALUES('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s');",
                 patient.getName(),
-                patient.getAge(),
-                patient.getAddress(),
-                patient.getMobile(),
-                patient.getOccupation());
-
-      /*          patient.getName(),
                 patient.getAge(),
                 patient.getAddress(),
                 patient.getMobile(),
@@ -107,9 +99,16 @@ public class Database extends SQLiteAssetHelper {
                 patient.getDistractedBy(),
                 patient.getLane(),
                 patient.getDisposal(),
-                patient.getVehicle());*/
+                patient.getPatientState());
         sqLiteDatabase.execSQL(query);
-        sqLiteDatabase.close();
+       /* sqLiteDatabase.close();
+        String query = String.format("INSERT INTO "+TABLE_NAME1+" ("+PAT_COL_10+","+PAT_COL_1+","+PAT_COL_2+","+PAT_COL_3+","+PAT_COL_4+")"
+                        +" VALUES('%s','%s','%s','%s','%s');",
+                patient.getName(),
+                patient.getAge(),
+                patient.getAddress(),
+                patient.getMobile(),
+                patient.getOccupation());*/
     }
 
     public void addToPatientHealth(PatientHealth patient)

@@ -184,7 +184,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:paddingBottom="10dp"
+                style="@style/inputStyle"
+                android:layout_marginBottom="10dp"
                 android:inputType="textMultiLine" />
 
             <TextView
@@ -208,6 +209,7 @@
 
                 <RadioButton
                     android:id="@+id/radio3"
+                    android:checked="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Admitted to Ward (Admission Number:)" />
@@ -333,8 +335,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Name of Data Collector:"
+                    android:paddingBottom="10dp"
                     android:textSize="18sp" />
                 <EditText
+                    style="@style/inputStyle"
+                   android:layout_marginBottom="10dp"
                     android:id="@+id/dataCollectorName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -350,9 +355,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Date, Time: "
+                    android:paddingBottom="10dp"
                     android:textSize="18sp" />
                 <EditText
                     android:id="@+id/timestamp"
+                    style="@style/inputStyle"
+                    android:layout_marginBottom="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -366,25 +374,27 @@
                 android:weightSum="2">
 
                 <Button
-                    android:textColor="@android:color/white"
+                    android:textColor="@android:color/black"
                     android:id="@+id/btnPrevious"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@color/colorPrimary"
                     android:layout_margin="5dp"
                     android:text="PREVIOUS"
+                    android:background="@drawable/button_shape"
+                    android:letterSpacing="0.1"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <Button
-                    android:textColor="@android:color/white"
+                    android:textColor="@android:color/black"
                     android:id="@+id/btnSave"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="@color/colorPrimary"
+                    android:letterSpacing="0.2"
+                    android:background="@drawable/button_shape"
                     android:text="SAVE"
                     android:textSize="18sp"
                     android:textStyle="bold" />

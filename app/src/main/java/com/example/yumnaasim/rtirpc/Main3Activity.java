@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import Databases.Database;
 import model.AccidentDetails;
@@ -82,7 +83,10 @@ public class Main3Activity extends Activity {
                 new Database(Main3Activity.this).addToAccidentDetails(details);
                 new Database(Main3Activity.this).addToRecord(accidentRecord);
 
-                startActivity(new Intent(Main3Activity.this,Main4Activity.class));
+                Toast.makeText(getApplicationContext(),"Record saved!",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Main3Activity.this,Main4Activity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
                 finish();
             }
         });
