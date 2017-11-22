@@ -14,11 +14,11 @@ public class SplashScreen extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
         TextView tv = (TextView) findViewById(R.id.text);
-        TextView tv1 = (TextView) findViewById(R.id.text1);
+       /* TextView tv1 = (TextView) findViewById(R.id.text1);*/
         Typeface face = Typeface.createFromAsset(getAssets(),
                 "fonts/nabila.otf");
         tv.setTypeface(face);
-        tv1.setTypeface(face);
+   /*     tv1.setTypeface(face);*/
         Thread thread = new Thread()
         {
             @Override
