@@ -1,6 +1,7 @@
 package Databases;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
@@ -65,6 +66,8 @@ public class Database extends SQLiteAssetHelper {
     private static final String ACC_COL_10 = "locDetails";
     private static final String ACC_COL_11 = "locDescription";
     private static final String ACC_COL_12 = "ambulance";
+
+    SQLiteDatabase sqLiteDatabase = getReadableDatabase();
 
     public Database(Context context) {
         super(context, DB_NAME, null, DB_VER);
@@ -156,5 +159,42 @@ public class Database extends SQLiteAssetHelper {
         );
         sqLiteDatabase.execSQL(query);
         sqLiteDatabase.close();
+    }
+
+    public PatientHealth getPatientHealthDetails(){
+        StringBuffer stringBuffer = new StringBuffer();
+        StringBuffer stringBuffer1 = new StringBuffer();
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " +TABLE_NAME2+" " ,null);
+
+        while(cursor.moveToNext()){
+            stringBuffer.append(cursor.getString(2)).append("\n ");
+            stringBuffer1.append(cursor.getString(13)).append("\n ");
+
+        }
+        String bloodPressure = stringBuffer.toString();
+        PatientHealth patientHealth = new PatientHealth();
+        patientHealth.setBloodPressure(bloodPressure);
+        patientHealth.setDoctorNotes(stringBuffer1.toString());
+        sqLiteDatabase.close();
+        return patientHealth;
+    }
+    public Cursor getPatientDetails(){
+
+        StringBuffer stringBuffer = new StringBuffer();
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " +TABLE_NAME1+" " ,null);
+
+      /*  while(cursor.moveToNext()){
+            stringBuffer.append(cursor.getString(1)).append("   ")
+                    .append(cursor.getString(2)).append("   ")
+                    .append(cursor.getString(3)).append("   ")
+                    .append(cursor.getString(4)).append("   ")
+                    .append("\n");
+
+        }
+
+        sqLiteDatabase.close();
+        return stringBuffer.toString();*/
+      return cursor;
+
     }
 }

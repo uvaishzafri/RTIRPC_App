@@ -7,6 +7,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.rubengees.introduction.IntroductionBuilder;
+import com.rubengees.introduction.Slide;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class SplashScreen extends Activity {
 
     @Override
@@ -35,4 +41,5 @@ public class SplashScreen extends Activity {
         };
         thread.start();
     }
+
 }

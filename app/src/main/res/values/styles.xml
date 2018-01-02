@@ -13,6 +13,19 @@
         <item name="android:background">@drawable/box</item>
     </style>
 
+    <style name="rowDataDisplay">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:lineSpacingExtra">8dp</item>
+    </style>
+
+    <style name="rowHeadingDisplay">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
     <style name="myApp">
         <item name="android:textColor">@android:color/black</item>
     </style>
