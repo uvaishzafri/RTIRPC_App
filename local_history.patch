@@ -1,0 +1,429 @@
+Index: app/src/main/java/com/example/yumnaasim/rtirpc/DisplayData.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/yumnaasim/rtirpc/DisplayData.java	(revision )
++++ app/src/main/java/com/example/yumnaasim/rtirpc/DisplayData.java	(revision )
+@@ -0,0 +1,23 @@
++package com.example.yumnaasim.rtirpc;
++
++import android.support.v7.app.AppCompatActivity;
++import android.os.Bundle;
++import android.widget.TextView;
++
++import Databases.Database;
++import model.Patient;
++import model.PatientHealth;
++
++public class DisplayData extends AppCompatActivity {
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_display_data);
++        TextView textView = (TextView) findViewById(R.id.display_data);
++
++        //String data = new Database(getApplicationContext()).getPatientDetails();
++       // textView.setText(data);
++
++    }
++}
+Index: app/src/main/java/com/example/yumnaasim/rtirpc/IntroSlider.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/yumnaasim/rtirpc/IntroSlider.java	(revision )
++++ app/src/main/java/com/example/yumnaasim/rtirpc/IntroSlider.java	(revision )
+@@ -0,0 +1,68 @@
++package com.example.yumnaasim.rtirpc;
++
++import android.content.Context;
++import android.content.Intent;
++import android.content.SharedPreferences;
++import android.support.v7.app.AppCompatActivity;
++import android.os.Bundle;
++
++import com.rubengees.introduction.IntroductionBuilder;
++import com.rubengees.introduction.Slide;
++import com.rubengees.introduction.style.FullscreenStyle;
++
++import java.util.ArrayList;
++import java.util.List;
++
++public class IntroSlider extends AppCompatActivity {
++    SharedPreferences preferences;
++    SharedPreferences.Editor editor;
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_intro_slider);
++        new IntroductionBuilder(this).withSlides(generateSlides()).introduceMyself();
++        preferences = getSharedPreferences("ShaPreferences", Context.MODE_PRIVATE);
++        SharedPreferences.Editor editor=preferences.edit();
++        boolean  firstTime=preferences.getBoolean("first", true);
++        if(firstTime) {
++            editor.putBoolean("first",false);
++            editor.commit();
++        }
++        else
++        {
++            startActivity(new Intent(IntroSlider.this,SplashScreen.class));
++            finish();
++        }
++
++
++    }
++    private List<Slide> generateSlides() {
++        List<Slide> result = new ArrayList<>();
++
++        result.add(new Slide()
++                .withTitle("Welcome!")
++                .withDescription(R.string.app_title).
++                        withColorResource(R.color.colorPrimaryDark)
++                .withImage(R.drawable.logo)
++        );
++
++        result.add(new Slide()
++                .withTitle("Patient Report")
++                .withDescription("Submit the patient report with us")
++                .withColorResource(R.color.colorPrimary)
++                .withImage(R.drawable.introduction_ic_arrow_next)
++        );
++
++        return result;
++    }
++
++    @Override
++    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
++        if (requestCode == IntroductionBuilder.INTRODUCTION_REQUEST_CODE && resultCode == RESULT_OK) {
++           startActivity(new Intent(IntroSlider.this,SplashScreen.class));
++            finish();
++        }
++    }
++}
++
+Index: app/src/main/java/com/example/yumnaasim/rtirpc/PatientReport.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/yumnaasim/rtirpc/PatientReport.java	(revision )
++++ app/src/main/java/com/example/yumnaasim/rtirpc/PatientReport.java	(revision )
+@@ -0,0 +1,28 @@
++package com.example.yumnaasim.rtirpc;
++
++import android.database.Cursor;
++import android.support.v7.app.AppCompatActivity;
++import android.os.Bundle;
++import android.text.TextUtils;
++import android.widget.ArrayAdapter;
++import android.widget.ListView;
++
++import Databases.Database;
++
++public class PatientReport extends AppCompatActivity {
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_patient_report);
++        ListView listView = (ListView) findViewById(R.id.list_view);
++        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1);
++        Cursor cursor = new Database(getApplicationContext()).getPatientDetails();
++        while (cursor.moveToNext())
++        {
++            String patientName = cursor.getString(1);
++            if (!TextUtils.isEmpty(patientName))
++            arrayAdapter.add(cursor.getString(1));
++        }
++    }
++}
+Index: app/src/main/java/com/example/yumnaasim/rtirpc/About.java
+===================================================================
+--- app/src/main/java/com/example/yumnaasim/rtirpc/About.java	(revision )
++++ app/src/main/java/com/example/yumnaasim/rtirpc/About.java	(revision )
+@@ -1,15 +0,0 @@
+-package com.example.yumnaasim.rtirpc;
+-
+-import android.support.v7.app.AppCompatActivity;
+-import android.os.Bundle;
+-
+-public class About extends AppCompatActivity {
+-
+-    @Override
+-    protected void onCreate(Bundle savedInstanceState) {
+-        super.onCreate(savedInstanceState);
+-        setContentView(R.layout.activity_about);
+-        this.setTitle("About");
+-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+-    }
+-}
+Index: app/src/main/java/com/example/yumnaasim/rtirpc/Report.java
+===================================================================
+--- app/src/main/java/com/example/yumnaasim/rtirpc/Report.java	(revision )
++++ app/src/main/java/com/example/yumnaasim/rtirpc/Report.java	(revision )
+@@ -1,111 +0,0 @@
+-package com.example.yumnaasim.rtirpc;
+-
+-import android.content.pm.ActivityInfo;
+-import android.graphics.Color;
+-import android.support.v7.app.AppCompatActivity;
+-import android.os.Bundle;
+-
+-import com.jjoe64.graphview.GraphView;
+-import com.jjoe64.graphview.GridLabelRenderer;
+-import com.jjoe64.graphview.ValueDependentColor;
+-import com.jjoe64.graphview.Viewport;
+-import com.jjoe64.graphview.helper.StaticLabelsFormatter;
+-import com.jjoe64.graphview.series.BarGraphSeries;
+-import com.jjoe64.graphview.series.DataPoint;
+-
+-import static com.example.yumnaasim.rtirpc.R.id.graph;
+-
+-public class Report extends AppCompatActivity {
+-
+-    @Override
+-    protected void onCreate(Bundle savedInstanceState) {
+-        super.onCreate(savedInstanceState);
+-        setContentView(R.layout.activity_report);
+-        this.setTitle("Reports");
+-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+-        //this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+-        GraphView graph = (GraphView) findViewById(R.id.graph);
+-        displayGraph(graph);
+-
+-        GraphView graph1 = (GraphView) findViewById(R.id.graph1);
+-        displayGraphLocation(graph1);
+-    }
+-
+-    private void displayGraphLocation(GraphView graph) {
+-
+-        StaticLabelsFormatter staticLabelsFormatter = new StaticLabelsFormatter(graph);
+-        staticLabelsFormatter.setHorizontalLabels(new String[] {"Gulberg", "Uni Rd", "North Naz", "Tariq Rd"});
+-
+-        GridLabelRenderer gridLabelRenderer =  graph.getGridLabelRenderer();
+-        gridLabelRenderer.setLabelFormatter(staticLabelsFormatter);
+-        gridLabelRenderer.setHorizontalAxisTitle("Locations");
+-        gridLabelRenderer.setVerticalAxisTitle("No. of Accidents");
+-
+-        graph.setTitle("Accident Reports");
+-        graph.setTitleTextSize(48);
+-
+-        BarGraphSeries<DataPoint> series = new BarGraphSeries<>(new DataPoint[] {
+-                new DataPoint(0, 5),
+-                new DataPoint(1, 12),
+-                new DataPoint(2, 7),
+-                new DataPoint(3, 8),
+-        });
+-        graph.addSeries(series);
+-        series.setAnimated(true);
+-
+-        series.setValueDependentColor(new ValueDependentColor<DataPoint>() {
+-            @Override
+-            public int get(DataPoint data) {
+-                return Color.rgb((int) data.getX()*255/4, (int) Math.abs(data.getY()*255/6), 100);
+-            }
+-        });
+-
+-        series.setSpacing(30);
+-        series.setDrawValuesOnTop(true);
+-        series.setValuesOnTopColor(Color.RED);
+-
+-    }
+-
+-    private void displayGraph(GraphView graph) {
+-
+-        StaticLabelsFormatter staticLabelsFormatter = new StaticLabelsFormatter(graph);
+-        staticLabelsFormatter.setHorizontalLabels(new String[] {"Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct","Nov", "Dec"});
+-
+-        GridLabelRenderer gridLabelRenderer =  graph.getGridLabelRenderer();
+-        gridLabelRenderer.setLabelFormatter(staticLabelsFormatter);
+-        gridLabelRenderer.setHorizontalAxisTitle("Months");
+-        gridLabelRenderer.setVerticalAxisTitle("No. of Accidents");
+-
+-        graph.setTitle("Accident Reports");
+-        graph.setTitleTextSize(48);
+-
+-        BarGraphSeries<DataPoint> series = new BarGraphSeries<>(new DataPoint[] {
+-                new DataPoint(0, 5),
+-                new DataPoint(1, 10),
+-                new DataPoint(2, 15),
+-                new DataPoint(3, 20),
+-                new DataPoint(4, 4),
+-                new DataPoint(5, 5),
+-                new DataPoint(6, 10),
+-                new DataPoint(7, 15),
+-                new DataPoint(8, 20),
+-                new DataPoint(9, 19),
+-                new DataPoint(10, 5),
+-                new DataPoint(11, 10)
+-        });
+-        graph.addSeries(series);
+-        series.setAnimated(true);
+-
+-        series.setValueDependentColor(new ValueDependentColor<DataPoint>() {
+-            @Override
+-            public int get(DataPoint data) {
+-                return Color.rgb((int) data.getX()*255/4, (int) Math.abs(data.getY()*255/6), 100);
+-            }
+-        });
+-
+-        series.setSpacing(50);
+-        series.setDrawValuesOnTop(true);
+-        series.setValuesOnTopColor(Color.RED);
+-
+-    }
+-}
+Index: app/src/main/java/com/example/yumnaasim/rtirpc/Home.java
+===================================================================
+--- app/src/main/java/com/example/yumnaasim/rtirpc/Home.java	(revision )
++++ app/src/main/java/com/example/yumnaasim/rtirpc/Home.java	(revision )
+@@ -1,68 +0,0 @@
+-package com.example.yumnaasim.rtirpc;
+-
+-import android.content.Intent;
+-import android.content.res.TypedArray;
+-import android.support.v7.app.AppCompatActivity;
+-import android.os.Bundle;
+-import android.util.DisplayMetrics;
+-import android.view.View;
+-import android.widget.AdapterView;
+-import android.widget.GridView;
+-
+-import model.CustomAdapter;
+-
+-public class Home extends AppCompatActivity {
+-
+-    public static String[] nameList = {
+-            "About",
+-            "Submit Report",
+-            "Analyze Result",
+-            "Preview Report"
+-    };
+-    public static int[] images = {
+-            R.mipmap.ic_launcher,
+-            R.mipmap.ic_launcher,
+-            R.mipmap.ic_launcher,
+-            R.mipmap.ic_launcher
+-           };
+-
+-    @Override
+-    protected void onCreate(Bundle savedInstanceState) {
+-        super.onCreate(savedInstanceState);
+-        setContentView(R.layout.activity_home);
+-        this.setTitle("Home");
+-        GridView gridView = (GridView) findViewById(R.id.gridView);
+-        gridView.setAdapter(new CustomAdapter(this, nameList,images));
+-
+-
+-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+-            @Override
+-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+-
+-                switch (i) {
+-                    case 0:
+-//                        about app
+-                        Intent intentAbout = new Intent(Home.this, About.class);
+-                        startActivity(intentAbout);
+-                        break;
+-                    case 1:
+-//
+-                        Intent intent = new Intent(Home.this, MainActivity.class);
+-                        startActivity(intent);
+-                        break;
+-                    case 2:
+-//
+-                        Intent intent1 = new Intent(Home.this, Report.class);
+-                        startActivity(intent1);
+-                        break;
+-
+-                    case 3:
+-//
+-                        Intent intent2 = new Intent(Home.this, Report.class);
+-                        startActivity(intent2);
+-                        break;
+-                }
+-            }
+-        });
+-    }
+-}
+Index: app/src/main/java/com/example/yumnaasim/rtirpc/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/yumnaasim/rtirpc/MainActivity.java	(revision )
++++ app/src/main/java/com/example/yumnaasim/rtirpc/MainActivity.java	(revision )
+@@ -225,7 +225,7 @@
+ 
+     @Override
+     public void onBackPressed() {
+-           /* new AlertDialog.Builder(this)
++            new AlertDialog.Builder(this)
+                     .setIcon(R.drawable.ic_warning_black_24dp)
+                     .setTitle("Exit")
+                     .setMessage("Are you sure you want to exit?")
+@@ -236,8 +236,7 @@
+                         }
+                     })
+                     .setNegativeButton("No", null)
+-                    .show();*/
+-           super.onBackPressed();
++                    .show();
+         }
+ 
+ }
+Index: app/src/main/java/com/example/yumnaasim/rtirpc/SplashScreen.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/yumnaasim/rtirpc/SplashScreen.java	(revision )
++++ app/src/main/java/com/example/yumnaasim/rtirpc/SplashScreen.java	(revision )
+@@ -7,6 +7,12 @@
+ import android.os.Bundle;
+ import android.widget.TextView;
+ 
++import com.rubengees.introduction.IntroductionBuilder;
++import com.rubengees.introduction.Slide;
++
++import java.util.ArrayList;
++import java.util.List;
++
+ public class SplashScreen extends Activity {
+ 
+     @Override
+@@ -28,11 +34,12 @@
+                 }catch (InterruptedException ex){
+                     ex.printStackTrace();
+                 }
+-                Intent intent = new Intent(getApplicationContext(),Home.class);
++                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                 startActivity(intent);
+                 finish();
+             }
+         };
+         thread.start();
+     }
++
+ }
+Index: app/src/main/java/com/example/yumnaasim/rtirpc/Main4Activity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/yumnaasim/rtirpc/Main4Activity.java	(revision )
++++ app/src/main/java/com/example/yumnaasim/rtirpc/Main4Activity.java	(revision )
+@@ -25,7 +25,7 @@
+         button.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+-                startActivity(new Intent(Main4Activity.this, MainActivity.class));
++                startActivity(new Intent(Main4Activity.this, DisplayData.class));
+                 finish();
+             }
+         });
+\ No newline at end of file

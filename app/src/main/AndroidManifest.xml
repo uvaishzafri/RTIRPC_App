@@ -10,22 +10,32 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashScreen"
-            android:screenOrientation="portrait">
+        <activity
+            android:name=".SplashScreen"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Main2Activity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Main4Activity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Main3Activity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".MainActivity"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".Main2Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Main4Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Main3Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Home" />
+        <activity android:name=".Report"
+            android:parentActivityName=".Home"/>
+        <activity android:name=".About"
+            android:parentActivityName=".Home"></activity>
     </application>
 
 </manifest>

@@ -225,7 +225,7 @@ public class MainActivity extends Activity {
 
     @Override
     public void onBackPressed() {
-            new AlertDialog.Builder(this)
+           /* new AlertDialog.Builder(this)
                     .setIcon(R.drawable.ic_warning_black_24dp)
                     .setTitle("Exit")
                     .setMessage("Are you sure you want to exit?")
@@ -236,7 +236,8 @@ public class MainActivity extends Activity {
                         }
                     })
                     .setNegativeButton("No", null)
-                    .show();
+                    .show();*/
+           super.onBackPressed();
         }
 
 }
