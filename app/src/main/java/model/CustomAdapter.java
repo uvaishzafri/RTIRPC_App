@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.yumnaasim.rtirpc.R;
+import com.squareup.picasso.Picasso;
 
 public class CustomAdapter extends BaseAdapter{
 
@@ -24,6 +25,7 @@ public class CustomAdapter extends BaseAdapter{
     Context context;
     int [] imageId;
     private static LayoutInflater inflater=null;
+
     public CustomAdapter(Context mainActivity, String[] osNameList, int[] osImages) {
         // TODO Auto-generated constructor stub
         result=osNameList;
@@ -83,7 +85,9 @@ public class CustomAdapter extends BaseAdapter{
             textView.setText(result[position]);
 
             ImageView imageView = (ImageView) gridView.findViewById(R.id.images);
-            imageView.setImageResource(imageId[position]);
+            Picasso.with(context)
+                    .load(imageId[position]).into(imageView);
+            //imageView.setImageResource(imageId[position]);
 
         } else {
             gridView = (LinearLayout) convertView;

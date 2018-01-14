@@ -87,12 +87,11 @@ Email: info@roadsafety.pk, rtirpc@gmail.com</string>
     </string-array>
     <string name="title_activity_main4">Main4Activity</string>
 
-    <string name="about_app">This app is designed to submit accident reports.
-        It perform analysis on submitted data and generate results.
-        It allows you to share accident reports as well.\n\n
+    <string name="about_app">This app is designed to submit accident data.\n
+        It performs analysis on submitted data and generates results.\n\n
 
-    <i>Department of Neurosurgrey, Jinnah Postgrudate Medical Center\n
-Karachi 75510, Pakistan. Phone: 0092 99207377 \n
+    <i>Department of Neurosurgrey, Jinnah Postgraduate Medical Center Karachi, Pakistan.\n
+        Phone: 0092 99207377 \n
 Email: info@roadsafety.pk, rtirpc@gmail.com</i></string>
 
 </resources>

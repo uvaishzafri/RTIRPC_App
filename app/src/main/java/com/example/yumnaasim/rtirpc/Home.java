@@ -20,10 +20,10 @@ public class Home extends AppCompatActivity {
             "Preview Report"
     };
     public static int[] images = {
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher
+            R.drawable.about,
+            R.drawable.submit_report,
+            R.drawable.report,
+            R.drawable.preview_report
            };
 
     @Override
