@@ -77,7 +77,6 @@ public class CustomAdapter extends BaseAdapter{
 
             gridView.setLayoutParams(new GridView.LayoutParams(GridView.LayoutParams.FILL_PARENT, screenHeight/2));
 
-
             //gridView.setMinimumHeight(screenHeight/9);
             // set value into textview
             TextView textView = (TextView) gridView
