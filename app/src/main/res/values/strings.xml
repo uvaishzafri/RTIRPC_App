@@ -10,30 +10,44 @@ Email: info@roadsafety.pk, rtirpc@gmail.com</string>
         <item>JMPC</item>
         <item>ASH</item>
     </string-array>
+
     <string-array name="ambulance_array">
         <item>Ambulane</item>
         <item>Private</item>
         <item>Public</item>
         <item>Police</item>
     </string-array>
+
     <string-array name="history_array">
         <item>Patient</item>
         <item>Attendant</item>
         <item>Public</item>
         <item>Police</item>
     </string-array>
+
     <string-array name="travelling_array">
         <item>Work</item>
         <item>Leisure</item>
         <item>Study</item>
         <item>Other</item>
     </string-array>
+
     <string-array name="vehicles_array">
         <item>Car</item>
         <item>Truck</item>
         <item>Bike</item>
         <item>Taxi</item>
     </string-array>
+
+    <string-array name="date_range">
+        <item>Last 7 days</item>
+        <item>Last 30 days</item>
+        <item>Last 180 days</item>
+        <item>Last 365 days</item>
+        <item>Lifetime</item>
+        <item>Custom</item>
+    </string-array>
+
     <string-array name="patient_ride_array">
         <item>Rider (of 2 wheeler)</item>
         <item>Pillion Passenger</item>
@@ -93,5 +107,8 @@ Email: info@roadsafety.pk, rtirpc@gmail.com</string>
     <i>Department of Neurosurgrey, Jinnah Postgraduate Medical Center Karachi, Pakistan.\n
         Phone: 0092 99207377 \n
 Email: info@roadsafety.pk, rtirpc@gmail.com</i></string>
+    <string name="title_activity_stats">Statistics</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 
 </resources>
