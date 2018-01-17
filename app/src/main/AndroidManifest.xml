@@ -30,27 +30,26 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
+            android:parentActivityName=".NavDrawer"
             android:screenOrientation="portrait" />
         <activity android:name=".Home" />
         <activity
             android:name=".Report"
             android:hardwareAccelerated="true"
-            android:parentActivityName=".Home" />
+            android:parentActivityName=".NavDrawer" />
         <activity
             android:name=".About"
-            android:parentActivityName=".Home" />
+            android:parentActivityName=".NavDrawer" />
         <activity
             android:name=".StatsActivity"
+            android:hardwareAccelerated="true"
             android:label="@string/title_activity_stats"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName=".Home"
-            android:hardwareAccelerated="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:parentActivityName=".NavDrawer"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".NavDrawer"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".CitizenForm"></activity>
     </application>
 
 </manifest>

@@ -16,14 +16,14 @@ public class Home extends AppCompatActivity {
     public static String[] nameList = {
             "About",
             "Submit Report",
-            "Analyze Result",
+            "Statistics",
             "Preview Report"
     };
     public static int[] images = {
             R.drawable.about,
             R.drawable.submit_report,
             R.drawable.report,
-            R.drawable.preview_report
+            R.drawable.preview
            };
 
     @Override
@@ -52,13 +52,13 @@ public class Home extends AppCompatActivity {
                         break;
                     case 2:
 //
-                        Intent intent1 = new Intent(Home.this, Report.class);
+                        Intent intent1 = new Intent(Home.this, StatsActivity.class);
                         startActivity(intent1);
                         break;
 
                     case 3:
 //
-                        Intent intent2 = new Intent(Home.this, Report.class);
+                        Intent intent2 = new Intent(Home.this, StatsActivity.class);
                         startActivity(intent2);
                         break;
                 }

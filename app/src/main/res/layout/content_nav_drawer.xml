@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.NestedScrollView
+    android:clipToPadding="false"
+    android:id="@+id/nested_scroll_view"
+    android:background="@color/bgColor"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.yumnaasim.rtirpc.NavDrawer"
+    tools:showIn="@layout/app_bar_nav_drawer">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical">
+
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:padding="16dp"
+           android:background="@color/colorPrimary"
+           android:textAlignment="center"
+           android:textColor="@android:color/white"
+           android:textSize="@dimen/material_text_headline"
+           android:text="Login as"
+           />
+
+       <android.support.v7.widget.CardView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/cv1"
+           app:cardElevation="5dp"
+           android:layout_margin="8dp"
+           app:cardCornerRadius="24dp"
+           >
+
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/relLayout1"
+               android:padding="16dp">
+
+               <ImageView
+                   android:id="@+id/img"
+                   android:layout_width="50dp"
+                   android:layout_height="50dp"
+                   android:layout_marginRight="24dp"
+                   android:src="@drawable/ic_menu_camera"/>
+
+               <LinearLayout
+                   android:layout_toRightOf="@id/img"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical"
+                   tools:context="com.example.yumnaasim.rtirpc.StatsActivity$PlaceholderFragment">
+
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:textSize="16sp"
+                       android:id="@+id/txt1"
+                       android:layout_gravity="center_vertical"
+                       android:textColor="@android:color/black"
+                       android:text="@string/role1_title"/>
+
+                   <TextView
+                       android:paddingTop="4dp"
+                       android:layout_gravity="center_vertical"
+                       android:id="@+id/txt2"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:textSize="14sp"
+                       android:text="@string/role1_desc"/>
+
+               </LinearLayout>
+
+           </RelativeLayout>
+       </android.support.v7.widget.CardView>
+
+       <android.support.v7.widget.CardView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           app:cardElevation="5dp"
+           android:id="@+id/cv2"
+           android:layout_margin="8dp"
+           app:cardCornerRadius="24dp"
+           >
+
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/relLayout2"
+               android:padding="16dp">
+
+               <ImageView
+                   android:id="@+id/img1"
+                   android:layout_width="50dp"
+                   android:layout_height="50dp"
+                   android:layout_marginRight="24dp"
+                   android:src="@drawable/ic_menu_camera"/>
+
+               <LinearLayout
+                   android:layout_toRightOf="@id/img1"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical"
+                   tools:context="com.example.yumnaasim.rtirpc.StatsActivity$PlaceholderFragment">
+
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:textSize="16sp"
+                       android:id="@+id/txt3"
+                       android:layout_gravity="center_vertical"
+                       android:textColor="@android:color/black"
+                       android:text="@string/role2_title"/>
+
+                   <TextView
+                       android:paddingTop="4dp"
+                       android:layout_gravity="center_vertical"
+                       android:id="@+id/txt4"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:textSize="14sp"
+                       android:text="@string/role2_desc"/>
+
+               </LinearLayout>
+
+           </RelativeLayout>
+       </android.support.v7.widget.CardView>
+
+       <android.support.v7.widget.CardView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/cv3"
+           app:cardElevation="5dp"
+           android:layout_margin="8dp"
+           app:cardCornerRadius="24dp"
+           >
+
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/relLayout3"
+               android:padding="16dp">
+
+               <ImageView
+                   android:id="@+id/img2"
+                   android:layout_width="50dp"
+                   android:layout_height="50dp"
+                   android:layout_marginRight="24dp"
+                   android:src="@drawable/ic_menu_camera"/>
+
+               <LinearLayout
+                   android:layout_toRightOf="@id/img2"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical"
+                   tools:context="com.example.yumnaasim.rtirpc.StatsActivity$PlaceholderFragment">
+
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:textSize="16sp"
+                       android:id="@+id/txt5"
+                       android:layout_gravity="center_vertical"
+                       android:textColor="@android:color/black"
+                       android:text="@string/role3_title"/>
+
+                   <TextView
+                       android:paddingTop="4dp"
+                       android:layout_gravity="center_vertical"
+                       android:id="@+id/txt6"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:textSize="14sp"
+                       android:text="@string/role3_desc"/>
+
+               </LinearLayout>
+
+           </RelativeLayout>
+       </android.support.v7.widget.CardView>
+   </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>
