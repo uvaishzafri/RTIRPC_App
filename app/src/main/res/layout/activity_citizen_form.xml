@@ -1,9 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<LinearLayout
+    android:orientation="vertical"
+    android:background="@color/bgColor"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context="com.example.yumnaasim.rtirpc.CitizenForm">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+       style="@style/form_txt"
+        android:text="Date of Accident"
+        android:paddingBottom="8dp"
+      />
+
+    <EditText
+        style="@style/edittxt_style"
+        android:id="@+id/date"
+        android:inputType="date" />
+
+    <TextView
+        style="@style/form_txt"
+        android:text="Time of Accident"
+        android:paddingBottom="8dp"
+        />
+
+    <EditText
+        style="@style/edittxt_style"
+        android:id="@+id/time"
+        android:inputType="time"
+        />
+
+    <TextView
+        style="@style/form_txt"
+        android:text="Location of Accident"
+        android:paddingBottom="8dp"
+        />
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        tools:context="com.example.yumnaasim.rtirpc.CitizenForm"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        style="@style/form_txt"
+        android:text="Location of Accident"
+        android:paddingBottom="8dp"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/location"
+        android:inputType="textMultiLine"
+        android:lines="3"
+        android:background="@drawable/newbox"
+        />
+
+    <info.hoang8f.widget.FButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SUBMIT"
+        android:textColor="@android:color/white"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:buttonColor="@color/colorPrimary"
+        app:shadowEnabled="true"
+        app:shadowColor="@android:color/black"
+        app:shadowHeight="5dp"
+        app:cornerRadius="4dp"
+        android:layout_margin="8dp"
+        android:id="@+id/buttonSubmit"
+        android:layout_alignParentBottom="true"
+        />
+</LinearLayout>
+</ScrollView>

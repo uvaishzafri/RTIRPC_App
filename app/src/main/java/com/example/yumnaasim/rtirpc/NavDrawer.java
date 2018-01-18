@@ -38,7 +38,7 @@ public class NavDrawer extends AppCompatActivity
         cardView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(NavDrawer.this,MainActivity.class);
+                Intent intent1 = new Intent(NavDrawer.this,CitizenForm.class);
                 startActivity(intent1);
             }
         });
@@ -99,7 +99,8 @@ public class NavDrawer extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_about) {
+            startActivity(new Intent(NavDrawer.this,About.class));
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
 

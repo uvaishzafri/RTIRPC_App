@@ -50,7 +50,7 @@
                    android:layout_width="50dp"
                    android:layout_height="50dp"
                    android:layout_marginRight="24dp"
-                   android:src="@drawable/ic_menu_camera"/>
+                   android:src="@drawable/operator"/>
 
                <LinearLayout
                    android:layout_toRightOf="@id/img"
@@ -102,7 +102,7 @@
                    android:layout_width="50dp"
                    android:layout_height="50dp"
                    android:layout_marginRight="24dp"
-                   android:src="@drawable/ic_menu_camera"/>
+                   android:src="@drawable/citizens"/>
 
                <LinearLayout
                    android:layout_toRightOf="@id/img1"
@@ -154,7 +154,7 @@
                    android:layout_width="50dp"
                    android:layout_height="50dp"
                    android:layout_marginRight="24dp"
-                   android:src="@drawable/ic_menu_camera"/>
+                   android:src="@drawable/manager"/>
 
                <LinearLayout
                    android:layout_toRightOf="@id/img2"
