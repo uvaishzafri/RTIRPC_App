@@ -57,12 +57,10 @@
         android:paddingBottom="8dp"
         />
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/edittxt_style"
         android:id="@+id/location"
         android:inputType="textMultiLine"
-        android:lines="3"
-        android:background="@drawable/newbox"
+        android:lines="4"
         />
 
     <info.hoang8f.widget.FButton

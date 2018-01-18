@@ -185,6 +185,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
                     android:ems="10"
+                    android:hint="+92-345-1290023"
                     android:inputType="phone" />
             </LinearLayout>
             <LinearLayout

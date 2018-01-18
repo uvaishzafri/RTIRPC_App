@@ -136,14 +136,9 @@ public class StatsActivity extends AppCompatActivity {
 
             GraphView graphView = (GraphView) rootView.findViewById(R.id.graph);
 
-
             switch (secNumber)
             {
-                case 3:
-                    textView1.setText(getResources().getString(R.string.stats3_txt1));
-                    textView2.setText(getResources().getString(R.string.stats3_txt2));
-                    displayGraph(graphView);
-                    break;
+
                 case 1:
                     textView1.setText(getResources().getString(R.string.stats2_txt1));
                     textView2.setText(getResources().getString(R.string.stats2_txt2));
@@ -283,7 +278,7 @@ public class StatsActivity extends AppCompatActivity {
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 2;
         }
 
         @Override
@@ -293,8 +288,6 @@ public class StatsActivity extends AppCompatActivity {
                     return "STATS 1";
                 case 1:
                     return "STATS 2";
-                case 2:
-                    return "STATS 3";
             }
             return null;
         }

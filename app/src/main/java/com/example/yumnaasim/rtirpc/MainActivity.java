@@ -17,6 +17,10 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 import Databases.Database;
 import model.AccidentDetails;
 import model.AccidentRecord;
@@ -30,6 +34,8 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         Button button = (Button) findViewById(R.id.buttonNext);
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+
+        getDateTime();
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -241,5 +247,21 @@ public class MainActivity extends Activity {
                     .show();*/
            super.onBackPressed();
         }
+
+    private void getDateTime() {
+
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        String formattedDate = df.format(c.getTime());
+
+        EditText date = (EditText) findViewById(R.id.date);
+        date.setText(formattedDate);
+
+        String currentTimeString = new SimpleDateFormat("HH:mm:ss").format(new Date());
+        EditText time = (EditText) findViewById(R.id.timeAcc);
+// textView is the TextView view that should display it
+        time.setText(currentTimeString);
+
+    }
 
 }

@@ -13,6 +13,10 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 import Databases.Database;
 import model.AccidentDetails;
 import model.AccidentRecord;
@@ -26,6 +30,9 @@ public class Main3Activity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
         Button button = (Button) findViewById(R.id.btnSave);
+
+        getDateTime();
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -116,6 +123,17 @@ public class Main3Activity extends Activity {
         spinner3.setAdapter(adapter);
         spinner4.setAdapter(adapter);
         spinner5.setAdapter(adapter);
+    }
+
+    private void getDateTime() {
+
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        String formattedDate = df.format(c.getTime());
+
+        EditText date = (EditText) findViewById(R.id.timestamp);
+        date.setText(formattedDate);
+
     }
 
 
