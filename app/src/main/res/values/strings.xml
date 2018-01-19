@@ -124,13 +124,18 @@ Email: info@roadsafety.pk, rtirpc@gmail.com</i></string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="role1_title">Data Entry Operator</string>
-    <string name="role2_title">Citizens</string>
-    <string name="role3_title">Manager</string>
+    <string name="role1_title">RTIRPC Reporting</string>
+    <string name="role2_title">Self Reporting</string>
+    <string name="role3_title">RTIRPC Statistics</string>
 
     <string name="role1_desc">Submit accident reports</string>
     <string name="role2_desc">Submit on site accident reports</string>
     <string name="role3_desc">View stats of submitted reports</string>
     <string name="title_activity_maps">Map</string>
+
+    <string name="photos_line"><b>Accident Scene Photos</b>\n
+                                Please take atleast 3 photographs\n
+                                All photos submitted have to be taken using\n
+                                RTIRPC reporting app.</string>
 
 </resources>

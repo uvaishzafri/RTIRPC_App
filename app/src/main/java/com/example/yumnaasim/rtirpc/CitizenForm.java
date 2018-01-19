@@ -1,6 +1,8 @@
 package com.example.yumnaasim.rtirpc;
 
 import android.Manifest;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.content.pm.PackageManager;
@@ -8,10 +10,12 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
+import android.location.LocationManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -72,12 +76,46 @@ public class CitizenForm extends AppCompatActivity implements OnMapReadyCallback
 
         getDateTime();
         initGoogleApiClient();
+        checkGPS();
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
         initLocationRequest();
+    }
+
+    private void checkGPS() {
+
+        LocationManager mlocManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+        boolean enabled = mlocManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+
+        if(!enabled) {
+            showDialogGPS();
+        }
+    }
+
+    private void showDialogGPS() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(false);
+        builder.setTitle("Enable GPS");
+        builder.setMessage("Please enable GPS");
+        builder.setInverseBackgroundForced(true);
+        builder.setPositiveButton("Enable", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                startActivity(
+                        new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+            }
+        });
+        builder.setNegativeButton("Ignore", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        AlertDialog alert = builder.create();
+        alert.show();
+
     }
 
     private void initLocationRequest() {
@@ -103,31 +141,33 @@ public class CitizenForm extends AppCompatActivity implements OnMapReadyCallback
             else{
 
             Location location = LocationServices.FusedLocationApi.getLastLocation(googleApiClient);
-            Log.i(TAG, "Location services connected."+" "+location.toString());
+
             if (location == null)
             {
                 LocationServices.FusedLocationApi.requestLocationUpdates(googleApiClient,locationRequest,this);
-            }
+            }else
                 handleLocation(location);
         }
 
     }
 
     private void handleLocation(Location location) {
-        double latitude = location.getLatitude();
-        double longitude = location.getLongitude();
 
-        LatLng latlng = new LatLng(latitude,longitude);
-        CameraPosition cameraPosition = CameraPosition.builder()
-                .target(latlng)
-                .zoom(12)
-                .bearing(90)
-                .build();
-        mMap.addMarker(new MarkerOptions().position(latlng).title(getAddress(location)));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(latlng));
-        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
-        Log.i(TAG,location.toString());
-        getAddress(location);
+            double latitude = location.getLatitude();
+            double longitude = location.getLongitude();
+
+            LatLng latlng = new LatLng(latitude, longitude);
+            CameraPosition cameraPosition = CameraPosition.builder()
+                    .target(latlng)
+                    .zoom(12)
+                    .bearing(90)
+                    .build();
+            mMap.addMarker(new MarkerOptions().position(latlng).title(getAddress(location)));
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(latlng));
+            mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+            Log.i(TAG, location.toString());
+            getAddress(location);
+
     }
 
     private String getAddress(Location loc) {
@@ -203,9 +243,6 @@ public class CitizenForm extends AppCompatActivity implements OnMapReadyCallback
         SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         String formattedDate = df.format(c.getTime());
 
-        EditText loc = (EditText) findViewById(R.id.location);
-        loc.setText("Agha Khan Hospital");
-
         EditText date = (EditText) findViewById(R.id.date);
         date.setText(formattedDate);
 
@@ -218,7 +255,7 @@ public class CitizenForm extends AppCompatActivity implements OnMapReadyCallback
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(CitizenForm.this,NavDrawer.class));
+                startActivity(new Intent(CitizenForm.this,ScenePhotos.class));
                 finish();
             }
         });
