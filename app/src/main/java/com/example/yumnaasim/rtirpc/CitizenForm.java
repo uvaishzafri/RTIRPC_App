@@ -18,6 +18,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -71,6 +72,9 @@ public class CitizenForm extends AppCompatActivity implements OnMapReadyCallback
         this.setTitle("Accident Information");
         setContentView(R.layout.activity_citizen_form);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        getSupportActionBar()
+                .setTitle(Html.fromHtml("<font color=\"#FFFFFF\">" + "Accident Information" + "</font>"));
 
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 

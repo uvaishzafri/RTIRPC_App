@@ -13,6 +13,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -24,8 +25,11 @@ public class ScenePhotos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main5);
-        this.setTitle("Accident Scene");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        getSupportActionBar()
+                .setTitle(Html.fromHtml("<font color=\"#FFFFFF\">" + "Accident Scene" + "</font>"));
+
 
         checkPermission();
         handleUserInput();
@@ -70,6 +74,7 @@ public class ScenePhotos extends AppCompatActivity {
             Bitmap image = (Bitmap) data.getExtras().get("data");
             ImageView imageView = (ImageView) findViewById(R.id.imageView);
             imageView.setImageBitmap(image);
+            imageView.setBackgroundResource(R.drawable.camerabox);
         }
 
     }
