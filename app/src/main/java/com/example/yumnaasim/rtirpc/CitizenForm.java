@@ -81,6 +81,7 @@ public class CitizenForm extends AppCompatActivity implements OnMapReadyCallback
         getDateTime();
         initGoogleApiClient();
         checkGPS();
+        googleApiClient.connect();
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -220,7 +221,6 @@ public class CitizenForm extends AppCompatActivity implements OnMapReadyCallback
     @Override
     protected void onResume() {
         super.onResume();
-        googleApiClient.connect();
     }
 
     @Override

@@ -31,6 +31,7 @@ import com.jjoe64.graphview.helper.StaticLabelsFormatter;
 import com.jjoe64.graphview.series.BarGraphSeries;
 import com.jjoe64.graphview.series.DataPoint;
 
+import static com.example.yumnaasim.rtirpc.R.id.cancel_action;
 import static com.example.yumnaasim.rtirpc.R.id.container;
 import static com.example.yumnaasim.rtirpc.R.id.graph;
 import static com.example.yumnaasim.rtirpc.R.id.useLogo;
@@ -102,7 +103,6 @@ public class StatsActivity extends AppCompatActivity {
      */
     public static class PlaceholderFragment extends Fragment {
 
-        static int secNumber;
         /**
          * The fragment argument representing the section number for this
          * fragment.
@@ -121,27 +121,45 @@ public class StatsActivity extends AppCompatActivity {
             Bundle args = new Bundle();
             args.putInt(ARG_SECTION_NUMBER, sectionNumber);
             fragment.setArguments(args);
-            secNumber = sectionNumber;
             return fragment;
         }
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-
+            Bundle bundle = getArguments();
+            int sectionNumber = bundle.getInt(ARG_SECTION_NUMBER);
             rootView = inflater.inflate(R.layout.fragment_stats, container, false);
             TextView textView1 = (TextView) rootView.findViewById(R.id.txt1);
             TextView textView2 = (TextView) rootView.findViewById(R.id.txt2);
-            Log.v("Stats"," "+secNumber);
+            Log.v("Stats", " " + sectionNumber);
 
             GraphView graphView = (GraphView) rootView.findViewById(R.id.graph);
+
+            switch (sectionNumber){
+                case 0:
 
                     textView1.setText(getResources().getString(R.string.stats2_txt1));
                     textView2.setText(getResources().getString(R.string.stats2_txt2));
                     displayGraphLocation(graphView);
+                    break;
+                case 1:
 
-            updateViews(rootView);
-            return rootView;
+                    textView1.setText(getResources().getString(R.string.stats1_txt1));
+                    textView2.setText(getResources().getString(R.string.stats1_txt2));
+                    displayGraph(graphView);
+                    break;
+
+                case 2:
+
+                    textView1.setText(getResources().getString(R.string.stats3_txt1));
+                    textView2.setText(getResources().getString(R.string.stats3_txt2));
+                    displayGraph3(graphView);
+                    break;
+            }
+
+                updateViews(rootView);
+                return rootView;
         }
 
         private void updateViews(final View rootView) {
@@ -178,7 +196,7 @@ public class StatsActivity extends AppCompatActivity {
         private void displayGraphLocation(GraphView graph) {
 
             StaticLabelsFormatter staticLabelsFormatter = new StaticLabelsFormatter(graph);
-            staticLabelsFormatter.setHorizontalLabels(new String[] {"Gulberg", "Uni Rd", "North Naz", "Tariq Rds"});
+            staticLabelsFormatter.setHorizontalLabels(new String[] {"Highway", "Uni Rd", "Sharea Faisal ", "Tariq Rds"});
 
             GridLabelRenderer gridLabelRenderer =  graph.getGridLabelRenderer();
             gridLabelRenderer.setLabelFormatter(staticLabelsFormatter);
@@ -221,8 +239,41 @@ public class StatsActivity extends AppCompatActivity {
                     new DataPoint(0, 2),
                     new DataPoint(1, 12),
                     new DataPoint(2, 8),
-                    new DataPoint(3, 20),
+                    new DataPoint(3, 16),
                     new DataPoint(4, 5)
+            });
+            graph.addSeries(series);
+            series.setAnimated(true);
+
+            series.setValueDependentColor(new ValueDependentColor<DataPoint>() {
+                @Override
+                public int get(DataPoint data) {
+                    return Color.rgb((int) data.getX()*255/4, (int) Math.abs(data.getY()*255/6), 100);
+                }
+            });
+
+            series.setSpacing(30);
+            series.setDrawValuesOnTop(true);
+            series.setValuesOnTopColor(Color.RED);
+
+        }
+
+        private void displayGraph3(GraphView graph) {
+
+            StaticLabelsFormatter staticLabelsFormatter = new StaticLabelsFormatter(graph);
+            staticLabelsFormatter.setHorizontalLabels(new String[] {"Car", "Truck", "Bus", "Bike"});
+
+            GridLabelRenderer gridLabelRenderer =  graph.getGridLabelRenderer();
+            gridLabelRenderer.setLabelFormatter(staticLabelsFormatter);
+            gridLabelRenderer.setVerticalAxisTitle("No. of Accidents");
+
+
+            BarGraphSeries<DataPoint> series = new BarGraphSeries<>(new DataPoint[] {
+                    new DataPoint(0, 5),
+                    new DataPoint(1, 10),
+                    new DataPoint(2, 7),
+                    new DataPoint(3, 2),
+                    new DataPoint(4, 16)
             });
             graph.addSeries(series);
             series.setAnimated(true);
@@ -261,7 +312,7 @@ public class StatsActivity extends AppCompatActivity {
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 1;
+            return 3;
         }
 
         @Override
@@ -269,6 +320,10 @@ public class StatsActivity extends AppCompatActivity {
             switch (position) {
                 case 0:
                     return "STATS 1";
+                case 1:
+                    return "STATS 2";
+                case 2:
+                    return "STATS 3";
             }
             return null;
         }

@@ -6,9 +6,12 @@ Karachi 75510, Pakistan. Phone: 0092 99207377 \n
 Email: info@roadsafety.pk, rtirpc@gmail.com</string>
     <string name="header_text">Road Traffic Injury Research and Prevention Center</string>
     <string-array name="hospital_array">
-        <item>Agha Khan - AKU</item>
+        <item>Agha Khan - AKUH</item>
         <item>Jinnah PostGraduate - JPMC</item>
         <item>Abbasi Shaheed - ASH</item>
+        <item>Civil Hospital</item>
+        <item>Liaquat National Hospital</item>
+
     </string-array>
 
     <string-array name="ambulance_array">
