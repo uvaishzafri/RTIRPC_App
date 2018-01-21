@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     android:gravity="center_vertical"
-    android:background="@android:color/white"
+    android:background="@color/bgColor"
     xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <ImageView

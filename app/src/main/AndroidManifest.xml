@@ -3,8 +3,8 @@
     package="com.example.yumnaasim.rtirpc">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <uses-feature
@@ -81,8 +81,15 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".ScenePhotos"
-            android:parentActivityName=".NavDrawer"></activity>
+        <activity
+            android:name=".ScenePhotos"
+            android:parentActivityName=".NavDrawer" />
+
+        <activity android:name=".TermsAndConditions"
+            android:parentActivityName=".NavDrawer" />
+
+        <activity android:name=".PreviewReport"
+            android:parentActivityName=".NavDrawer" ></activity>
     </application>
 
 </manifest>

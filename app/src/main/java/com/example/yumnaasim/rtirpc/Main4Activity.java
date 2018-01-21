@@ -17,10 +17,7 @@ public class Main4Activity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
-        TextView tv = (TextView) findViewById(R.id.text);
-        Typeface face = Typeface.createFromAsset(getAssets(),
-                "fonts/nabila.otf");
-        tv.setTypeface(face);
+
         Button button = (Button) findViewById(R.id.btnNewCase);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,11 +26,11 @@ public class Main4Activity extends Activity {
                 finish();
             }
         });
-        Button button1 = (Button) findViewById(R.id.btnExit);
+        Button button1 = (Button) findViewById(R.id.btnPreview);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();
+                startActivity(new Intent(Main4Activity.this,PreviewReport.class));
             }
         });
     }

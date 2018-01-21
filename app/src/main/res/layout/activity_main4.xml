@@ -12,8 +12,8 @@
     <ImageView
         android:padding="16dp"
         android:id="@+id/imageView2"
-        android:layout_width="230dp"
-        android:layout_height="230dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:src="@drawable/logo"
         android:layout_gravity="center"/>
 
@@ -23,15 +23,32 @@
         android:layout_height="wrap_content"
         android:text="Thanks for saving data"
         android:textAlignment="center"
-        android:textStyle="bold"
+
         android:textColor="@android:color/black"
-        android:textSize="25sp"/>
+        android:textSize="@dimen/material_text_title"/>
 
     <info.hoang8f.widget.FButton
-            android:id="@+id/btnNewCase"
+        android:id="@+id/btnPreview"
         android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_width="140dp"
+        android:layout_gravity="center"
+        android:layout_width="140dp"
+        android:textColor="@android:color/white"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:buttonColor="@color/colorPrimary"
+        app:shadowEnabled="true"
+        android:text="PREVIEW REPORT"
+        app:shadowColor="@android:color/black"
+        app:shadowHeight="5dp"
+        app:cornerRadius="4dp"
+        android:layout_marginTop="16dp"
+        />
+
+    <info.hoang8f.widget.FButton
+        android:layout_marginTop="16dp"
+        android:id="@+id/btnNewCase"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_width="140dp"
         android:textColor="@android:color/white"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         app:buttonColor="@color/colorPrimary"
@@ -40,21 +57,6 @@
         app:shadowHeight="5dp"
         app:cornerRadius="4dp"
         android:text="NEW CASE"
-        />
-    <info.hoang8f.widget.FButton
-        android:id="@+id/btnExit"
-        android:layout_marginTop="16dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_width="140dp"
-        android:textColor="@android:color/white"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        app:buttonColor="@color/colorPrimary"
-        app:shadowEnabled="true"
-        android:text="EXIT"
-        app:shadowColor="@android:color/black"
-        app:shadowHeight="5dp"
-        app:cornerRadius="4dp"
         />
 
 
