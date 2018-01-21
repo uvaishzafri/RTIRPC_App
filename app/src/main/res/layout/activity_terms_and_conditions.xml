@@ -1,9 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp"
     tools:context="com.example.yumnaasim.rtirpc.TermsAndConditions">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:paddingTop="8dp"
+        android:id="@+id/tv1"
+        android:paddingBottom="16dp"
+        style="@style/form_txt"
+        android:textStyle="bold"
+        android:text="@string/term1"/>
+
+    <TextView
+        style="@style/form_txt"
+        android:paddingBottom="16dp"
+        android:id="@+id/tv2"
+        android:textColor="@android:color/holo_red_dark"
+        android:layout_below="@id/tv1"
+        android:text="@string/term2"
+        />
+
+    <TextView
+        android:layout_below="@id/tv2"
+        android:textSize="14sp"
+        android:id="@+id/tv3"
+        android:text="@string/term3"
+        style="@style/form_txt" />
+
+
+    <info.hoang8f.widget.FButton
+    android:id="@+id/btnOk"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="OK"
+    android:textColor="@android:color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:buttonColor="@color/colorPrimary"
+    app:shadowEnabled="true"
+    app:shadowColor="@android:color/black"
+    app:shadowHeight="5dp"
+    app:cornerRadius="4dp"
+
+    android:layout_alignParentBottom="true"
+    />
+
+</RelativeLayout>

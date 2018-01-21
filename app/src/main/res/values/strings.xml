@@ -138,4 +138,16 @@ Email: info@roadsafety.pk, rtirpc@gmail.com</i></string>
                                 All photos submitted have to be taken using\n
                                 RTIRPC reporting app.</string>
 
+    <string name="term1">This app is only available for Hospital Management and Citizens
+                            to do accident reporting.</string>
+
+    <string name="term2"><b>Please <u>do not use</u> this app to do accident reporting if:</b>\n\n
+ &#160;1. You have left the accident scene.\n
+ &#160;2. You are not the driver at the point of the accident.\n
+ &#160;3. There are injuries involved.\n
+ &#160;4. The accident involves government vehicle or property,foreign vehicle, pedestrian/cyclist, hit-and-run, vandalism, and fire.
+ </string>
+
+    <string name="term3">For such situations, please proceed to RTIRPC to complete the accident reporting within the next working day.\n\nDo note that for (3) and (4), you have to make a police report before you proceed to report the accident.</string>
+
 </resources>
