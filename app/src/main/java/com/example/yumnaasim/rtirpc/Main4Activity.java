@@ -26,13 +26,13 @@ public class Main4Activity extends Activity {
                 finish();
             }
         });
-        Button button1 = (Button) findViewById(R.id.btnPreview);
+       /* Button button1 = (Button) findViewById(R.id.btnPreview);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Main4Activity.this,PreviewReport.class));
             }
-        });
+        });*/
     }
 
     @Override

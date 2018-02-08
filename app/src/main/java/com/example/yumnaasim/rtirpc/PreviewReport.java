@@ -19,7 +19,6 @@ public class PreviewReport extends AppCompatActivity {
     }
 
     private void getView() {
-
         WebView webview = (WebView) findViewById(R.id.webview);
         webview.loadUrl("file:///android_asset/file.html");
     }

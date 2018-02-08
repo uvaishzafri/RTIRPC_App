@@ -27,7 +27,7 @@
         android:textColor="@android:color/black"
         android:textSize="@dimen/material_text_title"/>
 
-    <info.hoang8f.widget.FButton
+<!--    <info.hoang8f.widget.FButton
         android:id="@+id/btnPreview"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -41,7 +41,7 @@
         app:shadowHeight="5dp"
         app:cornerRadius="4dp"
         android:layout_marginTop="16dp"
-        />
+        />-->
 
     <info.hoang8f.widget.FButton
         android:layout_marginTop="16dp"

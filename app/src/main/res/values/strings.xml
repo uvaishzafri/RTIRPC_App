@@ -153,4 +153,17 @@ Email: info@roadsafety.pk, rtirpc@gmail.com</i></string>
 
     <string name="term3">For such situations, please proceed to RTIRPC to complete the accident reporting within the next working day.\n\nDo note that for (3) and (4), you have to make a police report before you proceed to report the accident.</string>
 
+    <string name="export_txt">Select data to export:</string>
+
+    <string name="file1">Only Report Data</string>
+    <string name="file2">Only Accident Data</string>
+    <string name="file3">Only Patient General Data</string>
+    <string name="file4">Only Patient Health Data</string>
+
+    <string name="export_txt2">Share and send the exported data or upload it on the cloud(i.e. Drive).</string>
+
+    <string name="share_txt">Select data to share:</string>
+    <string name="share_txt2">The data is exported in file(.csv) format.\n
+        Open the exported file(.csv) in supported file extension application.</string>
+
 </resources>

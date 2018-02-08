@@ -7,9 +7,12 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -30,7 +33,7 @@ public class Main3Activity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
         Button button = (Button) findViewById(R.id.btnSave);
-
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         getDateTime();
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -77,6 +80,12 @@ public class Main3Activity extends Activity {
                 EditText editTextNotes = (EditText) findViewById(R.id.notes);
                 String dtNotes = editTextNotes.getText().toString();
 
+                RadioGroup radioGroup = (RadioGroup) findViewById(R.id.disposal);
+                int id = radioGroup.getCheckedRadioButtonId();
+                RadioButton radioButton = (RadioButton) findViewById(id);
+                String disposal = radioButton.getText().toString();
+                patient.setDisposal(disposal);
+
                 health.setHeadISS(headISS);
                 health.setChestISS(chestISS);
                 health.setExtermityISS(extermityISS);
@@ -85,10 +94,10 @@ public class Main3Activity extends Activity {
                 health.setExternalISS(externalISS);
                 health.setDoctorNotes(dtNotes);
 
-                new Database(Main3Activity.this).addToPatientHealth(health);
-                new Database(Main3Activity.this).addToPatientInfo(patient);
-                new Database(Main3Activity.this).addToAccidentDetails(details);
-                new Database(Main3Activity.this).addToRecord(accidentRecord);
+                new Database(Main3Activity.this).insertData(patient,
+                        accidentRecord,
+                        details,
+                        health);
 
                 Toast.makeText(getApplicationContext(),"Record saved!",Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(Main3Activity.this,Main4Activity.class);

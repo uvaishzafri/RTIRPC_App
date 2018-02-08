@@ -38,14 +38,14 @@
                     android:textSize="18sp" />
 
                 <EditText
-                 style="@style/inputStyle"
+                    style="@style/inputStyle"
                     android:id="@+id/date"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:layout_weight="3"
                     android:inputType="date" />
-                </LinearLayout>
+            </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -68,25 +68,26 @@
                     android:layout_height="wrap_content"
                     style="@style/inputStyle"
                     android:ems="10"
+                    android:text="2190"
                     android:inputType="number" />
 
             </LinearLayout>
 
-                <TextView
+            <TextView
 
-                    android:id="@+id/text2"
-                    android:paddingBottom="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Hospital Name"
-                    android:textSize="18sp" />
+                android:id="@+id/text2"
+                android:paddingBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hospital Name"
+                android:textSize="18sp" />
 
-                <Spinner
-                    android:paddingBottom="10dp"
-                    android:id="@+id/spinner"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"/>
+            <Spinner
+                android:paddingBottom="10dp"
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -110,8 +111,9 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
                     android:ems="10"
+                    android:text="Ali"
                     android:inputType="textPersonName" />
-                </LinearLayout>
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -134,34 +136,29 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
                     android:ems="10"
+                    android:text="21"
                     android:inputType="number" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="5"
-                android:paddingBottom="10dp">
 
                 <TextView
-
                     android:id="@+id/text6"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Address "
-                    android:layout_weight="2"
+                    android:paddingBottom="10dp"
                     android:textSize="18sp" />
 
                 <EditText
+                    android:paddingBottom="12dp"
                     android:id="@+id/address"
                     style="@style/inputStyle"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="3"
                     android:ems="10"
+                    android:text="C-51 Abul Hasan Isaphani Road"
                     android:inputType="textPersonName" />
-            </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -185,7 +182,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
                     android:ems="10"
-                    android:hint="+92-345-1290023"
+                    android:text="+92 345 9810023"
                     android:inputType="phone" />
             </LinearLayout>
             <LinearLayout
@@ -209,40 +206,41 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
                     android:ems="10"
-                    android:inputType="text" />
+                    android:inputType="text"
+                    android:text="Student"/>
             </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/text5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingBottom="10dp"
-                        android:text="Gender:"
-                        android:textSize="18sp" />
+            <TextView
+                android:id="@+id/text5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:text="Gender:"
+                android:textSize="18sp" />
 
-                    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:weightSum="2"
-                        android:layout_marginBottom="10dp"
-                        android:orientation="horizontal"
-                        android:id="@+id/radioGroupGender">
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal"
+                android:id="@+id/radioGroupGender">
 
-                    <RadioButton
-                        android:id="@+id/male"
-                        android:checked="true"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:text="Male" />
+                <RadioButton
+                    android:id="@+id/male"
+                    android:checked="true"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Male" />
 
-                    <RadioButton
-                        android:id="@+id/female"
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:text="Female" />
-                    </RadioGroup>
+                <RadioButton
+                    android:id="@+id/female"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Female" />
+            </RadioGroup>
 
 
 
@@ -295,24 +293,25 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
                     android:ems="10"
-                    android:inputType="time" />
+                    android:inputType="time"
+                    android:text="12:18"/>
 
             </LinearLayout>
 
-                <TextView
-                    android:id="@+id/text11"
-                    android:paddingBottom="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Arrived by: "
-                    android:textSize="18sp" />
+            <TextView
+                android:id="@+id/text11"
+                android:paddingBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Arrived by: "
+                android:textSize="18sp" />
 
-                <Spinner
-                    android:paddingBottom="10dp"
-                    android:id="@+id/spinner1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"/>
+            <Spinner
+                android:paddingBottom="10dp"
+                android:id="@+id/spinner1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -335,82 +334,83 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
                     android:ems="10"
-                    android:inputType="text" />
+                    android:inputType="text"
+                    android:text="Aman"/>
             </LinearLayout>
 
-                <TextView
-                    android:id="@+id/text13"
-                    android:paddingBottom="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="History given by :"
-                    android:textSize="18sp" />
+            <TextView
+                android:id="@+id/text13"
+                android:paddingBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="History given by :"
+                android:textSize="18sp" />
 
-                <Spinner
-                    android:id="@+id/spinner2"
-                    android:paddingBottom="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-
-                <TextView
-                    android:id="@+id/text14"
-                    android:paddingBottom="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Was he travelling for :"
-                    android:textSize="18sp"
-                    />
-
-                <Spinner
-                    android:id="@+id/spinner3"
-                    android:paddingBottom="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+            <Spinner
+                android:id="@+id/spinner2"
+                android:paddingBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
 
-                <TextView
-                    android:paddingBottom="10dp"
-                    android:id="@+id/text15"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Vehicle(s) involvement 1:"
-                    android:textSize="18sp" />
+            <TextView
+                android:id="@+id/text14"
+                android:paddingBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Was he travelling for :"
+                android:textSize="18sp"
+                />
 
-                <Spinner
-                    android:id="@+id/spinner4"
-                    android:paddingBottom="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+            <Spinner
+                android:id="@+id/spinner3"
+                android:paddingBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
 
-                <TextView
-                    android:id="@+id/text16"
-                    android:layout_width="match_parent"
-                    android:paddingBottom="10dp"
-                    android:layout_height="wrap_content"
-                    android:text="Vehicle(s) involvement 2 :"
-                    android:textSize="18sp" />
+            <TextView
+                android:paddingBottom="10dp"
+                android:id="@+id/text15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Vehicle(s) involvement 1:"
+                android:textSize="18sp" />
 
-                <Spinner
-                    android:id="@+id/spinner5"
-                    android:paddingBottom="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+            <Spinner
+                android:id="@+id/spinner4"
+                android:paddingBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-                <TextView
-                    android:id="@+id/text17"
-                    android:layout_width="match_parent"
-                    android:paddingBottom="10dp"
-                    android:layout_height="wrap_content"
-                    android:text="Patient was:"
-                    android:textSize="18sp" />
 
-                <Spinner
-                    android:id="@+id/spinner6"
-                    android:paddingBottom="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/text16"
+                android:layout_width="match_parent"
+                android:paddingBottom="10dp"
+                android:layout_height="wrap_content"
+                android:text="Vehicle(s) involvement 2 :"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinner5"
+                android:paddingBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/text17"
+                android:layout_width="match_parent"
+                android:paddingBottom="10dp"
+                android:layout_height="wrap_content"
+                android:text="Patient was:"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinner6"
+                android:paddingBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/text18"
@@ -424,34 +424,34 @@
                 android:layout_height="wrap_content"
                 android:paddingBottom="10dp"
                 android:orientation="horizontal">
-            <RadioButton
-                android:id="@+id/radio"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="5"
-                android:text="Yes" />
+                <RadioButton
+                    android:id="@+id/radio"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:text="Yes" />
 
-            <RadioButton
-                android:id="@+id/radio1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="5"
-                android:text="No" />
+                <RadioButton
+                    android:id="@+id/radio1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:text="No" />
             </RadioGroup>
 
-                <TextView
-                    android:id="@+id/text20"
-                    android:layout_width="match_parent"
-                    android:paddingBottom="10dp"
-                    android:layout_height="wrap_content"
-                    android:text="Type of collision:"
-                    android:textSize="18sp" />
+            <TextView
+                android:id="@+id/text20"
+                android:layout_width="match_parent"
+                android:paddingBottom="10dp"
+                android:layout_height="wrap_content"
+                android:text="Type of collision:"
+                android:textSize="18sp" />
 
-                <Spinner
-                    android:id="@+id/spinner9"
-                    android:paddingBottom="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+            <Spinner
+                android:id="@+id/spinner9"
+                android:paddingBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -480,27 +480,27 @@
                     android:orientation="horizontal"
                     android:id="@+id/radioGroup">
 
-                <RadioButton
-                    android:id="@+id/checkBox4"
-                    android:layout_width="0dp"
-                    android:checked="true"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Signboard" />
+                    <RadioButton
+                        android:id="@+id/checkBox4"
+                        android:layout_width="0dp"
+                        android:checked="true"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Signboard" />
 
-                <RadioButton
-                    android:id="@+id/checkBox3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Vehicle" />
+                    <RadioButton
+                        android:id="@+id/checkBox3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Vehicle" />
 
-                <RadioButton
-                    android:id="@+id/checkBox8"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Other" />
+                    <RadioButton
+                        android:id="@+id/checkBox8"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Other" />
                 </RadioGroup>
             </LinearLayout>
 
@@ -523,27 +523,27 @@
                     android:id="@+id/radioGroup1"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
-                <RadioButton
-                    android:id="@+id/checkBox5"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="5"
-                    android:text="Right" />
+                    <RadioButton
+                        android:id="@+id/checkBox5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:text="Right" />
 
-                <RadioButton
-                    android:id="@+id/checkBox6"
-                    android:checked="true"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="5"
-                    android:text="Centre" />
+                    <RadioButton
+                        android:id="@+id/checkBox6"
+                        android:checked="true"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:text="Centre" />
 
-                <RadioButton
-                    android:id="@+id/checkBox7"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="5"
-                    android:text="Left" />
+                    <RadioButton
+                        android:id="@+id/checkBox7"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:text="Left" />
                 </RadioGroup>
 
             </LinearLayout>
@@ -561,23 +561,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textMultiLine" />
+                android:inputType="textMultiLine"
+                android:text="Block 4-A Gulshan-e-Iqbal Karachi"/>
 
 
-                <TextView
-                    android:id="@+id/text21"
-                    android:layout_width="match_parent"
-                    android:paddingBottom="10dp"
-                    android:layout_height="wrap_content"
-                    android:text="Location Details"
-                    android:textSize="18sp" />
+            <TextView
+                android:id="@+id/text21"
+                android:layout_width="match_parent"
+                android:paddingBottom="10dp"
+                android:layout_height="wrap_content"
+                android:text="Location Details"
+                android:textSize="18sp" />
 
-                <Spinner
-                    android:id="@+id/spinner10"
-                    android:paddingBottom="10dp"
-                    android:layout_margin="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+            <Spinner
+                android:id="@+id/spinner10"
+                android:paddingBottom="10dp"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
             <info.hoang8f.widget.FButton
                 android:layout_width="match_parent"
@@ -595,7 +596,7 @@
                 android:layout_alignParentBottom="true"
                 />
 
-</LinearLayout>
+        </LinearLayout>
 
     </ScrollView>
 

@@ -27,6 +27,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="10dp"
+                android:text="Doctor Notes:"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/notes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                style="@style/inputStyle"
+                android:layout_marginBottom="10dp"
+                android:inputType="textMultiLine"
+                android:text="Critical Condition"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
                 android:textStyle="bold"
                 android:text="Glasgow Coma Scale:"
                 android:textSize="18sp" />
@@ -184,6 +200,7 @@
                 android:textSize="18sp" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/disposal"
                 android:layout_width="fill_parent"
                 android:paddingBottom="10dp"
                 android:layout_height="wrap_content"
@@ -226,6 +243,91 @@
                     android:layout_height="wrap_content"
                     android:text="Referred from other hospital" />
 
+                <!--<LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+                    <RadioButton
+                        android:id="@+id/radio"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
+                        android:text="Expired" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Time:"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/editText3"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="time" />
+                </LinearLayout>-->
+
+                <!--<LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:weightSum="4">
+                    <RadioButton
+                        android:id="@+id/radio1"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
+                        android:text="Transferred to other hospital" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hospital Name:"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/editText4"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text" />
+                </LinearLayout>-->
+
+                <!--<LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:weightSum="4">
+
+                    <RadioButton
+                        android:id="@+id/radio5"
+                        android:layout_weight="2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Referred from other hospital" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hospital Name:"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/editText5"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="text" />
+                </LinearLayout>-->
+
                 <RadioButton
                     android:id="@+id/radio6"
                     android:layout_width="match_parent"
@@ -234,35 +336,21 @@
             </RadioGroup>
 
             <TextView
+                android:id="@+id/text6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="Name of Data Collector:"
                 android:paddingBottom="10dp"
-                android:text="Doctor Notes:"
                 android:textSize="18sp" />
-
             <EditText
-                android:id="@+id/notes"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:lines="2"
                 style="@style/inputStyle"
                 android:layout_marginBottom="10dp"
-                android:inputType="textMultiLine" />
-
-                <TextView
-                    android:id="@+id/text6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Name of Data Collector:"
-                    android:paddingBottom="10dp"
-                    android:textSize="18sp" />
-                <EditText
-                    style="@style/inputStyle"
-                   android:layout_marginBottom="10dp"
-                    android:id="@+id/dataCollectorName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text" />
+                android:id="@+id/dataCollectorName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:text="Qasim Ali"
+                android:inputType="text" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -328,6 +416,5 @@
             </LinearLayout>
 
         </LinearLayout>
-        </ScrollView>
-    </LinearLayout>
-
+    </ScrollView>
+</LinearLayout>
