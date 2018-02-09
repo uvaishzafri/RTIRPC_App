@@ -29,6 +29,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.lang.reflect.Array;
+import java.util.Random;
 
 import Databases.Database;
 import Databases.Schema;
@@ -71,20 +72,30 @@ public class ExportActivity extends AppCompatActivity {
                 String selectedButton = radioButton.getText().toString();
 
                 if (selectedButton.equals(getResources().getString(R.string.file2))) {
-                    String path = exportDB(Schema.Accident.TABLE_NAME3, "AccidentDetails");
+                    String path = exportDB(Schema.Accident.TABLE_NAME3, "AccidentData");
                     createNotification(path);
                 }
                 else if (selectedButton.equals(getResources().getString(R.string.file3))) {
-                    String path = exportDB(Schema.Patient.TABLE_NAME1, "PatientDetails");
+                    String path = exportDB(Schema.Patient.TABLE_NAME1, "PatientGeneralData");
                     createNotification(path);
                 }
                else if (selectedButton.equals(getResources().getString(R.string.file4))) {
-                    String path = exportDB(Schema.PatientHealth.TABLE_NAME4, "PatientHealthDetails");
+                    String path = exportDB(Schema.PatientHealth.TABLE_NAME4, "PatientHealthData");
                     createNotification(path);
                 }
                else if (selectedButton.equals(getResources().getString(R.string.file1))) {
-                    String path = exportDB(Schema.Report.TABLE_NAME2, "ReportDetails");
+                    String path = exportDB(Schema.Report.TABLE_NAME2, "ReportData");
                     createNotification(path);
+                }
+                else if (selectedButton.equals(getResources().getString(R.string.file))) {
+                    String path3 = exportDB(Schema.Report.TABLE_NAME2, "ReportData");
+                    createNotification(path3);
+                    String path2 = exportDB(Schema.PatientHealth.TABLE_NAME4, "PatientHealthData");
+                    createNotification(path2);
+                    String path = exportDB(Schema.Patient.TABLE_NAME1, "PatientGeneralData");
+                    createNotification(path);
+                    String path1 = exportDB(Schema.Accident.TABLE_NAME3, "AccidentData");
+                    createNotification(path1);
                 }
              /*   if (database.isChecked()) {
                     exportDB(null, "RTIRPC_Database");
@@ -228,8 +239,7 @@ public class ExportActivity extends AppCompatActivity {
                         .setContentText("File exported successfully");
 
         Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        mBuilder.setSound(alarmSound).setOnlyAlertOnce(true);
-
+        mBuilder.setSound(alarmSound);
 
         NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
@@ -243,9 +253,15 @@ public class ExportActivity extends AppCompatActivity {
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
         mBuilder.setContentIntent(pendingIntent);
         mBuilder.setAutoCancel(true);
-        mNotificationManager.notify(001, mBuilder.build());
+        int notify = generateRandom();
+        mNotificationManager.notify(notify, mBuilder.build());
 
 
+    }
+
+    public int generateRandom(){
+        Random random = new Random();
+        return random.nextInt(9999 - 1000) + 1000;
     }
 
 }

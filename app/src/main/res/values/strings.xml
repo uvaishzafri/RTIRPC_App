@@ -159,11 +159,11 @@ Email: info@roadsafety.pk, rtirpc@gmail.com</i></string>
     <string name="file2">Only Accident Data</string>
     <string name="file3">Only Patient General Data</string>
     <string name="file4">Only Patient Health Data</string>
+    <string name="file">All Data</string>
 
     <string name="share_txt2">Share and send the exported data or upload it on the cloud (i.e. Drive).</string>
 
     <string name="share_txt">Select data to share:</string>
-    <string name="export_txt2">The data is exported in file(.csv) format.\n
-        Open the exported file(.csv) in supported file extension application (i.e. Excel).</string>
+    <string name="export_txt2">The data is exported in file(.csv) format.\nOpen the exported file(.csv) in supported file extension application (i.e. Excel).</string>
 
 </resources>
