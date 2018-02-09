@@ -40,7 +40,7 @@
                     android:paddingTop="8dp"
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
-                    android:text="@string/export_txt2"/>
+                    android:text="@string/share_txt2"/>
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -107,7 +107,6 @@
 
         <info.hoang8f.widget.FButton
             android:layout_width="match_parent"
-
             android:layout_height="wrap_content"
             android:text="SHARE"
             android:textColor="@android:color/white"

@@ -131,8 +131,6 @@ public class NavDrawer extends AppCompatActivity
             startActivity(new Intent(NavDrawer.this,ExportActivity.class));
         }else if (id == R.id.nav_backup) {
             startActivity(new Intent(NavDrawer.this,ShareActivity.class));
-        } else if (id == R.id.nav_share) {
-
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

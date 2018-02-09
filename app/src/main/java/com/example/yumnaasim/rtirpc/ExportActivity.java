@@ -239,7 +239,7 @@ public class ExportActivity extends AppCompatActivity {
         String extension = ".csv";
         String type = mime.getMimeTypeFromExtension(extension);
         Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setDataAndType(uri, type);
+        intent.setDataAndType(uri, "application/vnd.ms-excel");
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
         mBuilder.setContentIntent(pendingIntent);
         mBuilder.setAutoCancel(true);
