@@ -21,6 +21,7 @@
          location permissions for the 'MyLocation' functionality. 
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
 
     <application
         android:allowBackup="true"
@@ -94,8 +95,15 @@
         <activity
             android:name=".ExportActivity"
             android:parentActivityName=".NavDrawer" />
-
-        <activity android:name=".ShareActivity"
+        <activity
+            android:name=".ShareActivity"
+            android:parentActivityName=".NavDrawer" />
+        <activity android:name=".DeleteActivity"
+            android:label="Delete"
+            android:parentActivityName=".NavDrawer"/>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"
             android:parentActivityName=".NavDrawer"></activity>
     </application>
 

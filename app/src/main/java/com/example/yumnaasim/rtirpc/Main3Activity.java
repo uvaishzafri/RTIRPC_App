@@ -101,6 +101,7 @@ public class Main3Activity extends Activity {
 
                 Toast.makeText(getApplicationContext(),"Record saved!",Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(Main3Activity.this,Main4Activity.class);
+                intent.putExtra("Location",details.getLocation());
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
                 finish();

@@ -88,13 +88,13 @@ public class ExportActivity extends AppCompatActivity {
                     createNotification(path);
                 }
                 else if (selectedButton.equals(getResources().getString(R.string.file))) {
-                    String path3 = exportDB(Schema.Report.TABLE_NAME2, "ReportData");
+                    String path3 = exportDB(Schema.Report.TABLE_NAME2, getResources().getString(R.string.file1_name));
                     createNotification(path3);
-                    String path2 = exportDB(Schema.PatientHealth.TABLE_NAME4, "PatientHealthData");
+                    String path2 = exportDB(Schema.PatientHealth.TABLE_NAME4, getResources().getString(R.string.file4_name));
                     createNotification(path2);
-                    String path = exportDB(Schema.Patient.TABLE_NAME1, "PatientGeneralData");
+                    String path = exportDB(Schema.Patient.TABLE_NAME1, getResources().getString(R.string.file3_name));
                     createNotification(path);
-                    String path1 = exportDB(Schema.Accident.TABLE_NAME3, "AccidentData");
+                    String path1 = exportDB(Schema.Accident.TABLE_NAME3, getResources().getString(R.string.file2_name));
                     createNotification(path1);
                 }
              /*   if (database.isChecked()) {
@@ -200,7 +200,7 @@ public class ExportActivity extends AppCompatActivity {
                 }
                 bw.flush();
                 Log.i(TAG,"Exported Successfully.");
-                Toast.makeText(getApplicationContext(),"Exported Successfully.",Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getApplicationContext(),"Exported Successfully.",Toast.LENGTH_SHORT).show();
             }
         } catch (Exception ex) {
             if (sqldb.isOpen()) {

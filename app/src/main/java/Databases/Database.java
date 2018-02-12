@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
+import android.util.Log;
 
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
@@ -13,6 +14,8 @@ import model.AccidentDetails;
 import model.AccidentRecord;
 import model.Patient;
 import model.PatientHealth;
+
+import static com.example.yumnaasim.rtirpc.ShareActivity.TAG;
 
 /**
  * Created by YumnaAsim on 11/4/2017.
@@ -29,21 +32,7 @@ public class Database extends SQLiteOpenHelper {
 
     }
 
-    /*this method insert data in the accident record table*/
-/*    public void addToRecord(AccidentRecord record)
-    {
 
-
-       *//* String query = String.format("INSERT INTO "+TABLE_NAME+" ("+COL_2+","+COL_3+","+COL_4+","+COL_5+","+COL_6+")"
-                        +" VALUES('%s','%s','%s','%s','%s');",
-                record.getDate(),
-                record.getEmergencyNo(),
-                record.getHospitalName(),
-                record.getDataCollectorName(),
-                record.getTimestamp());
-        sqLiteDatabase.execSQL(query);*//*
-      *//*  sqLiteDatabase.close();*//*
-    }*/
     /*this method insert data in the accident record table*/
     public void insertData(Patient patient,AccidentRecord record, AccidentDetails accidentDetails, PatientHealth patientHealth)
     {
@@ -108,112 +97,8 @@ public class Database extends SQLiteOpenHelper {
 
         long healthID = sqLiteDatabase.insert(Schema.PatientHealth.TABLE_NAME4,null,contentValues3);
 
-        /*String query = String.format("INSERT INTO "+TABLE_NAME1+" ("+PAT_COL_10+","+PAT_COL_1+","+PAT_COL_2+","+PAT_COL_3+","+PAT_COL_4+","+PAT_COL_5+","+PAT_COL_6+","+PAT_COL_7+","+PAT_COL_8+","+PAT_COL_9+")"
-                        +" VALUES('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s');",
-                patient.getName(),
-                patient.getAge(),
-                patient.getAddress(),
-                patient.getMobile(),
-                patient.getOccupation(),
-                patient.getGender(),
-                patient.getDistractedBy(),
-                patient.getLane(),
-                patient.getDisposal(),
-                patient.getPatientState());
-        sqLiteDatabase.execSQL(query);*/
-       /* sqLiteDatabase.close();
-        String query = String.format("INSERT INTO "+TABLE_NAME1+" ("+PAT_COL_10+","+PAT_COL_1+","+PAT_COL_2+","+PAT_COL_3+","+PAT_COL_4+")"
-                        +" VALUES('%s','%s','%s','%s','%s');",
-                patient.getName(),
-                patient.getAge(),
-                patient.getAddress(),
-                patient.getMobile(),
-                patient.getOccupation());*/
     }
 
- /*   public void addToPatientHealth(PatientHealth patient)
-    {
-        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
-
-        String query = String.format("INSERT INTO "+TABLE_NAME2+" ("+HEA_COL_1+","+HEA_COL_2+","+HEA_COL_3+","+HEA_COL_4+","+HEA_COL_5+","+HEA_COL_6+","+HEA_COL_7+","+HEA_COL_8+","+HEA_COL_9+","+HEA_COL_10+","+HEA_COL_11+","+HEA_COL_12+","+HEA_COL_13+")"
-                        +" VALUES('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s');",
-                patient.getRespiratorRate(),
-                patient.getBloodPressure(),
-                patient.getGcs(),
-                patient.getEyeResponse1(),
-                patient.getVerbalResponse1(),
-                patient.getEyeResponse2(),
-                patient.getHeadISS(),
-                patient.getChestISS(),
-                patient.getExtermityISS(),
-                patient.getFaceISS(),
-                patient.getAbdomenISS(),
-                patient.getExternalISS(),
-                patient.getDoctorNotes()
-        );
-        sqLiteDatabase.execSQL(query);
-        sqLiteDatabase.close();
-    }
-
-    public void addToAccidentDetails(AccidentDetails details)
-    {
-        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
-
-        String query = String.format("INSERT INTO "+TABLE_NAME3+" ("+ACC_COL_1+","+ACC_COL_2+","+ACC_COL_3+","+ACC_COL_4+","+ACC_COL_5+","+ACC_COL_6+","+ACC_COL_7+","+ACC_COL_8+","+ACC_COL_9+","+ACC_COL_10+","+ACC_COL_11+","+ACC_COL_12+")"
-                        +" VALUES('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s');",
-             details.getTimeAccident(),
-                details.getTimeArrival(),
-                details.getArrivalVehicle(),
-                details.getAmbulanceName(),
-                details.getHistoryProvider(),
-                details.getTravellingReason(),
-                details.getVehicle1(),
-                details.getVehicle2(),
-                details.getCollisionType(),
-                details.getLocation(),
-                details.getLocDetails(),
-                details.getLocDescription()
-        );
-        sqLiteDatabase.execSQL(query);
-        sqLiteDatabase.close();
-    }
-
-    public PatientHealth getPatientHealthDetails(){
-        StringBuffer stringBuffer = new StringBuffer();
-        StringBuffer stringBuffer1 = new StringBuffer();
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " +TABLE_NAME2+" " ,null);
-
-        while(cursor.moveToNext()){
-            stringBuffer.append(cursor.getString(2)).append("\n ");
-            stringBuffer1.append(cursor.getString(13)).append("\n ");
-
-        }
-        String bloodPressure = stringBuffer.toString();
-        PatientHealth patientHealth = new PatientHealth();
-        patientHealth.setBloodPressure(bloodPressure);
-        patientHealth.setDoctorNotes(stringBuffer1.toString());
-        sqLiteDatabase.close();
-        return patientHealth;
-    }
-    public Cursor getPatientDetails(){
-
-        StringBuffer stringBuffer = new StringBuffer();
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " +TABLE_NAME1+" " ,null);
-
-      *//*  while(cursor.moveToNext()){
-            stringBuffer.append(cursor.getString(1)).append("   ")
-                    .append(cursor.getString(2)).append("   ")
-                    .append(cursor.getString(3)).append("   ")
-                    .append(cursor.getString(4)).append("   ")
-                    .append("\n");
-
-        }
-
-        sqLiteDatabase.close();
-        return stringBuffer.toString();*//*
-      return cursor;
-
-    }*/
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -292,6 +177,18 @@ public class Database extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
+    }
+
+    public void deleteData()
+    {
+        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+        int value = sqLiteDatabase.delete(Schema.Patient.TABLE_NAME1,null,null);
+        sqLiteDatabase.delete(Schema.Accident.TABLE_NAME3,null,null);
+        sqLiteDatabase.delete(Schema.PatientHealth.TABLE_NAME4,null,null);
+        sqLiteDatabase.delete(Schema.Report.TABLE_NAME2,null,null);
+        Log.v(TAG,""+value);
+
 
     }
 }

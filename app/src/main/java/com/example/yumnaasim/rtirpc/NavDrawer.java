@@ -132,6 +132,11 @@ public class NavDrawer extends AppCompatActivity
         }else if (id == R.id.nav_backup) {
             startActivity(new Intent(NavDrawer.this,ShareActivity.class));
         }
+        else if (id == R.id.nav_clear) {
+            startActivity(new Intent(NavDrawer.this,DeleteActivity.class));
+        }else if (id == R.id.nav_settings) {
+            startActivity(new Intent(NavDrawer.this,SettingsActivity.class));
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

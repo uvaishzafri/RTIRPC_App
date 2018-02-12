@@ -153,7 +153,7 @@ Email: info@roadsafety.pk, rtirpc@gmail.com</i></string>
 
     <string name="term3">For such situations, please proceed to RTIRPC to complete the accident reporting within the next working day.\n\nDo note that for (3) and (4), you have to make a police report before you proceed to report the accident.</string>
 
-    <string name="export_txt">Select data to export:</string>
+    <string name="export_txt">Select data to export</string>
 
     <string name="file1">Only Report Data</string>
     <string name="file2">Only Accident Data</string>
@@ -161,9 +161,94 @@ Email: info@roadsafety.pk, rtirpc@gmail.com</i></string>
     <string name="file4">Only Patient Health Data</string>
     <string name="file">All Data</string>
 
-    <string name="share_txt2">Share and send the exported data or upload it on the cloud (i.e. Drive).</string>
+    <string name="file1_name">ReportData</string>
+    <string name="file2_name">AccidentData</string>
+    <string name="file3_name">PatientGeneralData</string>
+    <string name="file4_name">PatientHealthData</string>
 
-    <string name="share_txt">Select data to share:</string>
-    <string name="export_txt2">The data is exported in file(.csv) format.\nOpen the exported file(.csv) in supported file extension application (i.e. Excel).</string>
 
+    <string name="share_txt2">Send the exported data or upload it to the cloud (i.e. Drive).</string>
+
+    <string name="share_txt">Select data to share</string>
+    <string name="export_txt2">Open the exported file in Excel.</string>
+
+    <string name="del_title">Delete Data</string>
+    <string name="del_subtxt">Delete data from all files.\nMake sure you have back up the saved data.</string>
+    <string name="alert_msg">Are you sure you want to delete all data?</string>
+
+    <string name="notify_sms"><b>Accident Reporting</b>\n\nAn accident take place at </string>
+    <string name="notfiy_subtxt">\n\nReported by Road Traffic Injury Research and Prevention Center.</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="list_preference_entries">
+        <item>Entry 1</item>
+        <item>Entry 2</item>
+        <item>Entry 3</item>
+    </string-array>
+
+    <string-array name="list_preference_entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="multi_select_list_preference_default_value" />
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
 </resources>
