@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:title="@string/run_by_locality"
+        android:defaultValue="@string/mode_default"
+        android:key="@string/mode_key"
+        android:entries="@array/run_by_locality_labels"
+        android:entryValues="@array/run_by_locality_values"/>
+    <EditTextPreference
+        android:title="@string/change_number"
+        android:defaultValue="@string/default_number"
+        android:key="@string/change_number"
+        android:id="@+id/ip"
+        android:selectAllOnFocus="true"
+        android:inputType="number"/>
+    <EditTextPreference
+        android:title="@string/change_email"
+        android:defaultValue="@string/default_email"
+        android:key="@string/change_email"
+        android:id="@+id/cs_port"
+        android:selectAllOnFocus="true"
+        android:inputType="textEmailAddress"/>
+    <!--<EditTextPreference
+        android:title="@string/live_stream_port"
+        android:defaultValue="@string/default_lv_port"
+        android:key="@string/live_stream_port"
+        android:id="@+id/lv_port"
+        android:selectAllOnFocus="true"
+        android:inputType="number"/>
+
+    <EditTextPreference
+        android:title="@string/change_channel_ID"
+        android:defaultValue="@string/default_chanelID"
+        android:key="@string/chanel_key"
+        android:id="@+id/channel"
+        android:selectAllOnFocus="true"
+        android:inputType="number"/>-->
+</PreferenceScreen>

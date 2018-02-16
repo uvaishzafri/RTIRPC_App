@@ -8,8 +8,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 import android.util.Log;
 
-import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
-
 import model.AccidentDetails;
 import model.AccidentRecord;
 import model.Patient;

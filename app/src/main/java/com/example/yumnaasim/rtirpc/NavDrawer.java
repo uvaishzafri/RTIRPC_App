@@ -1,11 +1,13 @@
 package com.example.yumnaasim.rtirpc;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Environment;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -47,6 +49,10 @@ public class NavDrawer extends AppCompatActivity
         this.setTitle("Home");
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        String mode = sharedPreferences.getString(getString(R.string.mode_key),
+                getString(R.string.mode_default));
+        Log.v(TAG,mode);
 
         CardView cardView = (CardView) findViewById(R.id.cv1);
         cardView.setOnClickListener(new View.OnClickListener() {

@@ -51,7 +51,6 @@
             android:name=".MainActivity"
             android:parentActivityName=".NavDrawer"
             android:screenOrientation="portrait" />
-        <activity android:name=".Home" />
         <activity
             android:name=".Report"
             android:hardwareAccelerated="true"
@@ -99,12 +98,14 @@
             android:name=".ShareActivity"
             android:parentActivityName=".NavDrawer" />
         <activity android:name=".DeleteActivity"
-            android:label="Delete"
+            android:label="@string/clear_data"
             android:parentActivityName=".NavDrawer"/>
+
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:parentActivityName=".NavDrawer"></activity>
+            android:parentActivityName=".NavDrawer">
+        </activity>
     </application>
 
 </manifest>
