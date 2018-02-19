@@ -14,13 +14,10 @@
             android:id="@+id/nav_export"
             android:icon="@drawable/ic_file_upload_black_24dp"
             android:title="Export Data" />
-    </group>
 
-    <item android:title="Communicate">
-        <menu>
             <item
                 android:id="@+id/nav_backup"
-                android:icon="@drawable/ic_backup_black_24dp"
+                android:icon="@drawable/ic_share_black_24dp"
                 android:title="Share Data" />
 
             <item
@@ -29,11 +26,15 @@
                 android:title="Clear Data" />
 
             <item
+                android:id="@+id/nav_reports"
+                android:icon="@drawable/ic_assignment_black_24dp"
+                android:title="My Reports" />
+
+            <item
                 android:id="@+id/nav_settings"
                 android:icon="@drawable/ic_settings_black_24dp"
                 android:title="Settings" />
 
-        </menu>
-    </item>
+    </group>
 
 </menu>

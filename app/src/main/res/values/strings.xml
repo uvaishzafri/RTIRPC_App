@@ -173,10 +173,14 @@ Email: info@roadsafety.pk, rtirpc@gmail.com</i></string>
 
     <string name="share_txt">Select data to share</string>
     <string name="export_txt2">Open the exported file in Excel.</string>
-
+<!--Delete activity strings-->
     <string name="del_title">Clear Data</string>
-    <string name="del_subtxt">Clear data from all files.\nMake sure you have back up the saved data.</string>
+    <string name="del_subtxt">Clear data from all files.\nMake sure you have back up the data.</string>
     <string name="alert_msg">Are you sure you want to clear all data?</string>
+    <string name="space_txt">Space occupied</string>
+    <string name="db_txt">Total database size</string>
+    <string name="db_txt2">Average used (%)</string>
+    <string name="db_txt3">Free</string>
 
     <string name="notify_sms"><b>Accident Reporting</b>\n\nAn accident take place at </string>
     <string name="notfiy_subtxt">\n\nReported by Road Traffic Injury Research and Prevention Center.</string>

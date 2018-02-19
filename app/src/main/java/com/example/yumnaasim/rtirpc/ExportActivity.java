@@ -4,6 +4,7 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -15,6 +16,7 @@ import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.NotificationCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -66,49 +68,57 @@ public class ExportActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radio);
-                int id = radioGroup.getCheckedRadioButtonId();
-                RadioButton radioButton = (RadioButton) findViewById(id);
-                String selectedButton = radioButton.getText().toString();
+                new AlertDialog.Builder(ExportActivity.this)
+                            .setIcon(R.drawable.ic_warning_black_24dp)
+                            .setTitle("Clearing Data")
+                            .setMessage(getResources().getString(R.string.alert_msg))
+                            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
 
-                if (selectedButton.equals(getResources().getString(R.string.file2))) {
-                    String path = exportDB(Schema.Accident.TABLE_NAME3, "AccidentData");
-                    createNotification(path);
-                }
-                else if (selectedButton.equals(getResources().getString(R.string.file3))) {
-                    String path = exportDB(Schema.Patient.TABLE_NAME1, "PatientGeneralData");
-                    createNotification(path);
-                }
-               else if (selectedButton.equals(getResources().getString(R.string.file4))) {
-                    String path = exportDB(Schema.PatientHealth.TABLE_NAME4, "PatientHealthData");
-                    createNotification(path);
-                }
-               else if (selectedButton.equals(getResources().getString(R.string.file1))) {
-                    String path = exportDB(Schema.Report.TABLE_NAME2, "ReportData");
-                    createNotification(path);
-                }
-                else if (selectedButton.equals(getResources().getString(R.string.file))) {
-                    String path3 = exportDB(Schema.Report.TABLE_NAME2, getResources().getString(R.string.file1_name));
-                    createNotification(path3);
-                    String path2 = exportDB(Schema.PatientHealth.TABLE_NAME4, getResources().getString(R.string.file4_name));
-                    createNotification(path2);
-                    String path = exportDB(Schema.Patient.TABLE_NAME1, getResources().getString(R.string.file3_name));
-                    createNotification(path);
-                    String path1 = exportDB(Schema.Accident.TABLE_NAME3, getResources().getString(R.string.file2_name));
-                    createNotification(path1);
-                }
+                                    RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radio);
+                                    int id = radioGroup.getCheckedRadioButtonId();
+                                    RadioButton radioButton = (RadioButton) findViewById(id);
+                                    String selectedButton = radioButton.getText().toString();
+                                    if (selectedButton.equals(getResources().getString(R.string.file2))) {
+                                        String path = exportDB(Schema.Accident.TABLE_NAME3, "AccidentData");
+                                        createNotification(path);
+                                    }
+                                    else if (selectedButton.equals(getResources().getString(R.string.file3))) {
+                                        String path = exportDB(Schema.Patient.TABLE_NAME1, "PatientGeneralData");
+                                        createNotification(path);
+                                    }
+                                    else if (selectedButton.equals(getResources().getString(R.string.file4))) {
+                                        String path = exportDB(Schema.PatientHealth.TABLE_NAME4, "PatientHealthData");
+                                        createNotification(path);
+                                    }
+                                    else if (selectedButton.equals(getResources().getString(R.string.file1))) {
+                                        String path = exportDB(Schema.Report.TABLE_NAME2, "ReportData");
+                                        createNotification(path);
+                                    }
+                                    else if (selectedButton.equals(getResources().getString(R.string.file))) {
+                                        String path3 = exportDB(Schema.Report.TABLE_NAME2, getResources().getString(R.string.file1_name));
+                                        createNotification(path3);
+                                        String path2 = exportDB(Schema.PatientHealth.TABLE_NAME4, getResources().getString(R.string.file4_name));
+                                        createNotification(path2);
+                                        String path = exportDB(Schema.Patient.TABLE_NAME1, getResources().getString(R.string.file3_name));
+                                        createNotification(path);
+                                        String path1 = exportDB(Schema.Accident.TABLE_NAME3, getResources().getString(R.string.file2_name));
+                                        createNotification(path1);
+                                    }
+
+                                }
+                            })
+                            .setNegativeButton("No", null)
+                            .show();
+
              /*   if (database.isChecked()) {
                     exportDB(null, "RTIRPC_Database");
 
                 }*/
             }
         });
-
-
     }
-
-
-
 
     private String exportDB(String tableName, String fileName) {
         Database database = new Database(getApplicationContext());
@@ -212,6 +222,7 @@ public class ExportActivity extends AppCompatActivity {
         } finally {
 
         }
+        database.close();
         return saveFile.getPath();
 
     }

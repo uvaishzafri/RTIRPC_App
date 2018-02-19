@@ -28,6 +28,7 @@ public class Database extends SQLiteOpenHelper {
 
         super(context, DB_NAME, null, DB_VER);
 
+
     }
 
 
@@ -187,6 +188,18 @@ public class Database extends SQLiteOpenHelper {
         sqLiteDatabase.delete(Schema.Report.TABLE_NAME2,null,null);
         Log.v(TAG,""+value);
 
+    }
 
+    public long sizeDatabase()
+    {
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+        return sqLiteDatabase.getMaximumSize();
+
+    }
+
+    public String dbPath()
+    {
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+        return sqLiteDatabase.getPath();
     }
 }
