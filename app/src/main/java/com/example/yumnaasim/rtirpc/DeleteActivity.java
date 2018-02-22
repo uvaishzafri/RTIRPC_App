@@ -22,11 +22,15 @@ import Databases.Schema;
 public class DeleteActivity extends AppCompatActivity {
     private static final String TAG = DeleteActivity.class.getSimpleName();
     File accidentData,reportData,patientData,healthData;
+    TextView size;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delete);
+        size = (TextView) findViewById(R.id.size);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar2);
         accidentData = new File(Environment.getExternalStorageDirectory(),getResources().getString(R.string.file2_name)+".csv");
         reportData = new File(Environment.getExternalStorageDirectory(),getResources().getString(R.string.file1_name)+".csv");
         patientData = new File(Environment.getExternalStorageDirectory(),getResources().getString(R.string.file3_name)+".csv");
@@ -87,12 +91,12 @@ public class DeleteActivity extends AppCompatActivity {
 
     private void fileSize(File accidentData, File reportData, File patientData, File healthData) {
         long totalSize = accidentData.length()+reportData.length()+patientData.length()+healthData.length();
-        TextView size = (TextView) findViewById(R.id.size);
         Log.v(TAG,"File size in bytes is : "+totalSize);
         totalSize = totalSize/1024;
         size.setText(totalSize+" ");
+
         Log.v(TAG,"File size in KB is : "+totalSize);
-        ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar2);
+
         progressBar.setProgress((int) totalSize);
     }
 
@@ -123,7 +127,8 @@ public class DeleteActivity extends AppCompatActivity {
         patientData.delete();
         healthData.delete();
         TextView size = (TextView) findViewById(R.id.size);
-        size.setText(0+" KB");
+        size.setText(0+" ");
+        progressBar.setProgress(0);
     }
 
 }
