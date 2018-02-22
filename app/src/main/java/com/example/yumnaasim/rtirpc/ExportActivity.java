@@ -70,8 +70,8 @@ public class ExportActivity extends AppCompatActivity {
             public void onClick(View v) {
                 new AlertDialog.Builder(ExportActivity.this)
                             .setIcon(R.drawable.ic_warning_black_24dp)
-                            .setTitle("Clearing Data")
-                            .setMessage(getResources().getString(R.string.alert_msg))
+                            .setTitle(getResources().getString(R.string.alert_title_export))
+                            .setMessage(getResources().getString(R.string.alert_subtxt_export))
                             .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {

@@ -94,7 +94,12 @@ public class Main3Activity extends Activity {
                 health.setExternalISS(externalISS);
                 health.setDoctorNotes(dtNotes);
 
-                for (int i=0;i<10;i++) {
+                /*new Database(Main3Activity.this).insertData(patient,
+                        accidentRecord,
+                        details,
+                        health);
+*/
+                for (int i=0;i<40;i++) {
                     new Database(Main3Activity.this).insertData(patient,
                             accidentRecord,
                             details,

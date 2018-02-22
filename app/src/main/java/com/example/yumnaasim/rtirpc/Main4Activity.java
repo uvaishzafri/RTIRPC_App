@@ -29,6 +29,7 @@ public class Main4Activity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
+        checkPermission();
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
         Button button = (Button) findViewById(R.id.btnNewCase);
@@ -43,7 +44,6 @@ public class Main4Activity extends Activity {
         buttonNotify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                checkPermission();
                 Bundle bundle = getIntent().getExtras();
                 String location = bundle.getString("Location");
                 String mode = sharedPreferences.getString(getString(R.string.mode_key),
