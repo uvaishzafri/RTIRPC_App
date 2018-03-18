@@ -97,15 +97,15 @@
         <activity
             android:name=".ShareActivity"
             android:parentActivityName=".NavDrawer" />
-        <activity android:name=".DeleteActivity"
+        <activity
+            android:name=".DeleteActivity"
             android:label="@string/clear_data"
-            android:parentActivityName=".NavDrawer"/>
-
+            android:parentActivityName=".NavDrawer" />
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:parentActivityName=".NavDrawer">
-        </activity>
+            android:parentActivityName=".NavDrawer"></activity>
+        <activity android:name=".MyReports"></activity>
     </application>
 
 </manifest>
