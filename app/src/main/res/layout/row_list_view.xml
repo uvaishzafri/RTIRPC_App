@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/recordNo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/form_txt"
+        android:text="Record # 01"/>
+
+    <TextView
+        android:id="@+id/area"
+        android:paddingTop="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/sub_txt"
+        android:text="Area : Nazimabad"/>
+
+    <LinearLayout
+        android:paddingTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        >
+
+        <TextView
+            android:id="@+id/date"
+            android:textAlignment="gravity"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:text=" 2018-02-11"
+            android:drawableTint="@color/grayColor"
+            android:drawableLeft="@drawable/ic_event_note_black_24dp"
+           />
+
+        <TextView
+            android:id="@+id/time"
+            android:textAlignment="gravity"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:text=" 19:12:32"
+            android:drawableTint="@color/grayColor"
+            android:drawableLeft="@drawable/ic_access_time_black_24dp"
+            />
+    </LinearLayout>
+
+
+</LinearLayout>
