@@ -12,7 +12,7 @@ public class PreviewReport extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preview_report);
         getSupportActionBar()
-                .setTitle(Html.fromHtml("<font color=\"#FFFFFF\">" + "Preview Report" + "</font>"));
+                .setTitle(Html.fromHtml("<font color=\"#FFFFFF\">" + "Preview Records" + "</font>"));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         getView();

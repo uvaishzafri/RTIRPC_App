@@ -27,7 +27,7 @@ public class Schema {
 
     public static final class Report implements BaseColumns{
 
-        public static final String TABLE_NAME2 = "Report";
+        public static final String TABLE_NAME2 = "Records";
         public static final String DATE = "date";
         public static final String EMER = "emergencyNo";
         public static final String HOSPITAL = "hospitalName";

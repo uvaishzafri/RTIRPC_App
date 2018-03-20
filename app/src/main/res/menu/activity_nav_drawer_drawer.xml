@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group android:checkableBehavior="single">
+    <group
+        android:id="@+id/group1" android:checkableBehavior="single">
         <item
             android:id="@+id/nav_about"
             android:icon="@drawable/about"
@@ -10,31 +11,35 @@
             android:id="@+id/nav_terms"
             android:icon="@drawable/ic_description_black_24dp"
             android:title="Terms and Agreement" />
-        <item
-            android:id="@+id/nav_export"
-            android:icon="@drawable/ic_file_upload_black_24dp"
-            android:title="Export Data" />
-
-            <item
-                android:id="@+id/nav_backup"
-                android:icon="@drawable/ic_share_black_24dp"
-                android:title="Share Data" />
-
-            <item
-                android:id="@+id/nav_clear"
-                android:icon="@drawable/ic_delete_forever_black_24dp"
-                android:title="Clear Data" />
-
             <item
                 android:id="@+id/nav_reports"
                 android:icon="@drawable/ic_assignment_black_24dp"
                 android:title="My Reports" />
 
-            <item
-                android:id="@+id/nav_settings"
-                android:icon="@drawable/ic_settings_black_24dp"
-                android:title="Settings" />
+    </group>
 
+    <group
+        android:id="@+id/group2" android:checkableBehavior="single">
+    <item
+        android:id="@+id/nav_backup"
+        android:icon="@drawable/ic_share_black_24dp"
+        android:title="Share" />
+
+        <item
+            android:id="@+id/nav_export"
+            android:icon="@drawable/ic_file_upload_black_24dp"
+            android:title="Export" />
+        <item
+            android:id="@+id/nav_clear"
+            android:icon="@drawable/ic_delete_forever_black_24dp"
+            android:title="Clear" />
+    </group>
+
+    <group android:id="@+id/group3">
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_settings_black_24dp"
+            android:title="Settings" />
     </group>
 
 </menu>

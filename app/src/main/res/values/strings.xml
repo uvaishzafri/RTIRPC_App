@@ -241,4 +241,7 @@ Email: info@roadsafety.pk, rtirpc@gmail.com</i></string>
     <string name="default_chanelID">171371</string>
     <string name="chanel_key">channel_ID</string>
     <string name="change_channel_ID">Change Channel Id</string>
+
+    <!--activity labels-->
+    <string name="label_reports">History</string>
 </resources>

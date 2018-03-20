@@ -105,7 +105,10 @@
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings"
             android:parentActivityName=".NavDrawer"></activity>
-        <activity android:name=".MyReports"></activity>
+
+        <activity android:name=".MyReports"
+            android:label="@string/label_reports"
+            android:parentActivityName=".NavDrawer"></activity>
     </application>
 
 </manifest>
