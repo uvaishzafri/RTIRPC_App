@@ -3,6 +3,7 @@ package Databases;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
@@ -96,6 +97,7 @@ public class Database extends SQLiteOpenHelper {
 
         long healthID = sqLiteDatabase.insert(Schema.PatientHealth.TABLE_NAME4,null,contentValues3);
 
+        sqLiteDatabase.close();
     }
 
 
@@ -187,19 +189,33 @@ public class Database extends SQLiteOpenHelper {
         sqLiteDatabase.delete(Schema.PatientHealth.TABLE_NAME4,null,null);
         sqLiteDatabase.delete(Schema.Report.TABLE_NAME2,null,null);
         Log.v(TAG,""+value);
+        sqLiteDatabase.close();
 
     }
 
     public long sizeDatabase()
     {
         SQLiteDatabase sqLiteDatabase = getReadableDatabase();
-        return sqLiteDatabase.getMaximumSize();
+        long size =  sqLiteDatabase.getMaximumSize();
+        sqLiteDatabase.close();
+        return size;
 
     }
 
     public String dbPath()
     {
         SQLiteDatabase sqLiteDatabase = getReadableDatabase();
-        return sqLiteDatabase.getPath();
+        String path =  sqLiteDatabase.getPath();
+        sqLiteDatabase.close();
+        return path;
+    }
+
+    public long numOfReport()
+    {
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+        long rows = DatabaseUtils.queryNumEntries(sqLiteDatabase, Schema.Report.TABLE_NAME2);
+        sqLiteDatabase.close();
+        return rows;
+
     }
 }

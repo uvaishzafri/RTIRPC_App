@@ -25,6 +25,7 @@ import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedWriter;
@@ -60,6 +61,13 @@ public class ExportActivity extends AppCompatActivity {
         String[] permissions = {"android.permission.WRITE_EXTERNAL_STORAGE"};
         ActivityCompat.requestPermissions(this, permissions, 1);
         handleUserInput();
+        getNumOfReport();
+    }
+
+    private void getNumOfReport() {
+        TextView textView = (TextView) findViewById(R.id.no_of_report);
+        long rows = new Database(getApplicationContext()).numOfReport();
+        textView.setText(""+rows);
     }
 
     private void handleUserInput() {
@@ -68,14 +76,6 @@ public class ExportActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new AlertDialog.Builder(ExportActivity.this)
-                            .setIcon(R.drawable.ic_warning_black_24dp)
-                            .setTitle(getResources().getString(R.string.alert_title_export))
-                            .setMessage(getResources().getString(R.string.alert_subtxt_export))
-                            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-
                                     RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radio);
                                     int id = radioGroup.getCheckedRadioButtonId();
                                     RadioButton radioButton = (RadioButton) findViewById(id);
@@ -106,11 +106,6 @@ public class ExportActivity extends AppCompatActivity {
                                         String path1 = exportDB(Schema.Accident.TABLE_NAME3, getResources().getString(R.string.file2_name));
                                         createNotification(path1);
                                     }
-
-                                }
-                            })
-                            .setNegativeButton("No", null)
-                            .show();
 
              /*   if (database.isChecked()) {
                     exportDB(null, "RTIRPC_Database");
@@ -220,9 +215,11 @@ public class ExportActivity extends AppCompatActivity {
             }
 
         } finally {
-
+            c.close();
+            sqldb.close();
+            database.close();
         }
-        database.close();
+
         return saveFile.getPath();
 
     }
@@ -274,5 +271,7 @@ public class ExportActivity extends AppCompatActivity {
         Random random = new Random();
         return random.nextInt(9999 - 1000) + 1000;
     }
+
+
 
 }

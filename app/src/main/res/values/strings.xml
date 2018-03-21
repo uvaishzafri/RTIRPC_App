@@ -159,6 +159,9 @@ Email: info@roadsafety.pk, rtirpc@gmail.com</i></string>
     <string name="alert_title_export">Exporting Data</string>
     <string name="alert_subtxt_export">Are you sure you want to export data?</string>
 
+    <string name="report_num_txt1">Total No. of</string>
+    <string name="report_num_txt2">Accident Report</string>
+
     <string name="export_txt">Select data to export</string>
 
     <string name="file1">Only Report Data</string>

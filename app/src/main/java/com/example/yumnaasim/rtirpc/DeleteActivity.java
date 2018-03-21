@@ -51,20 +51,23 @@ public class DeleteActivity extends AppCompatActivity {
 
     private void getMaxDbSize() {
         /*getting maximum database size may grow*/
-        Database database = new Database(DeleteActivity.this);
-        database.deleteData();
-        long maxDbSize = database.sizeDatabase();
+        Database database1 = new Database(DeleteActivity.this);
+
 
         /*Reading current db size*/
-        File file = getApplicationContext().getDatabasePath(database.dbPath());
+        File file = getApplicationContext().getDatabasePath(database1.dbPath());
         long currentDbSize = file.length();
         Log.v(TAG,"Current DB size in bytes "+currentDbSize);
+
+        long maxDbSize = database1.sizeDatabase();
+
         double percentageUsed = (currentDbSize*100)/maxDbSize;
         Log.v(TAG,"Average used "+percentageUsed);
 
 
         double multiplicant = 1e-12;
         Log.v(TAG,"Multiplicant is "+multiplicant);
+
         Log.v(TAG,"Max Database size in bytes is : "+(maxDbSize)+" B");
         maxDbSize *= multiplicant;
 
@@ -82,7 +85,7 @@ public class DeleteActivity extends AppCompatActivity {
         TextView textView1 = (TextView) findViewById(R.id.free_db_size);
         textView1.setText(freeSize+" TB");
 
-        database.close();
+        database1.close();
 
 
 
@@ -111,7 +114,7 @@ public class DeleteActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         Database database = new Database(DeleteActivity.this);
                         database.deleteData();
-                        long size = database.sizeDatabase();
+                        /*long size = database.sizeDatabase();*/
                         deleteFiles(accidentData,reportData,patientData,healthData);
                         Toast.makeText(getApplicationContext(),"Deleted successfully!",Toast.LENGTH_SHORT).show();
                     }
