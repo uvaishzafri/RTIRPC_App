@@ -97,9 +97,9 @@ public class Main3Activity extends Activity {
                 /*new Database(Main3Activity.this).insertData(patient,
                         accidentRecord,
                         details,
-                        health);
-*/
-                for (int i=0;i<40;i++) {
+                        health);*/
+
+                for (int i=0;i<5;i++) {
                     new Database(Main3Activity.this).insertData(patient,
                             accidentRecord,
                             details,

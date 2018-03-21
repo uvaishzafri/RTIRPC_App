@@ -3,6 +3,7 @@ package Databases;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
@@ -30,7 +31,6 @@ public class Database extends SQLiteOpenHelper {
 
 
     }
-
 
     /*this method insert data in the accident record table*/
     public void insertData(Patient patient,AccidentRecord record, AccidentDetails accidentDetails, PatientHealth patientHealth)
@@ -201,5 +201,33 @@ public class Database extends SQLiteOpenHelper {
     {
         SQLiteDatabase sqLiteDatabase = getReadableDatabase();
         return sqLiteDatabase.getPath();
+    }
+
+    String[] data = new String[2];
+
+    public String[] getData(String rowID)
+    {
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+        //Cursor cursor = sqLiteDatabase.rawQuery("SELECT "+ Schema.Report.DATE+" FROM "+ Schema.Report.TABLE_NAME2+" WHERE "+ Schema.Report._ID+"="+rowID,null);
+        String from[] = { Schema.Report.DATE, Schema.Report.TIMESTAMP };
+        String where = Schema.Report._ID + "=?";
+        String[] whereArgs = new String[]{rowID+""};
+        Cursor cursor = sqLiteDatabase.query(Schema.Report.TABLE_NAME2, from, where, whereArgs, null, null, null, null);
+
+        if(cursor != null)
+        {
+            while(cursor.moveToNext()){
+                data[0] = cursor.getString(cursor.getColumnIndex(Schema.Report.DATE));
+                data[1] = cursor.getString(cursor.getColumnIndex(Schema.Report.TIMESTAMP));
+            }
+        }
+        return data;
+    }
+
+    public int numOfRecord()
+    {
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+        int numRows = (int) DatabaseUtils.queryNumEntries(sqLiteDatabase, Schema.Report.TABLE_NAME2);
+        return numRows;
     }
 }

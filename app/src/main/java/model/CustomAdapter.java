@@ -40,12 +40,12 @@ public class CustomAdapter extends ArrayAdapter<Records> implements View.OnClick
         TextView recordNo = (TextView) v.findViewById(R.id.recordNo);
         TextView date = (TextView) v.findViewById(R.id.date);
         TextView time = (TextView) v.findViewById(R.id.time);
-        TextView area = (TextView) v.findViewById(R.id.area);
+
 
         recordNo.setText("Record # "+dataModel.getRecordNum());
         date.setText("  "+dataModel.getDate());
         time.setText("  "+dataModel.getTime());
-        area.setText("Area: "+dataModel.getArea());
+
         v.setOnClickListener(this);
 
         return v;

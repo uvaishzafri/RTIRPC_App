@@ -8,13 +8,13 @@ public class Records {
     private int recordNum;
     String date;
     String time;
-    String area;
 
-    public Records(int recordNum, String date, String time, String area) {
+
+    public Records(int recordNum, String date, String time) {
         this.recordNum = recordNum;
         this.date = date;
         this.time = time;
-        this.area = area;
+
     }
 
     public int getRecordNum() {
@@ -41,11 +41,4 @@ public class Records {
         this.time = time;
     }
 
-    public String getArea() {
-        return area;
-    }
-
-    public void setArea(String area) {
-        this.area = area;
-    }
 }
