@@ -30,36 +30,40 @@ public class MyReports extends AppCompatActivity {
     /*Reading data(time,date) from database and displaying it in the listview layout*/
     private void displayDataInList() {
 
-        String[] data,time;
-
+        String[] data, time;
 
         ArrayList<Records> arrayList = new ArrayList<>();
         Database database = new Database(getApplicationContext());
 
         int rows = database.numOfRecord();
 
-        for (int i=1;i<=rows;i++)
-        {
-            data = database.getData(String.valueOf(i));
-            time = data[1].split(" ");
-            arrayList.add(new Records(i,data[0], time[1]));
-        }
-        database.close();
-        CustomAdapter customAdapter = new CustomAdapter(this,arrayList);
+        if (rows == 0) {
 
-        ListView listView = (ListView) findViewById(R.id.listview);
-        //listView.setAdapter(customAdapter);
 
-        AlphaInAnimationAdapter animationAdapter = new AlphaInAnimationAdapter(customAdapter);
-        animationAdapter.setAbsListView(listView);
-        listView.setAdapter(animationAdapter);
+        } else {
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+            for (int i = 1; i <= rows; i++) {
+                data = database.getData(String.valueOf(i));
+                time = data[1].split(" ");
+                arrayList.add(new Records(i, data[0], time[1]));
             }
-        });
+            database.close();
+            CustomAdapter customAdapter = new CustomAdapter(this, arrayList);
 
+            ListView listView = (ListView) findViewById(R.id.listview);
+            //listView.setAdapter(customAdapter);
+
+            AlphaInAnimationAdapter animationAdapter = new AlphaInAnimationAdapter(customAdapter);
+            animationAdapter.setAbsListView(listView);
+            listView.setAdapter(animationAdapter);
+
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                }
+            });
+
+        }
     }
 }
