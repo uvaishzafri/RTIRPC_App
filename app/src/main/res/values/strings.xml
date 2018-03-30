@@ -244,4 +244,8 @@ Email: info@roadsafety.pk, rtirpc@gmail.com</i></string>
 
     <!--activity labels-->
     <string name="label_reports">History</string>
+
+    <!--MyReport screen strings-->
+    <string name="txt">No data found\n
+                        You\'ve not inserted any data yet.</string>
 </resources>

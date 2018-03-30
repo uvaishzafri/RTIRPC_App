@@ -205,7 +205,7 @@ public class Database extends SQLiteOpenHelper {
 
     String[] data = new String[2];
 
-    public String[] getData(String rowID)
+    public String[] getDateTimeData(String rowID)
     {
         SQLiteDatabase sqLiteDatabase = getReadableDatabase();
         //Cursor cursor = sqLiteDatabase.rawQuery("SELECT "+ Schema.Report.DATE+" FROM "+ Schema.Report.TABLE_NAME2+" WHERE "+ Schema.Report._ID+"="+rowID,null);
@@ -224,10 +224,23 @@ public class Database extends SQLiteOpenHelper {
         return data;
     }
 
-    public int numOfRecord()
+    public int getTotalNumOfRecords()
     {
         SQLiteDatabase sqLiteDatabase = getReadableDatabase();
         int numRows = (int) DatabaseUtils.queryNumEntries(sqLiteDatabase, Schema.Report.TABLE_NAME2);
         return numRows;
+    }
+
+    String rowID;
+    public int getFirstRecordID()
+    {
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT "+Schema.Report._ID+" FROM "+Schema.Report.TABLE_NAME2+" ORDER BY "+Schema.Report._ID+" ASC LIMIT 1",null);
+
+        if (cursor.moveToFirst()) {
+            rowID = cursor.getString(cursor.getColumnIndex(Schema.Report._ID));
+        }
+        cursor.close();
+        return Integer.parseInt(rowID);
     }
 }

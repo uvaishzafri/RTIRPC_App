@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.nhaarman.listviewanimations.appearance.simple.AlphaInAnimationAdapter;
@@ -35,23 +36,24 @@ public class MyReports extends AppCompatActivity {
         ArrayList<Records> arrayList = new ArrayList<>();
         Database database = new Database(getApplicationContext());
 
-        int rows = database.numOfRecord();
+        int totalNumOfRows =database.getTotalNumOfRecords()-1;
 
-        if (rows == 0) {
+        if (totalNumOfRows != 0) {
+            ListView listView = (ListView) findViewById(R.id.listview);
+            listView.setVisibility(View.VISIBLE);
+            LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linearLayout);
+            linearLayout.setVisibility(View.GONE);
 
+            int rowID = database.getFirstRecordID();
+            int rows = (totalNumOfRows+rowID);
 
-        } else {
-
-            for (int i = 1; i <= rows; i++) {
-                data = database.getData(String.valueOf(i));
+            for (int i = rowID; i <=rows; i++) {
+                data = database.getDateTimeData(String.valueOf(i));
                 time = data[1].split(" ");
                 arrayList.add(new Records(i, data[0], time[1]));
             }
             database.close();
             CustomAdapter customAdapter = new CustomAdapter(this, arrayList);
-
-            ListView listView = (ListView) findViewById(R.id.listview);
-            //listView.setAdapter(customAdapter);
 
             AlphaInAnimationAdapter animationAdapter = new AlphaInAnimationAdapter(customAdapter);
             animationAdapter.setAbsListView(listView);
