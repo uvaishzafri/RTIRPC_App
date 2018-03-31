@@ -36,7 +36,10 @@ public class MyReports extends AppCompatActivity {
         ArrayList<Records> arrayList = new ArrayList<>();
         Database database = new Database(getApplicationContext());
 
-        int totalNumOfRows =database.getTotalNumOfRecords()-1;
+        int totalNumOfRows =database.getTotalNumOfRecords();
+
+        if (totalNumOfRows!=0)
+        totalNumOfRows = totalNumOfRows-1;
 
         if (totalNumOfRows != 0) {
             ListView listView = (ListView) findViewById(R.id.listview);

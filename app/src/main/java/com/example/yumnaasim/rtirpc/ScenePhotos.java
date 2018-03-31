@@ -30,10 +30,8 @@ public class ScenePhotos extends AppCompatActivity {
         getSupportActionBar()
                 .setTitle(Html.fromHtml("<font color=\"#FFFFFF\">" + "Accident Scene" + "</font>"));
 
-
         checkPermission();
         handleUserInput();
-
     }
 
     private void checkPermission() {
@@ -50,8 +48,14 @@ public class ScenePhotos extends AppCompatActivity {
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(cameraIntent, 1);
+                if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CAMERA)
+                        == PackageManager.PERMISSION_DENIED){
+                    Toast.makeText(getApplicationContext(),"Please grant permission to take photo",Toast.LENGTH_LONG).show();
+
+                }else {
+                    Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                    startActivityForResult(cameraIntent, 1);
+                }
             }
         });
 

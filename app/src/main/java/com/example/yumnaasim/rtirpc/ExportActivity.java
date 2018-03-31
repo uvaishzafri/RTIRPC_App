@@ -1,5 +1,6 @@
 package com.example.yumnaasim.rtirpc;
 
+import android.Manifest;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -13,9 +14,11 @@ import android.database.sqlite.SQLiteQueryBuilder;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.NotificationCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -55,7 +58,6 @@ public class ExportActivity extends AppCompatActivity {
         patient = (RadioButton) findViewById(R.id.checkBox2);
         health = (RadioButton) findViewById(R.id.checkBox3);
         report = (RadioButton) findViewById(R.id.checkBox4);
-       /* database = (RadioButton) findViewById(R.id.RadioButton5);*/
 
         String[] permissions = {"android.permission.WRITE_EXTERNAL_STORAGE"};
         ActivityCompat.requestPermissions(this, permissions, 1);
@@ -68,54 +70,39 @@ public class ExportActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new AlertDialog.Builder(ExportActivity.this)
-                            .setIcon(R.drawable.ic_warning_black_24dp)
-                            .setTitle(getResources().getString(R.string.alert_title_export))
-                            .setMessage(getResources().getString(R.string.alert_subtxt_export))
-                            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
+                if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                        == PackageManager.PERMISSION_DENIED){
+                    Toast.makeText(getApplicationContext(),"Please grant permission",Toast.LENGTH_LONG).show();
 
-                                    RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radio);
-                                    int id = radioGroup.getCheckedRadioButtonId();
-                                    RadioButton radioButton = (RadioButton) findViewById(id);
-                                    String selectedButton = radioButton.getText().toString();
-                                    if (selectedButton.equals(getResources().getString(R.string.file2))) {
-                                        String path = exportDB(Schema.Accident.TABLE_NAME3, "AccidentData");
-                                        createNotification(path);
-                                    }
-                                    else if (selectedButton.equals(getResources().getString(R.string.file3))) {
-                                        String path = exportDB(Schema.Patient.TABLE_NAME1, "PatientGeneralData");
-                                        createNotification(path);
-                                    }
-                                    else if (selectedButton.equals(getResources().getString(R.string.file4))) {
-                                        String path = exportDB(Schema.PatientHealth.TABLE_NAME4, "PatientHealthData");
-                                        createNotification(path);
-                                    }
-                                    else if (selectedButton.equals(getResources().getString(R.string.file1))) {
-                                        String path = exportDB(Schema.Report.TABLE_NAME2, "ReportData");
-                                        createNotification(path);
-                                    }
-                                    else if (selectedButton.equals(getResources().getString(R.string.file))) {
-                                        String path3 = exportDB(Schema.Report.TABLE_NAME2, getResources().getString(R.string.file1_name));
-                                        createNotification(path3);
-                                        String path2 = exportDB(Schema.PatientHealth.TABLE_NAME4, getResources().getString(R.string.file4_name));
-                                        createNotification(path2);
-                                        String path = exportDB(Schema.Patient.TABLE_NAME1, getResources().getString(R.string.file3_name));
-                                        createNotification(path);
-                                        String path1 = exportDB(Schema.Accident.TABLE_NAME3, getResources().getString(R.string.file2_name));
-                                        createNotification(path1);
-                                    }
+                }else {
 
-                                }
-                            })
-                            .setNegativeButton("No", null)
-                            .show();
-
-             /*   if (database.isChecked()) {
-                    exportDB(null, "RTIRPC_Database");
-
-                }*/
+                    RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radio);
+                    int id = radioGroup.getCheckedRadioButtonId();
+                    RadioButton radioButton = (RadioButton) findViewById(id);
+                    String selectedButton = radioButton.getText().toString();
+                    if (selectedButton.equals(getResources().getString(R.string.file2))) {
+                        String path = exportDB(Schema.Accident.TABLE_NAME3, "AccidentData");
+                        createNotification(path);
+                    } else if (selectedButton.equals(getResources().getString(R.string.file3))) {
+                        String path = exportDB(Schema.Patient.TABLE_NAME1, "PatientGeneralData");
+                        createNotification(path);
+                    } else if (selectedButton.equals(getResources().getString(R.string.file4))) {
+                        String path = exportDB(Schema.PatientHealth.TABLE_NAME4, "PatientHealthData");
+                        createNotification(path);
+                    } else if (selectedButton.equals(getResources().getString(R.string.file1))) {
+                        String path = exportDB(Schema.Report.TABLE_NAME2, "ReportData");
+                        createNotification(path);
+                    } else if (selectedButton.equals(getResources().getString(R.string.file))) {
+                        String path3 = exportDB(Schema.Report.TABLE_NAME2, getResources().getString(R.string.file1_name));
+                        createNotification(path3);
+                        String path2 = exportDB(Schema.PatientHealth.TABLE_NAME4, getResources().getString(R.string.file4_name));
+                        createNotification(path2);
+                        String path = exportDB(Schema.Patient.TABLE_NAME1, getResources().getString(R.string.file3_name));
+                        createNotification(path);
+                        String path1 = exportDB(Schema.Accident.TABLE_NAME3, getResources().getString(R.string.file2_name));
+                        createNotification(path1);
+                    }
+                }
             }
         });
     }
@@ -236,7 +223,7 @@ public class ExportActivity extends AppCompatActivity {
                 // save file
 
             } else {
-                Toast.makeText(getApplicationContext(), "PERMISSION_DENIED", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Grant permission to complete this action", Toast.LENGTH_SHORT).show();
             }
         }
     }
