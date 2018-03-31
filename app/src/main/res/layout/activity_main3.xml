@@ -388,7 +388,7 @@
                     xmlns:app="http://schemas.android.com/apk/res-auto"
                     app:buttonColor="@color/colorPrimary"
                     app:cornerRadius="4dp"
-                    android:layout_margin="8dp"
+                    android:layout_marginRight="8dp"
                     android:id="@+id/btnPrevious"
                     android:layout_alignParentBottom="true"
                     />
@@ -403,9 +403,7 @@
                     xmlns:app="http://schemas.android.com/apk/res-auto"
                     app:buttonColor="@color/colorPrimary"
                     app:cornerRadius="4dp"
-                    android:layout_margin="8dp"
-
-                    android:layout_alignParentBottom="true"
+                   android:layout_alignParentBottom="true"
                     />
             </LinearLayout>
 

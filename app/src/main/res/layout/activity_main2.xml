@@ -434,13 +434,13 @@
                 <info.hoang8f.widget.FButton
                     android:layout_width="0dp"
                     android:layout_weight="1"
+                    android:layout_marginRight="8dp"
                     android:layout_height="wrap_content"
                     android:text="PREVIOUS"
                     android:textColor="@android:color/white"
                     xmlns:app="http://schemas.android.com/apk/res-auto"
                     app:buttonColor="@color/colorPrimary"
                     app:cornerRadius="4dp"
-                    android:layout_margin="8dp"
                     android:id="@+id/btnPrevious"
                     android:layout_alignParentBottom="true"
                     />
@@ -455,8 +455,6 @@
                     xmlns:app="http://schemas.android.com/apk/res-auto"
                     app:buttonColor="@color/colorPrimary"
                     app:cornerRadius="4dp"
-                    android:layout_margin="8dp"
-
                     android:layout_alignParentBottom="true"
                     />
             </LinearLayout>
