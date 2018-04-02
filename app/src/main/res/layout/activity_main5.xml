@@ -13,7 +13,7 @@
     android:orientation="vertical"
     android:background="@color/bgColor"
     android:padding="16dp"
-    tools:context="com.example.yumnaasim.rtirpc.ScenePhotos">
+    tools:context="com.example.yumnaasim.rtirpc.ScenePhotosActivity">
 
     <TextView
         style="@style/form_txt"

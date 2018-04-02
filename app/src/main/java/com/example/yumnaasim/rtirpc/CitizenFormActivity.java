@@ -9,12 +9,10 @@ import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
-import android.location.LocationListener;
 import android.location.LocationManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -27,10 +25,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.Api;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.PendingResult;
-import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -41,28 +36,21 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import java.io.FileDescriptor;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
-import java.util.concurrent.TimeUnit;
 
-import static com.example.yumnaasim.rtirpc.R.id.address;
-import static com.example.yumnaasim.rtirpc.R.id.date;
-
-public class CitizenForm extends AppCompatActivity implements OnMapReadyCallback,
+public class CitizenFormActivity extends AppCompatActivity implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
         com.google.android.gms.location.LocationListener{
 
     private GoogleMap mMap;
     private GoogleApiClient googleApiClient;
-    private static final String TAG = CitizenForm.class.getSimpleName();
+    private static final String TAG = CitizenFormActivity.class.getSimpleName();
     private static final int CONNECTION_FAILURE_RESOLUTION_REQUEST = 9000;
     private LocationRequest locationRequest;
 
@@ -140,7 +128,7 @@ public class CitizenForm extends AppCompatActivity implements OnMapReadyCallback
             //                                          int[] grantResults)
             // to handle the case where the user grants the permission. See the documentation
             // for ActivityCompat#requestPermissions for more details.
-            ActivityCompat.requestPermissions(CitizenForm.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+            ActivityCompat.requestPermissions(CitizenFormActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
             return;
         }
             else{
@@ -179,7 +167,7 @@ public class CitizenForm extends AppCompatActivity implements OnMapReadyCallback
 
         String address = "";
 
-        Geocoder geocoder = new Geocoder(CitizenForm.this, Locale.getDefault());
+        Geocoder geocoder = new Geocoder(CitizenFormActivity.this, Locale.getDefault());
         try {
             List<Address> addresses = geocoder.getFromLocation(loc.getLatitude(), loc.getLongitude(), 1);
             Address obj = addresses.get(0);
@@ -259,7 +247,7 @@ public class CitizenForm extends AppCompatActivity implements OnMapReadyCallback
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(CitizenForm.this,ScenePhotos.class));
+                startActivity(new Intent(CitizenFormActivity.this,ScenePhotosActivity.class));
                 finish();
             }
         });

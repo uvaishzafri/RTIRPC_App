@@ -13,8 +13,8 @@
             android:title="Terms and Agreement" />
             <item
                 android:id="@+id/nav_reports"
-                android:icon="@drawable/ic_assignment_black_24dp"
-                android:title="My Reports" />
+                android:icon="@drawable/ic_history_black_24dp"
+                android:title="History" />
 
     </group>
 

@@ -2,7 +2,6 @@ package com.example.yumnaasim.rtirpc;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.LinearLayout;
@@ -16,8 +15,8 @@ import Databases.Database;
 import model.CustomAdapter;
 import model.Records;
 
-public class MyReports extends AppCompatActivity {
-    private static final String TAG = MyReports.class.getSimpleName();
+public class HistoryActivity extends AppCompatActivity {
+    private static final String TAG = HistoryActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

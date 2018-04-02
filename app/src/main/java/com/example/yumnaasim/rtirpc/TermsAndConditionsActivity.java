@@ -7,7 +7,7 @@ import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 
-public class TermsAndConditions extends AppCompatActivity {
+public class TermsAndConditionsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +20,7 @@ public class TermsAndConditions extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(TermsAndConditions.this,NavDrawer.class));
+                startActivity(new Intent(TermsAndConditionsActivity.this,NavDrawerActivity.class));
                 finish();
             }
         });

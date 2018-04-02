@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.provider.ContactsContract;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -19,7 +18,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class ScenePhotos extends AppCompatActivity {
+public class ScenePhotosActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +37,7 @@ public class ScenePhotos extends AppCompatActivity {
         if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CAMERA)
                 == PackageManager.PERMISSION_DENIED){
 
-            ActivityCompat.requestPermissions(ScenePhotos.this, new String[] {Manifest.permission.CAMERA}, 1);
+            ActivityCompat.requestPermissions(ScenePhotosActivity.this, new String[] {Manifest.permission.CAMERA}, 1);
 
         }
     }
@@ -64,7 +63,7 @@ public class ScenePhotos extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(),"Records submitted",Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(ScenePhotos.this,NavDrawer.class));
+                startActivity(new Intent(ScenePhotosActivity.this,NavDrawerActivity.class));
                 finish();
             }
         });
