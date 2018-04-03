@@ -1,7 +1,9 @@
 package com.example.yumnaasim.rtirpc;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.LinearLayout;
@@ -17,16 +19,17 @@ import model.Records;
 
 public class HistoryActivity extends AppCompatActivity {
     private static final String TAG = HistoryActivity.class.getSimpleName();
+    ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_reports);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+       listView = (ListView) findViewById(R.id.listview);
         displayDataInList();
     }
-
+        int rows;
     /*Reading data(time,date) from database and displaying it in the listview layout*/
     private void displayDataInList() {
 
@@ -37,17 +40,22 @@ public class HistoryActivity extends AppCompatActivity {
 
         int totalNumOfRows =database.getTotalNumOfRecords();
 
-        if (totalNumOfRows!=0)
-        totalNumOfRows = totalNumOfRows-1;
-
         if (totalNumOfRows != 0) {
-            ListView listView = (ListView) findViewById(R.id.listview);
+
+            Log.v(TAG,"Total number of rows are "+totalNumOfRows);
+
             listView.setVisibility(View.VISIBLE);
             LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linearLayout);
             linearLayout.setVisibility(View.GONE);
 
             int rowID = database.getFirstRecordID();
-            int rows = (totalNumOfRows+rowID);
+            rows = (totalNumOfRows+rowID);
+
+            Log.v(TAG,"First row ID is "+rowID);
+
+            Log.v(TAG,"Rows are "+rows);
+
+                rows = rows-1;
 
             for (int i = rowID; i <=rows; i++) {
                 data = database.getDateTimeData(String.valueOf(i));
@@ -60,13 +68,6 @@ public class HistoryActivity extends AppCompatActivity {
             AlphaInAnimationAdapter animationAdapter = new AlphaInAnimationAdapter(customAdapter);
             animationAdapter.setAbsListView(listView);
             listView.setAdapter(animationAdapter);
-
-            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                }
-            });
 
         }
     }

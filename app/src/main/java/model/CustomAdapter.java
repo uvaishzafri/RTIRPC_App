@@ -2,6 +2,8 @@ package model;
 
 import android.content.Context;
 
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +11,8 @@ import android.widget.ArrayAdapter;
 
 import android.widget.TextView;
 
+import com.example.yumnaasim.rtirpc.DetailedReportActivity;
+import com.example.yumnaasim.rtirpc.HistoryActivity;
 import com.example.yumnaasim.rtirpc.R;
 
 /**
@@ -53,6 +57,16 @@ public class CustomAdapter extends ArrayAdapter<Records> implements View.OnClick
 
     @Override
     public void onClick(View v) {
+
+        TextView recordNum = (TextView) v.findViewById(R.id.recordNo);
+        String text = recordNum.getText().toString();
+        String[] array = text.split("# ");
+        Log.v("Adapter",array[1]);
+        int recordNumber = Integer.parseInt(array[1]);
+
+        Intent intent = new Intent(getContext(),DetailedReportActivity.class);
+        intent.putExtra("RecordNumber",recordNumber);
+        getContext().startActivity(intent);
 
     }
 }

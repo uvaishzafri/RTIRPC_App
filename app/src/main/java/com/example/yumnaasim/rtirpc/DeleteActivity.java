@@ -52,7 +52,7 @@ public class DeleteActivity extends AppCompatActivity {
     private void getMaxDbSize() {
         /*getting maximum database size may grow*/
         Database database = new Database(DeleteActivity.this);
-        database.deleteData();
+
         long maxDbSize = database.sizeDatabase();
 
         /*Reading current db size*/
@@ -83,8 +83,6 @@ public class DeleteActivity extends AppCompatActivity {
         textView1.setText(freeSize+" TB");
 
         database.close();
-
-
 
 
     }

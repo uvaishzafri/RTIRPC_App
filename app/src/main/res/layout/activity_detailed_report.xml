@@ -1,9 +1,505 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:background="@color/bgColor"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:padding="16dp"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.yumnaasim.rtirpc.DetailedReportActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/img"
+            android:src="@drawable/logo"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"/>
+        <TextView
+            android:textColor="@android:color/black"
+            android:id="@+id/heading"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="Accident Report"/>
+        <TextView
+            style="@style/form_txt"
+            android:textSize="14sp"
+            android:layout_below="@id/heading"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/img"
+            android:text="by RTIRPC"/>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_marginTop="8dp"
+        android:textColor="@android:color/black"
+        android:layout_toRightOf="@id/img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:id="@+id/datetimetxt"
+        android:text="Written on Jan 21,2018, 3:52 AM"/>
+
+    <TextView
+        android:layout_marginTop="8dp"
+        style="@style/heading_style"
+        android:layout_toRightOf="@id/img"
+        android:text="@string/main_heading1"/>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:background="@drawable/newbox"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+        <TextView
+            style="@style/sub_heading_style"
+            android:text="@string/heading1"/>
+        <TextView
+            android:id="@+id/timeArrival"
+           style="@style/sub_heading_text_style"
+            android:text="  10:21 AM"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                style="@style/sub_heading_style"
+                android:text="@string/heading2"/>
+            <TextView
+                android:id="@+id/timeAcc"
+                style="@style/sub_heading_text_style"
+                android:text="  10:21 AM"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                style="@style/sub_heading_style"
+                android:text="@string/heading3"/>
+            <TextView
+                android:id="@+id/ambName"
+                style="@style/sub_heading_text_style"
+                android:text="  Accident"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                style="@style/sub_heading_style"
+                android:text="@string/heading4"/>
+            <TextView
+                android:id="@+id/vehicleArrived"
+                style="@style/sub_heading_text_style"
+                android:text="  Accident Details"/>
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                style="@style/sub_heading_style"
+                android:text="@string/heading6"/>
+            <TextView
+                android:id="@+id/historyProvider"
+                style="@style/sub_heading_text_style"
+                android:text="  Accident Details"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                style="@style/sub_heading_style"
+                android:text="@string/heading7"/>
+            <TextView
+                android:id="@+id/travellingReason"
+                style="@style/sub_heading_text_style"
+                android:text="  Accident Details"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                style="@style/sub_heading_style"
+                android:text="@string/heading8"/>
+            <TextView
+                android:id="@+id/veh1"
+                style="@style/sub_heading_text_style"
+                android:text="  Accident Details"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                style="@style/sub_heading_style"
+                android:text="@string/heading9"/>
+            <TextView
+                android:id="@+id/veh2"
+                style="@style/sub_heading_text_style"
+                android:text="  Accident Details"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                style="@style/sub_heading_style"
+                android:text="@string/heading10"/>
+            <TextView
+                android:id="@+id/collisionType"
+                style="@style/sub_heading_text_style"
+                android:text="  Accident Details"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                style="@style/sub_heading_style"
+                android:text="@string/heading11"/>
+            <TextView
+                android:id="@+id/location"
+                style="@style/sub_heading_text_style"
+                android:text="  Accident Details"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                style="@style/sub_heading_style"
+                android:text="@string/heading12"/>
+            <TextView
+                android:id="@+id/locDetails"
+                style="@style/sub_heading_text_style"
+                android:text="  Accident Details"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                style="@style/sub_heading_style"
+                android:text="@string/heading13"/>
+            <TextView
+                android:id="@+id/locDes"
+                style="@style/sub_heading_text_style"
+                android:text="  Accident Details"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="8dp"
+        style="@style/heading_style"
+        android:text="@string/main_heading2"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:background="@drawable/newbox"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                style="@style/sub_heading_style"
+                android:text="@string/heading14"/>
+            <TextView
+                style="@style/sub_heading_text_style"
+                android:text="  Accident Details"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                style="@style/sub_heading_style"
+                android:text="@string/heading15"/>
+            <TextView
+                style="@style/sub_heading_text_style"
+                android:text="  Accident Details"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                style="@style/sub_heading_style"
+                android:text="@string/heading16"/>
+            <TextView
+                style="@style/sub_heading_text_style"
+                android:text="  Accident Details"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                style="@style/sub_heading_style"
+                android:text="@string/heading17"/>
+            <TextView
+                style="@style/sub_heading_text_style"
+                android:text="  Accident Details"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                style="@style/sub_heading_style"
+                android:text="@string/heading18"/>
+            <TextView
+                style="@style/sub_heading_text_style"
+                android:text="  Accident Details"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                style="@style/sub_heading_style"
+                android:text="@string/heading19"/>
+            <TextView
+                style="@style/sub_heading_text_style"
+                android:text="  Accident Details"/>
+        </LinearLayout>
+
+        </LinearLayout>
+
+
+    <TextView
+        android:layout_marginTop="8dp"
+        style="@style/heading_style"
+        android:text="@string/main_heading3"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:background="@drawable/newbox"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                style="@style/sub_heading_style"
+                android:text="@string/heading20"/>
+            <TextView
+                style="@style/sub_heading_text_style"
+                android:text="  Accident Details"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                style="@style/sub_heading_style"
+                android:text="@string/heading21"/>
+            <TextView
+                style="@style/sub_heading_text_style"
+                android:text="  Accident Details"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                style="@style/sub_heading_style"
+                android:text="@string/heading22"/>
+            <TextView
+                style="@style/sub_heading_text_style"
+                android:text="  Accident Details"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                style="@style/sub_heading_style"
+                android:text="@string/heading23"/>
+            <TextView
+                style="@style/sub_heading_text_style"
+                android:text="  Accident Details"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                style="@style/sub_heading_style"
+                android:text="@string/heading24"/>
+            <TextView
+                style="@style/sub_heading_text_style"
+                android:text="  Accident Details"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                style="@style/sub_heading_style"
+                android:text="@string/heading25"/>
+            <TextView
+                style="@style/sub_heading_text_style"
+                android:text="  Accident Details"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                style="@style/sub_heading_style"
+                android:text="@string/heading26"/>
+            <TextView
+                style="@style/sub_heading_text_style"
+                android:text="  Accident Details"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                style="@style/sub_heading_style"
+                android:text="@string/heading27"/>
+            <TextView
+                style="@style/sub_heading_text_style"
+                android:text="  Accident Details"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                style="@style/sub_heading_style"
+                android:text="@string/heading28"/>
+            <TextView
+                style="@style/sub_heading_text_style"
+                android:text="  Accident Details"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                style="@style/sub_heading_style"
+                android:text="@string/heading29"/>
+            <TextView
+                style="@style/sub_heading_text_style"
+                android:text="  Accident Details"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                style="@style/sub_heading_style"
+                android:text="@string/heading30"/>
+            <TextView
+                style="@style/sub_heading_text_style"
+                android:text="  Accident Details"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                style="@style/sub_heading_style"
+                android:text="@string/heading31"/>
+            <TextView
+                style="@style/sub_heading_text_style"
+                android:text="  Accident Details"/>
+        </LinearLayout>
+
+        </LinearLayout>
+
+</LinearLayout>
+</ScrollView>

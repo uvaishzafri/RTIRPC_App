@@ -2,11 +2,11 @@ package Databases;
 
 import android.content.ContentValues;
 import android.content.Context;
+
 import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.provider.BaseColumns;
 import android.util.Log;
 
 import model.AccidentDetails;
@@ -32,7 +32,7 @@ public class Database extends SQLiteOpenHelper {
 
     }
 
-    /*this method insert data in the accident record table*/
+    /*this method insert accidentData in the accident record table*/
     public void insertData(Patient patient,AccidentRecord record, AccidentDetails accidentDetails, PatientHealth patientHealth)
     {
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
@@ -242,5 +242,40 @@ public class Database extends SQLiteOpenHelper {
         }
         cursor.close();
         return Integer.parseInt(rowID);
+    }
+
+    String[] accidentData = new String[12];
+    public String[] getAccidentData(int rowID)
+    {
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+        String from[] = { Schema.Accident.ACC_COL_1, Schema.Accident.ACC_COL_2, Schema.Accident.ACC_COL_3, Schema.Accident.ACC_COL_4
+                , Schema.Accident.ACC_COL_5, Schema.Accident.ACC_COL_6, Schema.Accident.ACC_COL_7, Schema.Accident.ACC_COL_8
+                , Schema.Accident.ACC_COL_9, Schema.Accident.ACC_COL_10, Schema.Accident.ACC_COL_11, Schema.Accident.ACC_COL_12};
+        String where = Schema.Accident._ID + "=?";
+        String[] whereArgs = new String[]{23+""};
+        Cursor cursor = sqLiteDatabase.query(Schema.Accident.TABLE_NAME3, from, where, whereArgs, null, null, null, null);
+
+        if(cursor.getCount()>0)
+        {
+            if (cursor.moveToFirst()) {
+                accidentData[0] = cursor.getString(cursor.getColumnIndex(Schema.Accident.ACC_COL_1));
+                accidentData[1] = cursor.getString(cursor.getColumnIndex(Schema.Accident.ACC_COL_2));
+                accidentData[2] = cursor.getString(cursor.getColumnIndex(Schema.Accident.ACC_COL_3));
+                accidentData[3] = cursor.getString(cursor.getColumnIndex(Schema.Accident.ACC_COL_4));
+                accidentData[4] = cursor.getString(cursor.getColumnIndex(Schema.Accident.ACC_COL_5));
+                accidentData[5] = cursor.getString(cursor.getColumnIndex(Schema.Accident.ACC_COL_6));
+                accidentData[6] = cursor.getString(cursor.getColumnIndex(Schema.Accident.ACC_COL_7));
+                accidentData[7] = cursor.getString(cursor.getColumnIndex(Schema.Accident.ACC_COL_8));
+                accidentData[8] = cursor.getString(cursor.getColumnIndex(Schema.Accident.ACC_COL_9));
+                accidentData[9] = cursor.getString(cursor.getColumnIndex(Schema.Accident.ACC_COL_10));
+                accidentData[10] = cursor.getString(cursor.getColumnIndex(Schema.Accident.ACC_COL_11));
+                accidentData[11] = cursor.getString(cursor.getColumnIndex(Schema.Accident.ACC_COL_12));
+            }
+            }
+
+        cursor.close();
+        sqLiteDatabase.close();
+        Log.v(TAG,""+accidentData[1]);
+        return accidentData;
     }
 }
