@@ -205,7 +205,7 @@ android:background="@color/bgColor"
             <TextView
                 android:id="@+id/location"
                 style="@style/sub_heading_text_style"
-                android:text="  Accident Details"/>
+                android:text="  Block 4-A Gulshan-e-Iqbal "/>
         </LinearLayout>
 
         <LinearLayout
@@ -219,7 +219,7 @@ android:background="@color/bgColor"
             <TextView
                 android:id="@+id/locDetails"
                 style="@style/sub_heading_text_style"
-                android:text="  Accident Details"/>
+                android:text="   Flyover"/>
         </LinearLayout>
 
         <LinearLayout
@@ -233,7 +233,7 @@ android:background="@color/bgColor"
             <TextView
                 android:id="@+id/locDes"
                 style="@style/sub_heading_text_style"
-                android:text="  Accident Details"/>
+                android:text="  Over Taking"/>
         </LinearLayout>
 
     </LinearLayout>
@@ -260,7 +260,8 @@ android:background="@color/bgColor"
                 android:text="@string/heading14"/>
             <TextView
                 style="@style/sub_heading_text_style"
-                android:text="  Accident Details"/>
+                android:id="@+id/name"
+                android:text="  Ali Khan"/>
         </LinearLayout>
 
         <LinearLayout
@@ -272,6 +273,7 @@ android:background="@color/bgColor"
                 style="@style/sub_heading_style"
                 android:text="@string/heading15"/>
             <TextView
+                android:id="@+id/age"
                 style="@style/sub_heading_text_style"
                 android:text="  Accident Details"/>
         </LinearLayout>
@@ -285,6 +287,7 @@ android:background="@color/bgColor"
                 style="@style/sub_heading_style"
                 android:text="@string/heading16"/>
             <TextView
+                android:id="@+id/occupation"
                 style="@style/sub_heading_text_style"
                 android:text="  Accident Details"/>
         </LinearLayout>
@@ -298,6 +301,7 @@ android:background="@color/bgColor"
                 style="@style/sub_heading_style"
                 android:text="@string/heading17"/>
             <TextView
+                android:id="@+id/mobile"
                 style="@style/sub_heading_text_style"
                 android:text="  Accident Details"/>
         </LinearLayout>
@@ -311,6 +315,7 @@ android:background="@color/bgColor"
                 style="@style/sub_heading_style"
                 android:text="@string/heading18"/>
             <TextView
+                android:id="@+id/address"
                 style="@style/sub_heading_text_style"
                 android:text="  Accident Details"/>
         </LinearLayout>
@@ -324,6 +329,7 @@ android:background="@color/bgColor"
                 style="@style/sub_heading_style"
                 android:text="@string/heading19"/>
             <TextView
+                android:id="@+id/gender"
                 style="@style/sub_heading_text_style"
                 android:text="  Accident Details"/>
         </LinearLayout>
@@ -352,6 +358,7 @@ android:background="@color/bgColor"
                 style="@style/sub_heading_style"
                 android:text="@string/heading20"/>
             <TextView
+                android:id="@+id/respiratorRate"
                 style="@style/sub_heading_text_style"
                 android:text="  Accident Details"/>
         </LinearLayout>
@@ -365,6 +372,7 @@ android:background="@color/bgColor"
                 style="@style/sub_heading_style"
                 android:text="@string/heading21"/>
             <TextView
+                android:id="@+id/bloodPressure"
                 style="@style/sub_heading_text_style"
                 android:text="  Accident Details"/>
         </LinearLayout>
@@ -378,6 +386,7 @@ android:background="@color/bgColor"
                 style="@style/sub_heading_style"
                 android:text="@string/heading22"/>
             <TextView
+                android:id="@+id/gcs"
                 style="@style/sub_heading_text_style"
                 android:text="  Accident Details"/>
         </LinearLayout>
@@ -391,6 +400,7 @@ android:background="@color/bgColor"
                 style="@style/sub_heading_style"
                 android:text="@string/heading23"/>
             <TextView
+                android:id="@+id/eyeRes1"
                 style="@style/sub_heading_text_style"
                 android:text="  Accident Details"/>
         </LinearLayout>
@@ -404,6 +414,7 @@ android:background="@color/bgColor"
                 style="@style/sub_heading_style"
                 android:text="@string/heading24"/>
             <TextView
+                android:id="@+id/eyeRes2"
                 style="@style/sub_heading_text_style"
                 android:text="  Accident Details"/>
         </LinearLayout>
@@ -417,6 +428,7 @@ android:background="@color/bgColor"
                 style="@style/sub_heading_style"
                 android:text="@string/heading25"/>
             <TextView
+                android:id="@+id/headISS"
                 style="@style/sub_heading_text_style"
                 android:text="  Accident Details"/>
         </LinearLayout>
@@ -430,6 +442,7 @@ android:background="@color/bgColor"
                 style="@style/sub_heading_style"
                 android:text="@string/heading26"/>
             <TextView
+                android:id="@+id/chestISS"
                 style="@style/sub_heading_text_style"
                 android:text="  Accident Details"/>
         </LinearLayout>
@@ -443,6 +456,7 @@ android:background="@color/bgColor"
                 style="@style/sub_heading_style"
                 android:text="@string/heading27"/>
             <TextView
+                android:id="@+id/extermityISS"
                 style="@style/sub_heading_text_style"
                 android:text="  Accident Details"/>
         </LinearLayout>
@@ -456,6 +470,7 @@ android:background="@color/bgColor"
                 style="@style/sub_heading_style"
                 android:text="@string/heading28"/>
             <TextView
+                android:id="@+id/faceISS"
                 style="@style/sub_heading_text_style"
                 android:text="  Accident Details"/>
         </LinearLayout>
@@ -469,6 +484,7 @@ android:background="@color/bgColor"
                 style="@style/sub_heading_style"
                 android:text="@string/heading29"/>
             <TextView
+                android:id="@+id/abdomenISS"
                 style="@style/sub_heading_text_style"
                 android:text="  Accident Details"/>
         </LinearLayout>
@@ -482,6 +498,7 @@ android:background="@color/bgColor"
                 style="@style/sub_heading_style"
                 android:text="@string/heading30"/>
             <TextView
+                android:id="@+id/extISS"
                 style="@style/sub_heading_text_style"
                 android:text="  Accident Details"/>
         </LinearLayout>
@@ -495,6 +512,7 @@ android:background="@color/bgColor"
                 style="@style/sub_heading_style"
                 android:text="@string/heading31"/>
             <TextView
+                android:id="@+id/doctor_notes"
                 style="@style/sub_heading_text_style"
                 android:text="  Accident Details"/>
         </LinearLayout>

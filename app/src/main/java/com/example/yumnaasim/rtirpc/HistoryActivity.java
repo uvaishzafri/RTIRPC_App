@@ -62,6 +62,7 @@ public class HistoryActivity extends AppCompatActivity {
                 time = data[1].split(" ");
                 arrayList.add(new Records(i, data[0], time[1]));
             }
+
             database.close();
             CustomAdapter customAdapter = new CustomAdapter(this, arrayList);
 

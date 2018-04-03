@@ -24,13 +24,19 @@ public class DetailedReportActivity extends AppCompatActivity {
         textView.setText(content);
 
         int recordNum = handleIntent();
+        Log.v(TAG,"Record number is "+recordNum);
+
         displayDataFromDatabase(recordNum);
     }
 
     private void displayDataFromDatabase(int recordNum) {
-        String[] data = new Database(getApplicationContext()).getAccidentData(recordNum);
+
+        Database database = new Database(getApplicationContext());
+        String[] data = database.getAccidentData(recordNum);
+
         for (int i=0;i<12;i++)
         Log.v(TAG,""+data[i]);
+
         TextView txtview = (TextView) findViewById(R.id.timeArrival);
         TextView txtview2 = (TextView) findViewById(R.id.timeAcc);
         TextView txtview3 = (TextView) findViewById(R.id.ambName);
@@ -48,14 +54,59 @@ public class DetailedReportActivity extends AppCompatActivity {
         txtview2.setText("  "+data[0]);
         txtview3.setText("  "+data[11]);
         txtview4.setText("  "+data[2]);
-        txtview5.setText(data[3]);
-        txtview6.setText(data[4]);
-        txtview7.setText(data[5]);
-        txtview8.setText(data[6]);
-        txtview9.setText(data[7]);
-        txtview10.setText(data[8]);
-        txtview11.setText(data[9]);
-        txtview12.setText(data[10]);
+        txtview5.setText("  "+data[3]);
+        txtview6.setText("  "+data[4]);
+        txtview7.setText("  "+data[5]);
+        txtview8.setText("  "+data[6]);
+        txtview9.setText("  "+data[7]);
+        txtview10.setText("  "+data[8]);
+        txtview11.setText("  "+data[9]);
+        txtview12.setText("  "+data[10]);
+
+        String[] patientData = database.getPatientData(recordNum);
+
+        TextView txtview13 = (TextView) findViewById(R.id.name);
+        TextView txtview14 = (TextView) findViewById(R.id.age);
+        TextView txtview15 = (TextView) findViewById(R.id.gender);
+        TextView txtview16 = (TextView) findViewById(R.id.address);
+        TextView txtview17 = (TextView) findViewById(R.id.mobile);
+        TextView txtview18 = (TextView) findViewById(R.id.occupation);
+
+        txtview13.setText("  "+patientData[0]);
+        txtview14.setText("  "+patientData[1]);
+        txtview15.setText("  "+patientData[5]);
+        txtview16.setText("  "+patientData[4]);
+        txtview17.setText("  "+patientData[3]);
+        txtview18.setText("  "+patientData[2]);
+
+        String[] patientHealthData = database.getPatientHealthData(recordNum);
+
+        TextView txtview19 = (TextView) findViewById(R.id.respiratorRate);
+        TextView txtview20 = (TextView) findViewById(R.id.bloodPressure);
+        TextView txtview21 = (TextView) findViewById(R.id.gcs);
+        TextView txtview22 = (TextView) findViewById(R.id.eyeRes1);
+        TextView txtview23 = (TextView) findViewById(R.id.eyeRes2);
+        TextView txtview24 = (TextView) findViewById(R.id.headISS);
+        TextView txtview25 = (TextView) findViewById(R.id.chestISS);
+        TextView txtview26 = (TextView) findViewById(R.id.extermityISS);
+        TextView txtview27 = (TextView) findViewById(R.id.faceISS);
+        TextView txtview28 = (TextView) findViewById(R.id.abdomenISS);
+        TextView txtview29 = (TextView) findViewById(R.id.extISS);
+        TextView txtview30 = (TextView) findViewById(R.id.doctor_notes);
+
+        txtview19.setText("  "+patientHealthData[0]);
+        txtview20.setText("  "+patientHealthData[1]);
+        txtview21.setText("  "+patientHealthData[2]);
+        txtview22.setText("  "+patientHealthData[3]);
+        txtview23.setText("  "+patientHealthData[4]);
+        txtview24.setText("  "+patientHealthData[5]);
+        txtview25.setText("  "+patientHealthData[6]);
+        txtview26.setText("  "+patientHealthData[7]);
+        txtview27.setText("  "+patientHealthData[8]);
+        txtview28.setText("  "+patientHealthData[9]);
+        txtview29.setText("  "+patientHealthData[10]);
+        txtview30.setText("  "+patientHealthData[11]);
+
     }
 
     private int handleIntent() {

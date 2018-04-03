@@ -217,7 +217,7 @@
                     android:checked="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Admitted to Ward (Admission Number:)" />
+                    android:text="Admitted to Ward (Admission Number)" />
 
                 <RadioButton
                     android:id="@+id/radio2"

@@ -294,7 +294,7 @@
                     android:layout_weight="3"
                     android:ems="10"
                     android:inputType="time"
-                    android:text="12:18"/>
+                    android:text="12:18:01"/>
 
             </LinearLayout>
 
