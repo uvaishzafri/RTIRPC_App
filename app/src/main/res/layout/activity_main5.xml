@@ -3,6 +3,8 @@
 
 <ScrollView android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/bgColor"
     xmlns:android="http://schemas.android.com/apk/res/android" >
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -11,8 +13,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/bgColor"
-    android:padding="16dp"
     tools:context="com.example.yumnaasim.rtirpc.ScenePhotosActivity">
 
     <TextView

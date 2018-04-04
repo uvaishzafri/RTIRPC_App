@@ -136,12 +136,14 @@
                 android:text="Hassan Square"/>
 
                 <CheckBox
+                    android:checked="true"
                     android:padding="16dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Main Korangi Road"/>
 
                 <CheckBox
+                    android:checked="true"
                     android:padding="16dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

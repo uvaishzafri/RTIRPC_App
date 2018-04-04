@@ -173,7 +173,7 @@ Email: info@roadsafety.pk, rtirpc@gmail.com</i></string>
     <string name="file4_name">PatientHealthData</string>
 
 
-    <string name="share_txt2">Send the exported data or upload it to the cloud (i.e. Drive).</string>
+    <string name="share_txt2">Share the data or upload it to the cloud.</string>
 
     <string name="share_txt">Select data to share</string>
     <string name="export_txt2">Open the exported file in Excel.</string>
@@ -214,7 +214,7 @@ Email: info@roadsafety.pk, rtirpc@gmail.com</i></string>
     <string name="global_lv_port_key">Live Stream Port(Global)</string>
 
     <string name="run_by_locality">Select your notification mode</string>
-    <string name="mode_default">SMS</string>
+    <string name="mode_default">Email</string>
     <string name="mode_key">mode</string>
     <string name="run_by_locality_local_label">SMS</string>
     <string name="run_by_locality_local_value" translatable="false">SMS</string>

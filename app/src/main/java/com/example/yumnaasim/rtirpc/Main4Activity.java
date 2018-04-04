@@ -76,12 +76,11 @@ public class Main4Activity extends Activity {
 
         try {
             startActivity(Intent.createChooser(emailIntent, "Sending ..."));
-            finish();
         } catch (android.content.ActivityNotFoundException ex) {
             Toast.makeText(Main4Activity.this,
                     "There is no email client installed.", Toast.LENGTH_SHORT).show();
         }
-        Toast.makeText(getApplicationContext(),"Email send",Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(),"Email send",Toast.LENGTH_SHORT).show();
     }
 
     private void sendSMS(String location) {

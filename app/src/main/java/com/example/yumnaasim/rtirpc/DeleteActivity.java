@@ -4,11 +4,14 @@ import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.os.Build;
 import android.os.Environment;
+import android.support.transition.Transition;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -29,6 +32,10 @@ public class DeleteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delete);
+     /*   if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            // Apply activity transition
+            getWindow().setEnterTransition(new SlideTransition);
+        }*/
         size = (TextView) findViewById(R.id.size);
         progressBar = (ProgressBar) findViewById(R.id.progressBar2);
         accidentData = new File(Environment.getExternalStorageDirectory(),getResources().getString(R.string.file2_name)+".csv");

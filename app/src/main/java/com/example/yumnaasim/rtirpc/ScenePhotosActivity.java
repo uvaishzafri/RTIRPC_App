@@ -72,12 +72,15 @@ public class ScenePhotosActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == 1 && data.getExtras() != null)
+        if (requestCode == 1 && resultCode == RESULT_OK)
         {
             Bitmap image = (Bitmap) data.getExtras().get("data");
             ImageView imageView = (ImageView) findViewById(R.id.imageView);
             imageView.setImageBitmap(image);
             imageView.setBackgroundResource(R.drawable.camerabox);
+        }
+        else {
+            Toast.makeText(getApplicationContext(),"No photo is captured",Toast.LENGTH_SHORT).show();
         }
 
     }

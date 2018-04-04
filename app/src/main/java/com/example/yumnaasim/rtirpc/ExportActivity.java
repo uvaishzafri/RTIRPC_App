@@ -13,6 +13,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.media.RingtoneManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
@@ -47,6 +48,7 @@ public class ExportActivity extends AppCompatActivity {
     RadioButton health;
     RadioButton report;
     RadioButton database;
+    String filePath = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,26 +83,72 @@ public class ExportActivity extends AppCompatActivity {
                     RadioButton radioButton = (RadioButton) findViewById(id);
                     String selectedButton = radioButton.getText().toString();
                     if (selectedButton.equals(getResources().getString(R.string.file2))) {
+
                         String path = exportDB(Schema.Accident.TABLE_NAME3, "AccidentData");
-                        createNotification(path);
+
+                        if (path.equals("Null"))
+                        {
+                            Toast.makeText(getApplicationContext(),"No data found to export",Toast.LENGTH_SHORT).show();
+                        }else
+                        {
+                            createNotification(path);
+                        }
+
                     } else if (selectedButton.equals(getResources().getString(R.string.file3))) {
+
                         String path = exportDB(Schema.Patient.TABLE_NAME1, "PatientGeneralData");
-                        createNotification(path);
+
+                        if (path.equals("Null"))
+                        {
+                            Toast.makeText(getApplicationContext(),"No data found to export",Toast.LENGTH_SHORT).show();
+                        }else
+                        {
+                            createNotification(path);
+                        }
+
                     } else if (selectedButton.equals(getResources().getString(R.string.file4))) {
+
                         String path = exportDB(Schema.PatientHealth.TABLE_NAME4, "PatientHealthData");
-                        createNotification(path);
+
+                        if (path.equals("Null"))
+                        {
+                            Toast.makeText(getApplicationContext(),"No data found to export",Toast.LENGTH_SHORT).show();
+                        }else
+                        {
+                            createNotification(path);
+                        }
+
                     } else if (selectedButton.equals(getResources().getString(R.string.file1))) {
+
                         String path = exportDB(Schema.Report.TABLE_NAME2, "ReportData");
-                        createNotification(path);
+
+                        if (path.equals("Null"))
+                        {
+                            Toast.makeText(getApplicationContext(),"No data found to export",Toast.LENGTH_SHORT).show();
+                        }else
+                        {
+                            createNotification(path);
+                        }
+
                     } else if (selectedButton.equals(getResources().getString(R.string.file))) {
+
                         String path3 = exportDB(Schema.Report.TABLE_NAME2, getResources().getString(R.string.file1_name));
-                        createNotification(path3);
                         String path2 = exportDB(Schema.PatientHealth.TABLE_NAME4, getResources().getString(R.string.file4_name));
-                        createNotification(path2);
                         String path = exportDB(Schema.Patient.TABLE_NAME1, getResources().getString(R.string.file3_name));
-                        createNotification(path);
                         String path1 = exportDB(Schema.Accident.TABLE_NAME3, getResources().getString(R.string.file2_name));
-                        createNotification(path1);
+
+                        if (path3.equals("Null") && path2.equals("Null") && path.equals("Null") && path1.equals("Null"))
+                        {
+                            Toast.makeText(getApplicationContext(),"No data found to export",Toast.LENGTH_SHORT).show();
+                        }
+                        else
+                        {
+                            createNotification(path3);
+                            createNotification(path2);
+                            createNotification(path);
+                            createNotification(path1);
+                        }
+
                     }
                 }
             }
@@ -114,7 +162,7 @@ public class ExportActivity extends AppCompatActivity {
         File sdCardDir = Environment.getExternalStorageDirectory();
         String filename = fileName+".csv";
         // the name of the file to export with
-        File saveFile = new File(sdCardDir, filename);
+
         //main code begins here
         try {
             if (fileName.equals("RTIRPC_Database"))
@@ -162,13 +210,16 @@ public class ExportActivity extends AppCompatActivity {
 
             int rowcount = 0;
             int colcount = 0;
-            FileWriter fw = new FileWriter(saveFile);
 
-            BufferedWriter bw = new BufferedWriter(fw);
+
             rowcount = c.getCount();
             colcount = c.getColumnCount();
             if (rowcount > 0) {
                 c.moveToFirst();
+
+                File saveFile = new File(sdCardDir, filename);
+                FileWriter fw = new FileWriter(saveFile);
+                BufferedWriter bw = new BufferedWriter(fw);
 
                 for (int i = 0; i < colcount; i++) {
                     if (i != colcount - 1) {
@@ -198,6 +249,11 @@ public class ExportActivity extends AppCompatActivity {
                 bw.flush();
                 Log.i(TAG,"Exported Successfully.");
                // Toast.makeText(getApplicationContext(),"Exported Successfully.",Toast.LENGTH_SHORT).show();
+                filePath = saveFile.getPath();
+            }
+            else
+            {
+                filePath = "Null";
             }
         } catch (Exception ex) {
             if (sqldb.isOpen()) {
@@ -210,7 +266,8 @@ public class ExportActivity extends AppCompatActivity {
 
         }
         database.close();
-        return saveFile.getPath();
+
+        return filePath;
 
     }
 
@@ -245,9 +302,19 @@ public class ExportActivity extends AppCompatActivity {
         Uri uri = Uri.fromFile(file);
         MimeTypeMap mime = MimeTypeMap.getSingleton();
         String extension = ".csv";
-        String type = mime.getMimeTypeFromExtension(extension);
+
         Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setDataAndType(uri, "application/vnd.ms-excel");
+
+        if (Build.VERSION.SDK_INT>=24){
+            //intent.setType("application/vnd.ms-excel");
+
+        }else {
+            intent.setDataAndType(uri, "application/vnd.ms-excel");
+        }
+
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        intent.setAction(Intent.ACTION_VIEW);
+
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
         mBuilder.setContentIntent(pendingIntent);
         mBuilder.setAutoCancel(true);
