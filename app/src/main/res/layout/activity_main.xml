@@ -588,7 +588,6 @@
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 app:buttonColor="@color/colorPrimary"
                 app:cornerRadius="4dp"
-
                 android:id="@+id/buttonNext"
                 android:layout_alignParentBottom="true"
                 />
