@@ -7,6 +7,11 @@ import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.widget.TextView;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import Databases.Database;
 
 public class DetailedReportActivity extends AppCompatActivity {
@@ -18,20 +23,29 @@ public class DetailedReportActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailed_report);
 
-        TextView textView = (TextView) findViewById(R.id.datetimetxt);
-        SpannableString content = new SpannableString("Written on Jan 21,2018, 3:52 AM");
-        content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
-        textView.setText(content);
-
         int recordNum = handleIntent();
         Log.v(TAG,"Record number is "+recordNum);
 
         displayDataFromDatabase(recordNum);
     }
 
-    private void displayDataFromDatabase(int recordNum) {
+    private void displayDataFromDatabase(int recordNum){
 
         Database database = new Database(getApplicationContext());
+
+        String[] dateTime = database.getDateTimeData(String.valueOf(recordNum));
+        String[] time = dateTime[1].split(" ");
+        Log.v(TAG,"DateTime is "+dateTime);
+        Log.v(TAG,"time is "+time);
+
+        String newDateString = convertDateStringFormat(dateTime[1], "dd-MM-yyy hh:mm:ss", "EEE, MMM d, ''yy hh:mm a");
+
+        TextView textView = (TextView) findViewById(R.id.datetimetxt);
+        SpannableString content = new SpannableString("Written on "+newDateString);
+        content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
+        textView.setText(content);
+
+
         String[] data = database.getAccidentData(recordNum);
 
         for (int i=0;i<12;i++)
@@ -113,5 +127,19 @@ public class DetailedReportActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         int recordNumber = (int) bundle.get("RecordNumber");
         return recordNumber;
+    }
+
+    public static String convertDateStringFormat(String dateString, String originalDateFormat, String outputDateFormat){
+        String finalDate = null;
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(originalDateFormat);
+        try {
+            Date date = simpleDateFormat.parse(dateString);
+            simpleDateFormat = new SimpleDateFormat(outputDateFormat);
+            finalDate = simpleDateFormat.format(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        Log.v(TAG,"Data after format change is "+finalDate);
+        return finalDate;
     }
 }
