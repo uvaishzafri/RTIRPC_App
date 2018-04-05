@@ -2,11 +2,11 @@ package Databases;
 
 import android.content.ContentValues;
 import android.content.Context;
+
 import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.provider.BaseColumns;
 import android.util.Log;
 
 import model.AccidentDetails;
@@ -24,6 +24,9 @@ public class Database extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "record.db";
     private static final int DB_VER = 1;
+    String[] patientData = new String[6];
+    String[] accidentData = new String[12];
+    String[] patientHealthData = new String[12];
 
     public Database(Context context) {
 
@@ -32,7 +35,7 @@ public class Database extends SQLiteOpenHelper {
 
     }
 
-    /*this method insert data in the accident record table*/
+    /*this method insert accidentData in the accident record table*/
     public void insertData(Patient patient,AccidentRecord record, AccidentDetails accidentDetails, PatientHealth patientHealth)
     {
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
@@ -205,7 +208,7 @@ public class Database extends SQLiteOpenHelper {
 
     String[] data = new String[2];
 
-    public String[] getData(String rowID)
+    public String[] getDateTimeData(String rowID)
     {
         SQLiteDatabase sqLiteDatabase = getReadableDatabase();
         //Cursor cursor = sqLiteDatabase.rawQuery("SELECT "+ Schema.Report.DATE+" FROM "+ Schema.Report.TABLE_NAME2+" WHERE "+ Schema.Report._ID+"="+rowID,null);
@@ -224,10 +227,124 @@ public class Database extends SQLiteOpenHelper {
         return data;
     }
 
-    public int numOfRecord()
+    public int getTotalNumOfRecords()
     {
         SQLiteDatabase sqLiteDatabase = getReadableDatabase();
         int numRows = (int) DatabaseUtils.queryNumEntries(sqLiteDatabase, Schema.Report.TABLE_NAME2);
         return numRows;
     }
+
+    String rowID;
+    public int getFirstRecordID()
+    {
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT "+Schema.Report._ID+" FROM "+Schema.Report.TABLE_NAME2+" ORDER BY "+Schema.Report._ID+" ASC LIMIT 1",null);
+
+        if (cursor.moveToFirst()) {
+            rowID = cursor.getString(cursor.getColumnIndex(Schema.Report._ID));
+        }
+        cursor.close();
+        return Integer.parseInt(rowID);
+    }
+
+
+
+    public String[] getAccidentData(int rowID)
+    {
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+        String from[] = { Schema.Accident.ACC_COL_1, Schema.Accident.ACC_COL_2, Schema.Accident.ACC_COL_3, Schema.Accident.ACC_COL_4
+                , Schema.Accident.ACC_COL_5, Schema.Accident.ACC_COL_6, Schema.Accident.ACC_COL_7, Schema.Accident.ACC_COL_8
+                , Schema.Accident.ACC_COL_9, Schema.Accident.ACC_COL_10, Schema.Accident.ACC_COL_11, Schema.Accident.ACC_COL_12};
+        String where = Schema.Accident._ID + "=?";
+        String[] whereArgs = new String[]{rowID+""};
+        Cursor cursor = sqLiteDatabase.query(Schema.Accident.TABLE_NAME3, from, where, whereArgs, null, null, null, null);
+
+        if(cursor.getCount()>0)
+        {
+            if (cursor.moveToFirst()) {
+                accidentData[0] = cursor.getString(cursor.getColumnIndex(Schema.Accident.ACC_COL_1));
+                accidentData[1] = cursor.getString(cursor.getColumnIndex(Schema.Accident.ACC_COL_2));
+                accidentData[2] = cursor.getString(cursor.getColumnIndex(Schema.Accident.ACC_COL_3));
+                accidentData[3] = cursor.getString(cursor.getColumnIndex(Schema.Accident.ACC_COL_4));
+                accidentData[4] = cursor.getString(cursor.getColumnIndex(Schema.Accident.ACC_COL_5));
+                accidentData[5] = cursor.getString(cursor.getColumnIndex(Schema.Accident.ACC_COL_6));
+                accidentData[6] = cursor.getString(cursor.getColumnIndex(Schema.Accident.ACC_COL_7));
+                accidentData[7] = cursor.getString(cursor.getColumnIndex(Schema.Accident.ACC_COL_8));
+                accidentData[8] = cursor.getString(cursor.getColumnIndex(Schema.Accident.ACC_COL_9));
+                accidentData[9] = cursor.getString(cursor.getColumnIndex(Schema.Accident.ACC_COL_10));
+                accidentData[10] = cursor.getString(cursor.getColumnIndex(Schema.Accident.ACC_COL_11));
+                accidentData[11] = cursor.getString(cursor.getColumnIndex(Schema.Accident.ACC_COL_12));
+            }
+            }
+
+        cursor.close();
+        sqLiteDatabase.close();
+        Log.v(TAG,""+accidentData[1]);
+        return accidentData;
+    }
+
+/*Read patient data and display it in detail report screen*/
+    public String[] getPatientData(int rowID)
+    {
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+        String from[] = { Schema.Patient.PAT_NAME,Schema.Patient.PAT_AGE,Schema.Patient.PAT_OCCUP,Schema.Patient.PAT_MOBILE,
+                Schema.Patient.PAT_ADDRESS,Schema.Patient.PAT_GENDER};
+        String where = Schema.Patient._ID + "=?";
+        String[] whereArgs = new String[]{rowID+""};
+        Cursor cursor = sqLiteDatabase.query(Schema.Patient.TABLE_NAME1, from, where, whereArgs, null, null, null, null);
+
+        if(cursor.getCount()>0)
+        {
+            if (cursor.moveToFirst()) {
+                patientData[0] = cursor.getString(cursor.getColumnIndex(Schema.Patient.PAT_NAME));
+                patientData[1] = cursor.getString(cursor.getColumnIndex(Schema.Patient.PAT_AGE));
+                patientData[2] = cursor.getString(cursor.getColumnIndex(Schema.Patient.PAT_OCCUP));
+                patientData[3] = cursor.getString(cursor.getColumnIndex(Schema.Patient.PAT_MOBILE));
+                patientData[4] = cursor.getString(cursor.getColumnIndex(Schema.Patient.PAT_ADDRESS));
+                patientData[5] = cursor.getString(cursor.getColumnIndex(Schema.Patient.PAT_GENDER));
+            }
+        }
+
+        cursor.close();
+        sqLiteDatabase.close();
+        return patientData;
+    }
+
+    /*Read patient health data and display it in detail report screen*/
+    public String[] getPatientHealthData(int rowID)
+    {
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+
+        String from[] = { Schema.PatientHealth.HEA_COL_1,Schema.PatientHealth.HEA_COL_2,Schema.PatientHealth.HEA_COL_3,
+                Schema.PatientHealth.HEA_COL_4,Schema.PatientHealth.HEA_COL_6,Schema.PatientHealth.HEA_COL_7,
+                Schema.PatientHealth.HEA_COL_8,Schema.PatientHealth.HEA_COL_9,Schema.PatientHealth.HEA_COL_10,
+                Schema.PatientHealth.HEA_COL_11,Schema.PatientHealth.HEA_COL_12,Schema.PatientHealth.HEA_COL_13};
+
+        String where = Schema.Patient._ID + "=?";
+        String[] whereArgs = new String[]{rowID+""};
+        Cursor cursor = sqLiteDatabase.query(Schema.PatientHealth.TABLE_NAME4, from, where, whereArgs, null, null, null, null);
+
+        if(cursor.getCount()>0)
+        {
+            if (cursor.moveToFirst()) {
+                patientHealthData[0] = cursor.getString(cursor.getColumnIndex(Schema.PatientHealth.HEA_COL_1));
+                patientHealthData[1] = cursor.getString(cursor.getColumnIndex(Schema.PatientHealth.HEA_COL_2));
+                patientHealthData[2] = cursor.getString(cursor.getColumnIndex(Schema.PatientHealth.HEA_COL_3));
+                patientHealthData[3] = cursor.getString(cursor.getColumnIndex(Schema.PatientHealth.HEA_COL_4));
+                patientHealthData[4] = cursor.getString(cursor.getColumnIndex(Schema.PatientHealth.HEA_COL_6));
+                patientHealthData[5] = cursor.getString(cursor.getColumnIndex(Schema.PatientHealth.HEA_COL_7));
+                patientHealthData[6] = cursor.getString(cursor.getColumnIndex(Schema.PatientHealth.HEA_COL_8));
+                patientHealthData[7] = cursor.getString(cursor.getColumnIndex(Schema.PatientHealth.HEA_COL_9));
+                patientHealthData[8] = cursor.getString(cursor.getColumnIndex(Schema.PatientHealth.HEA_COL_10));
+                patientHealthData[9] = cursor.getString(cursor.getColumnIndex(Schema.PatientHealth.HEA_COL_11));
+                patientHealthData[10] = cursor.getString(cursor.getColumnIndex(Schema.PatientHealth.HEA_COL_12));
+                patientHealthData[11] = cursor.getString(cursor.getColumnIndex(Schema.PatientHealth.HEA_COL_13));
+            }
+        }
+
+        cursor.close();
+        sqLiteDatabase.close();
+        return patientHealthData;
+    }
+
 }

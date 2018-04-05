@@ -3,6 +3,8 @@
 
 <ScrollView android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/bgColor"
     xmlns:android="http://schemas.android.com/apk/res/android" >
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -11,9 +13,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/bgColor"
-    android:padding="16dp"
-    tools:context="com.example.yumnaasim.rtirpc.ScenePhotos">
+    tools:context="com.example.yumnaasim.rtirpc.ScenePhotosActivity">
 
     <TextView
         style="@style/form_txt"
@@ -26,7 +26,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/cardview"
         app:cardCornerRadius="20dp"
-
         android:layout_gravity="center"
         >
         <LinearLayout
@@ -66,11 +65,7 @@
         android:textColor="@android:color/white"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         app:buttonColor="@color/colorPrimary"
-        app:shadowEnabled="true"
-        app:shadowColor="@android:color/black"
-        app:shadowHeight="5dp"
         app:cornerRadius="4dp"
-        android:layout_margin="8dp"
         android:id="@+id/buttonSubmit"
         android:layout_alignParentBottom="true"
         />

@@ -7,6 +7,13 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!--
+        The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+        Google Maps Android API v2, but you must specify either coarse or fine
+        location permissions for the 'MyLocation' functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
 
     <uses-feature
         android:name="android.hardware.camera.any"
@@ -15,23 +22,15 @@
         android:name="android.hardware.camera.autofocus"
         android:required="false" />
 
-    <!--
-         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
-         Google Maps Android API v2, but you must specify either coarse or fine
-         location permissions for the 'MyLocation' functionality. 
-    -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.SEND_SMS" />
-
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="false"
-        android:icon="@drawable/logo"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashScreen">
+        <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -49,27 +48,27 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
-            android:parentActivityName=".NavDrawer"
+            android:parentActivityName=".NavDrawerActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Report"
-            android:hardwareAccelerated="true"
-            android:parentActivityName=".NavDrawer" />
-        <activity
-            android:name=".About"
-            android:parentActivityName=".NavDrawer" />
+            android:name=".AboutActivity"
+            android:parentActivityName=".NavDrawerActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".StatsActivity"
             android:hardwareAccelerated="true"
             android:label="@string/title_activity_stats"
-            android:parentActivityName=".NavDrawer"
+            android:parentActivityName=".NavDrawerActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".NavDrawer"
+            android:name=".NavDrawerActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".CitizenForm"
-            android:parentActivityName=".NavDrawer" />
+            android:name=".CitizenFormActivity"
+            android:parentActivityName=".NavDrawerActivity"
+            android:screenOrientation="portrait" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -83,32 +82,44 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".ScenePhotos"
-            android:parentActivityName=".NavDrawer" />
+            android:name=".ScenePhotosActivity"
+            android:parentActivityName=".NavDrawerActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name=".TermsAndConditions"
-            android:parentActivityName=".NavDrawer" />
+            android:name=".TermsAndConditionsActivity"
+            android:parentActivityName=".NavDrawerActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".PreviewReport"
-            android:parentActivityName=".NavDrawer" />
+            android:parentActivityName=".NavDrawerActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ExportActivity"
-            android:parentActivityName=".NavDrawer" />
+            android:parentActivityName=".NavDrawerActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ShareActivity"
-            android:parentActivityName=".NavDrawer" />
+            android:parentActivityName=".NavDrawerActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".DeleteActivity"
             android:label="@string/clear_data"
-            android:parentActivityName=".NavDrawer" />
+            android:parentActivityName=".NavDrawerActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:parentActivityName=".NavDrawer"></activity>
-
-        <activity android:name=".MyReports"
+            android:parentActivityName=".NavDrawerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HistoryActivity"
             android:label="@string/label_reports"
-            android:parentActivityName=".NavDrawer"></activity>
+            android:parentActivityName=".NavDrawerActivity"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".DetailedReportActivity"
+            android:label="Details"
+            android:parentActivityName=".HistoryActivity"></activity>
     </application>
 
 </manifest>

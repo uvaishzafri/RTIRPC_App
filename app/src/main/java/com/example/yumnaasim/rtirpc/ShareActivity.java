@@ -33,10 +33,8 @@ public class ShareActivity extends AppCompatActivity {
         patient = (RadioButton) findViewById(R.id.checkBox2);
         health = (RadioButton) findViewById(R.id.checkBox3);
         report = (RadioButton) findViewById(R.id.checkBox4);
-       allData = (RadioButton) findViewById(R.id.allData);
+        allData = (RadioButton) findViewById(R.id.allData);
 
-        String[] permissions = {"android.permission.WRITE_EXTERNAL_STORAGE"};
-        ActivityCompat.requestPermissions(this, permissions, 1);
         handleUserInput();
     }
 
@@ -70,27 +68,31 @@ public class ShareActivity extends AppCompatActivity {
 
     private void shareAllFiles() {
         Intent intentShareFile = new Intent(Intent.ACTION_SEND_MULTIPLE);
-            ArrayList<Uri> arrayList = new ArrayList<>();
-            String[] filesToSend = {getResources().getString(R.string.file1_name),
-                    getResources().getString(R.string.file2_name),
-                    getResources().getString(R.string.file3_name),
-                    getResources().getString(R.string.file4_name)};
+        ArrayList<Uri> arrayList = new ArrayList<>();
+        String[] filesToSend = {getResources().getString(R.string.file1_name),
+                getResources().getString(R.string.file2_name),
+                getResources().getString(R.string.file3_name),
+                getResources().getString(R.string.file4_name)};
 
-            for (String name : filesToSend) {
-                File file = new File("/storage/emulated/0/" + name + ".csv");
-                if (file.exists()) {
-                    Uri uri = Uri.fromFile(file);
-                    arrayList.add(uri);
-                } else {
-                    Toast.makeText(getApplicationContext(), "No file exists. Export data first.", Toast.LENGTH_LONG).show();
-                }
+        for (String name : filesToSend) {
+            File file = new File("/storage/emulated/0/" + name + ".csv");
+            if (file.exists()) {
+                Uri uri = Uri.fromFile(file);
+                arrayList.add(uri);
             }
+        }
+
+        if (arrayList.size() > 0) {
             intentShareFile.setType("application/csv");
             intentShareFile.putParcelableArrayListExtra(Intent.EXTRA_STREAM, arrayList);
             intentShareFile.putExtra(Intent.EXTRA_SUBJECT,
                     "RTIRPC Reporting");
             intentShareFile.putExtra(Intent.EXTRA_TEXT, "Please find attached files");
             startActivity(Intent.createChooser(intentShareFile, "Share File"));
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "No file exists. Export data first.", Toast.LENGTH_LONG).show();
+        }
     }
 
     private void shareFile(String fileName) {
@@ -108,5 +110,8 @@ public class ShareActivity extends AppCompatActivity {
                 startActivity(Intent.createChooser(intentShareFile, "Share File"));
 
                 }
+                else {
+                Toast.makeText(getApplicationContext(), "No file exists. Export data first.", Toast.LENGTH_LONG).show();
+            }
     }
 }

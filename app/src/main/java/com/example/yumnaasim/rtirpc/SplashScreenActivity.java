@@ -2,12 +2,10 @@ package com.example.yumnaasim.rtirpc;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Typeface;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class SplashScreen extends Activity {
+public class SplashScreenActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +22,7 @@ public class SplashScreen extends Activity {
                 }catch (InterruptedException ex){
                     ex.printStackTrace();
                 }
-                Intent intent = new Intent(getApplicationContext(),NavDrawer.class);
+                Intent intent = new Intent(getApplicationContext(),NavDrawerActivity.class);
                 startActivity(intent);
                 finish();
             }

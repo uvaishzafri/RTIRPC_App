@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.provider.ContactsContract;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -19,7 +18,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class ScenePhotos extends AppCompatActivity {
+public class ScenePhotosActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,17 +29,15 @@ public class ScenePhotos extends AppCompatActivity {
         getSupportActionBar()
                 .setTitle(Html.fromHtml("<font color=\"#FFFFFF\">" + "Accident Scene" + "</font>"));
 
-
         checkPermission();
         handleUserInput();
-
     }
 
     private void checkPermission() {
         if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CAMERA)
                 == PackageManager.PERMISSION_DENIED){
 
-            ActivityCompat.requestPermissions(ScenePhotos.this, new String[] {Manifest.permission.CAMERA}, 1);
+            ActivityCompat.requestPermissions(ScenePhotosActivity.this, new String[] {Manifest.permission.CAMERA}, 1);
 
         }
     }
@@ -50,8 +47,14 @@ public class ScenePhotos extends AppCompatActivity {
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(cameraIntent, 1);
+                if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CAMERA)
+                        == PackageManager.PERMISSION_DENIED){
+                    Toast.makeText(getApplicationContext(),"Please grant permission to take photo",Toast.LENGTH_LONG).show();
+
+                }else {
+                    Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                    startActivityForResult(cameraIntent, 1);
+                }
             }
         });
 
@@ -60,7 +63,7 @@ public class ScenePhotos extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(),"Records submitted",Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(ScenePhotos.this,NavDrawer.class));
+                startActivity(new Intent(ScenePhotosActivity.this,NavDrawerActivity.class));
                 finish();
             }
         });
@@ -69,12 +72,15 @@ public class ScenePhotos extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == 1 && data.getExtras() != null)
+        if (requestCode == 1 && resultCode == RESULT_OK)
         {
             Bitmap image = (Bitmap) data.getExtras().get("data");
             ImageView imageView = (ImageView) findViewById(R.id.imageView);
             imageView.setImageBitmap(image);
             imageView.setBackgroundResource(R.drawable.camerabox);
+        }
+        else {
+            Toast.makeText(getApplicationContext(),"No photo is captured",Toast.LENGTH_SHORT).show();
         }
 
     }

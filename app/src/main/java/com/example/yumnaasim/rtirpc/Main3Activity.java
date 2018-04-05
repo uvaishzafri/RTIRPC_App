@@ -94,17 +94,17 @@ public class Main3Activity extends Activity {
                 health.setExternalISS(externalISS);
                 health.setDoctorNotes(dtNotes);
 
-                /*new Database(Main3Activity.this).insertData(patient,
+                new Database(Main3Activity.this).insertData(patient,
                         accidentRecord,
                         details,
-                        health);*/
+                        health);
 
-                for (int i=0;i<5;i++) {
+               /* for (int i=0;i<5;i++) {
                     new Database(Main3Activity.this).insertData(patient,
                             accidentRecord,
                             details,
                             health);
-                }
+                }*/
 
                 Toast.makeText(getApplicationContext(),"Record saved!",Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(Main3Activity.this,Main4Activity.class);

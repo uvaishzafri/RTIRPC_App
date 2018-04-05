@@ -2,16 +2,8 @@ package com.example.yumnaasim.rtirpc;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.os.Environment;
 import android.preference.PreferenceManager;
-import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.ActivityCompat;
 import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.View;
@@ -23,24 +15,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
-import com.opencsv.CSVReader;
-
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-
-import Databases.Database;
-import Databases.Schema;
-
-public class NavDrawer extends AppCompatActivity
+public class NavDrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    public static final String TAG = NavDrawer.class.getSimpleName();
+    public static final String TAG = NavDrawerActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +37,7 @@ public class NavDrawer extends AppCompatActivity
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(NavDrawer.this,MainActivity.class));
+                startActivity(new Intent(NavDrawerActivity.this,MainActivity.class));
             }
         });
 
@@ -66,7 +45,7 @@ public class NavDrawer extends AppCompatActivity
         cardView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(NavDrawer.this,CitizenForm.class);
+                Intent intent1 = new Intent(NavDrawerActivity.this,CitizenFormActivity.class);
                 startActivity(intent1);
             }
         });
@@ -75,7 +54,7 @@ public class NavDrawer extends AppCompatActivity
         cardView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(NavDrawer.this,StatsActivity.class));
+                startActivity(new Intent(NavDrawerActivity.this,StatsActivity.class));
             }
         });
 
@@ -102,7 +81,7 @@ public class NavDrawer extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.nav_drawer, menu);
+      //  getMenuInflater().inflate(R.menu.nav_drawer, menu);
         return true;
     }
 
@@ -128,22 +107,22 @@ public class NavDrawer extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_about) {
-            startActivity(new Intent(NavDrawer.this,About.class));
+            startActivity(new Intent(NavDrawerActivity.this,AboutActivity.class));
             // Handle the camera action
         } else if (id == R.id.nav_terms) {
-            startActivity(new Intent(NavDrawer.this,TermsAndConditions.class));
+            startActivity(new Intent(NavDrawerActivity.this,TermsAndConditionsActivity.class));
 
         } else if (id == R.id.nav_export) {
-            startActivity(new Intent(NavDrawer.this,ExportActivity.class));
+            startActivity(new Intent(NavDrawerActivity.this,ExportActivity.class));
         }else if (id == R.id.nav_backup) {
-            startActivity(new Intent(NavDrawer.this,ShareActivity.class));
+            startActivity(new Intent(NavDrawerActivity.this,ShareActivity.class));
         }
         else if (id == R.id.nav_clear) {
-            startActivity(new Intent(NavDrawer.this,DeleteActivity.class));
+            startActivity(new Intent(NavDrawerActivity.this,DeleteActivity.class));
         }else if (id == R.id.nav_settings) {
-            startActivity(new Intent(NavDrawer.this,SettingsActivity.class));
+            startActivity(new Intent(NavDrawerActivity.this,SettingsActivity.class));
         }else if (id == R.id.nav_reports) {
-            startActivity(new Intent(NavDrawer.this,MyReports.class));
+            startActivity(new Intent(NavDrawerActivity.this,HistoryActivity.class));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

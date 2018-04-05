@@ -173,7 +173,7 @@ Email: info@roadsafety.pk, rtirpc@gmail.com</i></string>
     <string name="file4_name">PatientHealthData</string>
 
 
-    <string name="share_txt2">Send the exported data or upload it to the cloud (i.e. Drive).</string>
+    <string name="share_txt2">Share the data or upload it to the cloud.</string>
 
     <string name="share_txt">Select data to share</string>
     <string name="export_txt2">Open the exported file in Excel.</string>
@@ -214,7 +214,7 @@ Email: info@roadsafety.pk, rtirpc@gmail.com</i></string>
     <string name="global_lv_port_key">Live Stream Port(Global)</string>
 
     <string name="run_by_locality">Select your notification mode</string>
-    <string name="mode_default">SMS</string>
+    <string name="mode_default">Email</string>
     <string name="mode_key">mode</string>
     <string name="run_by_locality_local_label">SMS</string>
     <string name="run_by_locality_local_value" translatable="false">SMS</string>
@@ -244,4 +244,55 @@ Email: info@roadsafety.pk, rtirpc@gmail.com</i></string>
 
     <!--activity labels-->
     <string name="label_reports">History</string>
+
+    <!--MyReport screen strings-->
+    <string name="txt">No data found\n
+                        You\'ve not inserted any data yet.</string>
+
+    <!--DetailedReportActivity strings-->
+
+    <string name="main_heading2">Patient Details</string>
+    <string name="main_heading1">Accident Details</string>
+    <string name="main_heading3">Patient Health Details</string>
+
+    <string name="heading1">Time Arrival:</string>
+    <string name="heading2">Time Accident:</string>
+    <string name="heading3">Ambulance Name: </string>
+    <string name="heading4">Vehicle (arrived): </string>
+    <string name="heading5">Ambulance Name: </string>
+    <string name="heading6">History provider: </string>
+    <string name="heading7">Travelling Reason: </string>
+    <string name="heading8">Vehicle involvement 1:  </string>
+    <string name="heading9">Vehicle involvement 2:  </string>
+    <string name="heading10">Collision Type:  </string>
+    <string name="heading11">Location:  </string>
+    <string name="heading12">Location Details:  </string>
+    <string name="heading13">Location Description:</string>
+    <string name="heading14">Name:</string>
+    <string name="heading15">Age:</string>
+    <string name="heading16">Occupation:</string>
+    <string name="heading17">Mobile:</string>
+    <string name="heading18">Address:</string>
+    <string name="heading19">Gender:</string>
+    <string name="heading20">Respirator Rate:</string>
+    <string name="heading21">Blood Pressure:</string>
+    <string name="heading22">GCS:</string>
+    <string name="heading23">Eye Response 1:</string>
+    <string name="heading24">Eye Response 2:</string>
+    <string name="heading25">Head ISS:</string>
+    <string name="heading26">Chest ISS:</string>
+    <string name="heading27">Extermity ISS:</string>
+    <string name="heading28">Face ISS:</string>
+    <string name="heading29">Abdomen ISS:</string>
+    <string name="heading30">External ISS:</string>
+    <string name="heading31">Doctor Notes:</string>
+
+    <string name="reset"><u>Reset Form</u></string>
+
+
+
+
+
+
+
 </resources>

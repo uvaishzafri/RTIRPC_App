@@ -13,22 +13,24 @@
             android:title="Terms and Agreement" />
             <item
                 android:id="@+id/nav_reports"
-                android:icon="@drawable/ic_assignment_black_24dp"
-                android:title="My Reports" />
+                android:icon="@drawable/ic_history_black_24dp"
+                android:title="History" />
 
     </group>
 
     <group
         android:id="@+id/group2" android:checkableBehavior="single">
-    <item
-        android:id="@+id/nav_backup"
-        android:icon="@drawable/ic_share_black_24dp"
-        android:title="Share" />
 
         <item
             android:id="@+id/nav_export"
             android:icon="@drawable/ic_file_upload_black_24dp"
             android:title="Export" />
+
+    <item
+        android:id="@+id/nav_backup"
+        android:icon="@drawable/ic_share_black_24dp"
+        android:title="Share" />
+
         <item
             android:id="@+id/nav_clear"
             android:icon="@drawable/ic_delete_forever_black_24dp"
@@ -41,5 +43,6 @@
             android:icon="@drawable/ic_settings_black_24dp"
             android:title="Settings" />
     </group>
+
 
 </menu>
