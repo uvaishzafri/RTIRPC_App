@@ -62,7 +62,7 @@ public class ScenePhotosActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"Records submitted",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Record submitted",Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(ScenePhotosActivity.this,NavDrawerActivity.class));
                 finish();
             }

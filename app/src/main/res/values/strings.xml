@@ -214,12 +214,12 @@ Email: info@roadsafety.pk, rtirpc@gmail.com</i></string>
     <string name="global_lv_port_key">Live Stream Port(Global)</string>
 
     <string name="run_by_locality">Select your notification mode</string>
-    <string name="mode_default">Email</string>
+    <string name="mode_default">WhatsApp/Email</string>
     <string name="mode_key">mode</string>
     <string name="run_by_locality_local_label">SMS</string>
     <string name="run_by_locality_local_value" translatable="false">SMS</string>
-    <string name="run_by_locality_global_label">Email</string>
-    <string name="run_by_locality_global_value" translatable="false">Email</string>
+    <string name="run_by_locality_global_label">WhatsApp/Email</string>
+    <string name="run_by_locality_global_value" translatable="false">WhatsApp/Email</string>
     <string-array name="run_by_locality_labels">
         <item>@string/run_by_locality_local_label</item>
         <item>@string/run_by_locality_global_label</item>
