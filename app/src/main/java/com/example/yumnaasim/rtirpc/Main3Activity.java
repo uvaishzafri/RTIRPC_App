@@ -28,6 +28,8 @@ import model.PatientHealth;
 
 public class Main3Activity extends Activity {
 
+    EditText editTextTimestamp,editTextDataCollector,editTextNotes;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +37,10 @@ public class Main3Activity extends Activity {
         Button button = (Button) findViewById(R.id.btnSave);
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         getDateTime();
+
+        editTextTimestamp = (EditText) findViewById(R.id.timestamp);
+        editTextDataCollector = (EditText) findViewById(R.id.dataCollectorName);
+        editTextNotes = (EditText) findViewById(R.id.notes);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,10 +56,8 @@ public class Main3Activity extends Activity {
 
                 AccidentDetails details = (AccidentDetails) getIntent().getSerializableExtra("AccidentDetails");
                 /*taking user input*/
-                EditText editTextTimestamp = (EditText) findViewById(R.id.timestamp);
-                String timestamp = editTextTimestamp.getText().toString();
 
-                EditText editTextDataCollector = (EditText) findViewById(R.id.dataCollectorName);
+                String timestamp = editTextTimestamp.getText().toString();
                 String dataCollectorName = editTextDataCollector.getText().toString();
 
                 accidentRecord.setTimestamp(timestamp);
@@ -77,7 +81,6 @@ public class Main3Activity extends Activity {
                 Spinner spinner6 = (Spinner) findViewById(R.id.spinner5);
                 String externalISS = spinner6.getSelectedItem().toString();
 
-                EditText editTextNotes = (EditText) findViewById(R.id.notes);
                 String dtNotes = editTextNotes.getText().toString();
 
                 RadioGroup radioGroup = (RadioGroup) findViewById(R.id.disposal);
@@ -151,6 +154,13 @@ public class Main3Activity extends Activity {
         EditText date = (EditText) findViewById(R.id.timestamp);
         date.setText(formattedDate);
 
+    }
+
+    public void clearForm3(View view)
+    {
+        editTextDataCollector.setText(null);
+        editTextNotes.setText(null);
+        editTextTimestamp.setText(null);
     }
 
 

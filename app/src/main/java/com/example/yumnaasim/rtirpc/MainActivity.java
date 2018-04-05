@@ -28,12 +28,29 @@ import model.Patient;
 
 public class MainActivity extends Activity {
 
+    EditText editTextDate;
+    EditText editTextEmergencyNo;
+    EditText editTextName,editTextAge,editTextAddress,editTextMobile,editTextOccup,editTextTimeAcc,editTextTimeArr,editTextLoc,editTextAmb ;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button button = (Button) findViewById(R.id.buttonNext);
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+
+        editTextDate = (EditText) findViewById(R.id.date);
+        editTextEmergencyNo = (EditText) findViewById(R.id.emergencyNo);
+        editTextName = (EditText) findViewById(R.id.name);
+        editTextAge = (EditText) findViewById(R.id.age);
+        editTextAddress = (EditText) findViewById(R.id.address);
+        editTextMobile = (EditText) findViewById(R.id.mobile);
+        editTextOccup = (EditText) findViewById(R.id.occupation);
+        editTextTimeAcc = (EditText) findViewById(R.id.timeAcc);
+        editTextTimeArr = (EditText) findViewById(R.id.timeArr);
+        editTextLoc = (EditText) findViewById(R.id.loc);
+        editTextAmb = (EditText) findViewById(R.id.ambulance);
 
         getDateTime();
 
@@ -42,12 +59,8 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 /*getting all inputs from user*/
                 /*accident record input*/
-                    EditText editTextDate = (EditText) findViewById(R.id.date);
-                    String date = editTextDate.getText().toString();
-
-                    EditText editTextEmergencyNo = (EditText) findViewById(R.id.emergencyNo);
-                    String emergencyNo = editTextEmergencyNo.getText().toString();
-
+                String date = editTextDate.getText().toString();
+                String emergencyNo = editTextEmergencyNo.getText().toString();
                     Spinner spinner = (Spinner) findViewById(R.id.spinner);
                     String hospitalName = spinner.getSelectedItem().toString();
 
@@ -55,16 +68,13 @@ public class MainActivity extends Activity {
                     accidentRecord.setDate(date);
                     accidentRecord.setEmergencyNo(emergencyNo);
                     accidentRecord.setHospitalName(hospitalName);
+
                 /*patient record input*/
-                    EditText editTextName = (EditText) findViewById(R.id.name);
+
                     String name = editTextName.getText().toString();
-                    EditText editTextAge = (EditText) findViewById(R.id.age);
                     String age = editTextAge.getText().toString();
-                    EditText editTextAddress = (EditText) findViewById(R.id.address);
                     String address = editTextAddress.getText().toString();
-                    EditText editTextMobile = (EditText) findViewById(R.id.mobile);
                     String mobile = editTextMobile.getText().toString();
-                    EditText editTextOccup = (EditText) findViewById(R.id.occupation);
                     String occupation = editTextOccup.getText().toString();
 
                     RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroupGender);
@@ -86,16 +96,14 @@ public class MainActivity extends Activity {
                     String patientState = spinner1.getSelectedItem().toString();
 
                 /*accident details input*/
-                    EditText editTextTimeAcc = (EditText) findViewById(R.id.timeAcc);
-                    String timeAcc = editTextTimeAcc.getText().toString();
 
-                    EditText editTextTimeArr = (EditText) findViewById(R.id.timeArr);
+                    String timeAcc = editTextTimeAcc.getText().toString();
                     String timeArr = editTextTimeArr.getText().toString();
 
                     Spinner spinner2 = (Spinner) findViewById(R.id.spinner1);
                     String arrivalVehicle = spinner2.getSelectedItem().toString();
 
-                    EditText editTextAmb = (EditText) findViewById(R.id.ambulance);
+
                     String ambulance = editTextAmb.getText().toString();
 
                     Spinner spinner3 = (Spinner) findViewById(R.id.spinner2);
@@ -113,7 +121,6 @@ public class MainActivity extends Activity {
                     Spinner spinner7 = (Spinner) findViewById(R.id.spinner9);
                     String collisionType = spinner7.getSelectedItem().toString();
 
-                    EditText editTextLoc = (EditText) findViewById(R.id.loc);
                     String loc = editTextLoc.getText().toString();
 
                     Spinner spinnerLoc = (Spinner) findViewById(R.id.spinner10);
@@ -262,6 +269,21 @@ public class MainActivity extends Activity {
 // textView is the TextView view that should display it
         time.setText(currentTimeString);
 
+    }
+
+    public void clearForm(View view)
+    {
+        editTextDate.setText(null);
+        editTextEmergencyNo.setText(null);
+        editTextName.setText(null);
+        editTextAge.setText(null);
+        editTextAddress.setText(null);
+        editTextMobile.setText(null);
+        editTextOccup.setText(null);
+        editTextTimeAcc.setText(null);
+        editTextTimeArr.setText(null);
+        editTextLoc.setText(null);
+        editTextAmb.setText(null);
     }
 
 }
