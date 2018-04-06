@@ -116,10 +116,11 @@
             android:label="@string/label_reports"
             android:parentActivityName=".NavDrawerActivity"
             android:screenOrientation="portrait" />
-
-        <activity android:name=".DetailedReportActivity"
+        <activity
+            android:name=".DetailedReportActivity"
             android:label="Details"
-            android:parentActivityName=".HistoryActivity"></activity>
+            android:parentActivityName=".HistoryActivity" />
+        <activity android:name=".HelpActivity"></activity>
     </application>
 
 </manifest>
