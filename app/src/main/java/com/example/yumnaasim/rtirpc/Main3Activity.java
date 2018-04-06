@@ -160,7 +160,7 @@ public class Main3Activity extends Activity {
     {
         editTextDataCollector.setText(null);
         editTextNotes.setText(null);
-        editTextTimestamp.setText(null);
+        //editTextTimestamp.setText(null);
     }
 
 

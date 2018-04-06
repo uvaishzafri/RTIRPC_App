@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -25,6 +26,7 @@ import Databases.Database;
 import model.AccidentDetails;
 import model.AccidentRecord;
 import model.Patient;
+import model.Validator;
 
 public class MainActivity extends Activity {
 
@@ -41,6 +43,7 @@ public class MainActivity extends Activity {
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
         editTextDate = (EditText) findViewById(R.id.date);
+
         editTextEmergencyNo = (EditText) findViewById(R.id.emergencyNo);
         editTextName = (EditText) findViewById(R.id.name);
         editTextAge = (EditText) findViewById(R.id.age);
@@ -57,6 +60,9 @@ public class MainActivity extends Activity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                /*validating user input*
+
                 /*getting all inputs from user*/
                 /*accident record input*/
                 String date = editTextDate.getText().toString();
