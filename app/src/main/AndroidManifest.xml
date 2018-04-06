@@ -120,7 +120,6 @@
             android:name=".DetailedReportActivity"
             android:label="Details"
             android:parentActivityName=".HistoryActivity" />
-        <activity android:name=".HelpActivity"></activity>
     </application>
 
 </manifest>

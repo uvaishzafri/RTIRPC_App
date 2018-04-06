@@ -234,8 +234,8 @@ Email: info@roadsafety.pk, rtirpc@gmail.com</i></string>
     <string name="change_email">Change notifier email address</string>
     <string name="live_stream_port">Change Live Stream Port</string>
     <!--default values-->
-    <string name="default_number">03409991000</string>
-    <string name="default_email">yumnaasim11@gmail.com</string>
+    <string name="default_number"></string>
+    <string name="default_email">yumnaasim11@yahoo.com</string>
     <string name="default_lv_port">8080</string>
 
     <string name="default_chanelID">171371</string>
