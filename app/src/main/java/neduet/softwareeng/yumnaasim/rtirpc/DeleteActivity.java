@@ -1,26 +1,22 @@
-package com.example.yumnaasim.rtirpc;
+package neduet.softwareeng.yumnaasim.rtirpc;
 
 import android.content.DialogInterface;
-import android.content.res.Resources;
-import android.os.Build;
 import android.os.Environment;
-import android.support.transition.Transition;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.yumnaasim.rtirpc.R;
+
 import java.io.File;
 
 import Databases.Database;
-import Databases.Schema;
 
 public class DeleteActivity extends AppCompatActivity {
     private static final String TAG = DeleteActivity.class.getSimpleName();

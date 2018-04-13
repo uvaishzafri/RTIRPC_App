@@ -4,7 +4,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "27.0.3"
     defaultConfig {
-        applicationId "com.example.yumnaasim.rtirpc"
+        applicationId "neduet.softwareeng.yumnaasim.rtirpc"
         minSdkVersion 14
         targetSdkVersion 25
         versionCode 1

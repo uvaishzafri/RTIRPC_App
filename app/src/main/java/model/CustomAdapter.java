@@ -11,8 +11,8 @@ import android.widget.ArrayAdapter;
 
 import android.widget.TextView;
 
-import com.example.yumnaasim.rtirpc.DetailedReportActivity;
-import com.example.yumnaasim.rtirpc.HistoryActivity;
+import neduet.softwareeng.yumnaasim.rtirpc.DetailedReportActivity;
+
 import com.example.yumnaasim.rtirpc.R;
 
 /**

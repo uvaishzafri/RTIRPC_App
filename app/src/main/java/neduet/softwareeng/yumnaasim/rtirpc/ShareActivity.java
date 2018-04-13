@@ -1,15 +1,15 @@
-package com.example.yumnaasim.rtirpc;
+package neduet.softwareeng.yumnaasim.rtirpc;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.Toast;
+
+import com.example.yumnaasim.rtirpc.R;
 
 import java.io.File;
 import java.util.ArrayList;

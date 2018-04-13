@@ -1,4 +1,4 @@
-package com.example.yumnaasim.rtirpc;
+package neduet.softwareeng.yumnaasim.rtirpc;
 
 import android.Manifest;
 import android.content.Context;
@@ -17,6 +17,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.example.yumnaasim.rtirpc.R;
 
 public class ScenePhotosActivity extends AppCompatActivity {
 

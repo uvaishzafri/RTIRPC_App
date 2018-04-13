@@ -3,11 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.yumnaasim.rtirpc.SettingsActivity">
+    tools:context="com.example.yumnaasim.rtirpc.neduet.example.yumnaasim.rtirpc.SettingsActivity">
     <fragment
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:name="com.example.yumnaasim.rtirpc.SettingsActivity$HomePreference"
+        android:name="neduet.softwareeng.yumnaasim.rtirpc.SettingsActivity$HomePreference"
         android:id="@+id/fragment"
         android:layout_gravity="center_vertical" />
 </LinearLayout>

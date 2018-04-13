@@ -1,32 +1,27 @@
-package com.example.yumnaasim.rtirpc;
+package neduet.softwareeng.yumnaasim.rtirpc;
 
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Typeface;
-import android.support.v7.app.AlertDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
-import android.widget.Toast;
 
+
+import com.example.yumnaasim.rtirpc.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-import Databases.Database;
 import model.AccidentDetails;
 import model.AccidentRecord;
 import model.Patient;
-import model.Validator;
 
 public class MainActivity extends Activity {
 

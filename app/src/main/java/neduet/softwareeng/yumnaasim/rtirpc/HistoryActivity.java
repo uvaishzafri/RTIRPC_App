@@ -1,14 +1,13 @@
-package com.example.yumnaasim.rtirpc;
+package neduet.softwareeng.yumnaasim.rtirpc;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
+import com.example.yumnaasim.rtirpc.R;
 import com.nhaarman.listviewanimations.appearance.simple.AlphaInAnimationAdapter;
 
 import java.util.ArrayList;

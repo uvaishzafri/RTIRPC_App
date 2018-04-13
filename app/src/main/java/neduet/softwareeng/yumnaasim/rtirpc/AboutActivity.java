@@ -1,7 +1,9 @@
-package com.example.yumnaasim.rtirpc;
+package neduet.softwareeng.yumnaasim.rtirpc;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.yumnaasim.rtirpc.R;
 
 public class AboutActivity extends AppCompatActivity {
 

@@ -12,7 +12,7 @@ android:background="@color/bgColor"
     android:padding="16dp"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.yumnaasim.rtirpc.DetailedReportActivity">
+    tools:context="com.example.yumnaasim.rtirpc.neduet.example.yumnaasim.rtirpc.DetailedReportActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"

@@ -11,7 +11,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context="com.example.yumnaasim.rtirpc.CitizenFormActivity">
+    tools:context="com.example.yumnaasim.rtirpc.neduet.example.yumnaasim.rtirpc.CitizenFormActivity">
 
     <TextView
        style="@style/form_txt"

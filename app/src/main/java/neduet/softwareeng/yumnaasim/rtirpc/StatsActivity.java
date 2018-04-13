@@ -1,9 +1,7 @@
-package com.example.yumnaasim.rtirpc;
+package neduet.softwareeng.yumnaasim.rtirpc;
 
 import android.graphics.Color;
 import android.support.design.widget.TabLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -24,6 +22,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.yumnaasim.rtirpc.R;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.GridLabelRenderer;
 import com.jjoe64.graphview.ValueDependentColor;
@@ -31,10 +30,7 @@ import com.jjoe64.graphview.helper.StaticLabelsFormatter;
 import com.jjoe64.graphview.series.BarGraphSeries;
 import com.jjoe64.graphview.series.DataPoint;
 
-import static com.example.yumnaasim.rtirpc.R.id.cancel_action;
 import static com.example.yumnaasim.rtirpc.R.id.container;
-import static com.example.yumnaasim.rtirpc.R.id.graph;
-import static com.example.yumnaasim.rtirpc.R.id.useLogo;
 
 public class StatsActivity extends AppCompatActivity {
 

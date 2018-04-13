@@ -1,4 +1,4 @@
-package com.example.yumnaasim.rtirpc;
+package neduet.softwareeng.yumnaasim.rtirpc;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,10 +7,11 @@ import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.widget.TextView;
 
+import com.example.yumnaasim.rtirpc.R;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Locale;
 
 import Databases.Database;
 

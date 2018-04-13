@@ -1,9 +1,11 @@
-package com.example.yumnaasim.rtirpc;
+package neduet.softwareeng.yumnaasim.rtirpc;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
 import android.webkit.WebView;
+
+import com.example.yumnaasim.rtirpc.R;
 
 public class PreviewReport extends AppCompatActivity {
 

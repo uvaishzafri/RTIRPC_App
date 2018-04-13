@@ -30,7 +30,7 @@
         android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashScreenActivity">
+        <activity android:name="neduet.softwareeng.yumnaasim.rtirpc.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,36 +38,36 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Main2Activity"
+            android:name="neduet.softwareeng.yumnaasim.rtirpc.Main2Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Main4Activity"
+            android:name="neduet.softwareeng.yumnaasim.rtirpc.Main4Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Main3Activity"
+            android:name="neduet.softwareeng.yumnaasim.rtirpc.Main3Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MainActivity"
-            android:parentActivityName=".NavDrawerActivity"
+            android:name="neduet.softwareeng.yumnaasim.rtirpc.MainActivity"
+            android:parentActivityName="neduet.softwareeng.yumnaasim.rtirpc.NavDrawerActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".AboutActivity"
-            android:parentActivityName=".NavDrawerActivity"
+            android:name="neduet.softwareeng.yumnaasim.rtirpc.AboutActivity"
+            android:parentActivityName="neduet.softwareeng.yumnaasim.rtirpc.NavDrawerActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".StatsActivity"
+            android:name="neduet.softwareeng.yumnaasim.rtirpc.StatsActivity"
             android:hardwareAccelerated="true"
             android:label="@string/title_activity_stats"
-            android:parentActivityName=".NavDrawerActivity"
+            android:parentActivityName="neduet.softwareeng.yumnaasim.rtirpc.NavDrawerActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".NavDrawerActivity"
+            android:name="neduet.softwareeng.yumnaasim.rtirpc.NavDrawerActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".CitizenFormActivity"
-            android:parentActivityName=".NavDrawerActivity"
+            android:name="neduet.softwareeng.yumnaasim.rtirpc.CitizenFormActivity"
+            android:parentActivityName="neduet.softwareeng.yumnaasim.rtirpc.NavDrawerActivity"
             android:screenOrientation="portrait" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -82,44 +82,44 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".ScenePhotosActivity"
-            android:parentActivityName=".NavDrawerActivity"
+            android:name="neduet.softwareeng.yumnaasim.rtirpc.ScenePhotosActivity"
+            android:parentActivityName="neduet.softwareeng.yumnaasim.rtirpc.NavDrawerActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".TermsAndConditionsActivity"
-            android:parentActivityName=".NavDrawerActivity"
+            android:name="neduet.softwareeng.yumnaasim.rtirpc.TermsAndConditionsActivity"
+            android:parentActivityName="neduet.softwareeng.yumnaasim.rtirpc.NavDrawerActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PreviewReport"
-            android:parentActivityName=".NavDrawerActivity"
+            android:name="neduet.softwareeng.yumnaasim.rtirpc.PreviewReport"
+            android:parentActivityName="neduet.softwareeng.yumnaasim.rtirpc.NavDrawerActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ExportActivity"
-            android:parentActivityName=".NavDrawerActivity"
+            android:name="neduet.softwareeng.yumnaasim.rtirpc.ExportActivity"
+            android:parentActivityName="neduet.softwareeng.yumnaasim.rtirpc.NavDrawerActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ShareActivity"
-            android:parentActivityName=".NavDrawerActivity"
+            android:name="neduet.softwareeng.yumnaasim.rtirpc.ShareActivity"
+            android:parentActivityName="neduet.softwareeng.yumnaasim.rtirpc.NavDrawerActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".DeleteActivity"
+            android:name="neduet.softwareeng.yumnaasim.rtirpc.DeleteActivity"
             android:label="@string/clear_data"
-            android:parentActivityName=".NavDrawerActivity"
+            android:parentActivityName="neduet.softwareeng.yumnaasim.rtirpc.NavDrawerActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SettingsActivity"
+            android:name="neduet.softwareeng.yumnaasim.rtirpc.SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:parentActivityName=".NavDrawerActivity"
+            android:parentActivityName="neduet.softwareeng.yumnaasim.rtirpc.NavDrawerActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".HistoryActivity"
+            android:name="neduet.softwareeng.yumnaasim.rtirpc.HistoryActivity"
             android:label="@string/label_reports"
-            android:parentActivityName=".NavDrawerActivity"
+            android:parentActivityName="neduet.softwareeng.yumnaasim.rtirpc.NavDrawerActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".DetailedReportActivity"
+            android:name="neduet.softwareeng.yumnaasim.rtirpc.DetailedReportActivity"
             android:label="Details"
-            android:parentActivityName=".HistoryActivity" />
+            android:parentActivityName="neduet.softwareeng.yumnaasim.rtirpc.HistoryActivity" />
     </application>
 
 </manifest>

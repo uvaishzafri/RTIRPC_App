@@ -14,7 +14,7 @@ import model.AccidentRecord;
 import model.Patient;
 import model.PatientHealth;
 
-import static com.example.yumnaasim.rtirpc.ShareActivity.TAG;
+import static neduet.softwareeng.yumnaasim.rtirpc.ShareActivity.TAG;
 
 /**
  * Created by YumnaAsim on 11/4/2017.

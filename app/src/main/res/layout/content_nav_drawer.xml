@@ -11,7 +11,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.yumnaasim.rtirpc.NavDrawerActivity"
+    tools:context="com.example.yumnaasim.rtirpc.neduet.example.yumnaasim.rtirpc.NavDrawerActivity"
     tools:showIn="@layout/app_bar_nav_drawer">
 
    <LinearLayout
@@ -57,7 +57,7 @@
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
                    android:orientation="vertical"
-                   tools:context="com.example.yumnaasim.rtirpc.StatsActivity$PlaceholderFragment">
+                   tools:context="com.example.yumnaasim.rtirpc.neduet.example.yumnaasim.rtirpc.StatsActivity$PlaceholderFragment">
 
                    <TextView
                        android:layout_width="match_parent"
@@ -109,7 +109,7 @@
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
                    android:orientation="vertical"
-                   tools:context="com.example.yumnaasim.rtirpc.StatsActivity$PlaceholderFragment">
+                   tools:context="com.example.yumnaasim.rtirpc.neduet.example.yumnaasim.rtirpc.StatsActivity$PlaceholderFragment">
 
                    <TextView
                        android:layout_width="match_parent"
@@ -161,7 +161,7 @@
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
                    android:orientation="vertical"
-                   tools:context="com.example.yumnaasim.rtirpc.StatsActivity$PlaceholderFragment">
+                   tools:context="com.example.yumnaasim.rtirpc.neduet.example.yumnaasim.rtirpc.StatsActivity$PlaceholderFragment">
 
                    <TextView
                        android:layout_width="match_parent"

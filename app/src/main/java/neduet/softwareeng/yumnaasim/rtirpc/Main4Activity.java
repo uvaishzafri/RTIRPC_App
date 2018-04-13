@@ -1,4 +1,4 @@
-package com.example.yumnaasim.rtirpc;
+package neduet.softwareeng.yumnaasim.rtirpc;
 
 import android.Manifest;
 import android.app.Activity;
@@ -17,6 +17,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.example.yumnaasim.rtirpc.R;
 
 public class Main4Activity extends Activity {
     private static final String TAG = Main4Activity.class.getSimpleName();

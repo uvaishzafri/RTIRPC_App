@@ -24,7 +24,7 @@
                 android:layout_height="match_parent"
                 android:padding="16dp"
                 android:orientation="vertical"
-                tools:context="com.example.yumnaasim.rtirpc.StatsActivity$PlaceholderFragment">
+                tools:context="com.example.yumnaasim.rtirpc.neduet.example.yumnaasim.rtirpc.StatsActivity$PlaceholderFragment">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -50,7 +50,7 @@
         android:padding="16dp"
         android:weightSum="5"
         android:orientation="horizontal"
-        tools:context="com.example.yumnaasim.rtirpc.StatsActivity$PlaceholderFragment">
+        tools:context="com.example.yumnaasim.rtirpc.neduet.example.yumnaasim.rtirpc.StatsActivity$PlaceholderFragment">
 
         <TextView
             android:id="@+id/date_range1"
@@ -80,7 +80,7 @@
                 android:layout_height="match_parent"
                 android:padding="16dp"
                 android:orientation="vertical"
-                tools:context="com.example.yumnaasim.rtirpc.StatsActivity$PlaceholderFragment">
+                tools:context="com.example.yumnaasim.rtirpc.neduet.example.yumnaasim.rtirpc.StatsActivity$PlaceholderFragment">
 
                 <TextView
                     android:layout_width="match_parent"
